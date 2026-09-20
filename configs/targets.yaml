@@ -1,0 +1,141 @@
+# Target definitions for:
+# Airline Network Disruption Intelligence:
+# Delay Prediction, Propagation, Recovery and Network Resilience
+
+version: "0.1.0"
+
+classification_targets:
+  severe_arrival_delay:
+    enabled: true
+    primary_threshold_minutes: 120
+    sensitivity_thresholds_minutes:
+      - 60
+      - 90
+      - 120
+      - 180
+
+    primary_target_name: "severe_delay_120"
+
+    target_definition: >
+      severe_delay_120 equals 1 when final arrival delay is greater than
+      or equal to 120 minutes. Otherwise, it equals 0.
+
+    eligible_cohort:
+      require_valid_arrival_delay: true
+      exclude_cancelled_flights: true
+      diverted_flight_policy: "to_be_confirmed_after_source_audit"
+
+    notes:
+      - "The 120-minute threshold is a project-defined analytical threshold."
+      - "It is not an official airline, airport, FAA, or regulatory classification."
+      - "Actual source column names will be confirmed during the Phase 1 source-data audit."
+
+  cancellation:
+    enabled: true
+    target_name: "cancelled"
+
+    target_definition: >
+      cancelled equals 1 when the audited source cancellation field indicates
+      that the flight was cancelled. Otherwise, it equals 0.
+
+    eligible_cohort:
+      require_valid_cancellation_indicator: true
+
+    source_field_policy: "to_be_confirmed_after_source_audit"
+
+regression_target:
+  arrival_delay_minutes:
+    enabled: true
+    target_name: "arrival_delay_minutes"
+
+    target_definition: >
+      Final arrival delay in minutes for the documented completed-flight cohort.
+
+    eligible_cohort:
+      require_valid_arrival_delay: true
+      exclude_cancelled_flights: true
+      diverted_flight_policy: "to_be_confirmed_after_source_audit"
+
+    primary_metric: "mae"
+
+propagation_targets:
+  enabled: true
+
+  requirements:
+    require_valid_tail_number: true
+    require_valid_utc_ordering: true
+    require_turnaround_plausibility_check: true
+    require_prior_leg_availability_check: true
+    exclude_ambiguous_rotation_links: true
+
+  measures:
+    - "previous_leg_arrival_delay_minutes"
+    - "current_flight_arrival_delay_minutes"
+    - "current_flight_severe_delay"
+    - "current_flight_cancellation"
+    - "delay_amplification_minutes"
+    - "cascade_depth"
+    - "cascade_duration_minutes"
+    - "cumulative_rotation_delay_minutes"
+    - "subsequent_severe_delay_risk"
+    - "subsequent_cancellation_risk"
+
+recovery_target:
+  enabled: true
+
+  disruption_trigger:
+    type: "arrival_delay_minutes"
+    primary_threshold_minutes: 120
+    sensitivity_thresholds_minutes:
+      - 60
+      - 90
+      - 120
+      - 180
+
+  normal_operation:
+    type: "arrival_delay_minutes"
+    primary_threshold_minutes: 15
+    comparison: "less_than"
+
+  recovery_definition: >
+    Recovery occurs when a later eligible operated flight in a validated
+    aircraft rotation has a final arrival delay below 15 minutes.
+
+  censoring:
+    enabled: true
+    right_censor_when_recovery_not_observed: true
+
+  cancellation_policy: "to_be_confirmed_after_source_audit"
+  diversion_policy: "to_be_confirmed_after_source_audit"
+
+network_targets:
+  enabled: true
+
+  candidate_measures:
+    - "airport_severe_delay_rate"
+    - "airport_cancellation_rate"
+    - "airport_delay_pressure"
+    - "route_severe_delay_rate"
+    - "route_cancellation_rate"
+    - "airport_exposure"
+    - "route_exposure"
+    - "downstream_disruption_indicators"
+    - "network_recovery_measures"
+
+weather_analysis:
+  enabled: true
+
+  role: "explanatory_feature_family"
+
+  intended_analyses:
+    - "severe_delay_prediction"
+    - "cancellation_prediction"
+    - "arrival_delay_regression"
+    - "aircraft_rotation_propagation"
+    - "recovery_analysis"
+    - "airport_network_disruption_analysis"
+
+  rule: >
+    Weather is not a prediction target. Only weather observations available
+    on or before the documented prediction timestamp may be used as
+    predictive features.

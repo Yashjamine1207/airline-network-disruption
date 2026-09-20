@@ -1,0 +1,122 @@
+# External data-source configuration for:
+# Airline Network Disruption Intelligence:
+# Delay Prediction, Propagation, Recovery and Network Resilience
+
+version: "0.1.0"
+
+official_source_boundary:
+  allowed_external_source_count: 2
+
+  allowed_sources:
+    - "Kaggle Flight Delay and Cancellation Dataset"
+    - "NOAA Global Historical Climatology Network hourly weather observations"
+
+  additional_external_sources_allowed: false
+
+  scope_control_rule: >
+    FAA data, NOAA Storm Events data, commercial aviation data, passenger data,
+    airline APIs, airport APIs, and other external datasets are outside the
+    official pipeline unless the research protocol is formally revised.
+
+flight_data:
+  source_id: "kaggle_flight_delay_cancellation"
+
+  dataset:
+    name: "Flight Delay and Cancellation Dataset"
+    platform: "Kaggle"
+    publisher_or_author: "to_be_confirmed_after_source_audit"
+    source_url: "to_be_confirmed_after_source_audit"
+    licence_or_terms: "to_be_confirmed_after_source_audit"
+
+  local_files:
+    raw_directory: "data/raw/flights_kaggle"
+    flight_csv: "data/raw/flights_kaggle/flights_sample_3m.csv"
+    column_dictionary: "data/raw/flights_kaggle/dictionary.html"
+    file_format: "csv"
+    encoding: "to_be_confirmed_after_source_audit"
+
+  acquisition:
+    access_date: "2026-09-20"
+    raw_data_immutable: true
+    raw_data_tracked_by_git: false
+    expected_record_scale: "approximately_3_million_rows_pending_audit"
+
+  audit_requirements:
+    calculate_file_hash: true
+    inspect_schema: true
+    calculate_raw_row_count: true
+    confirm_actual_date_coverage: true
+    calculate_missingness: true
+    identify_unique_record_key: true
+    confirm_time_fields: true
+    confirm_delay_fields: true
+    confirm_cancellation_fields: true
+    confirm_diversion_fields: true
+    confirm_tail_identifier_field: true
+    confirm_carrier_identifier_fields: true
+    compare_csv_schema_with_dictionary: true
+
+  required_documentation:
+    source_metadata_file: "docs/data/source_metadata.md"
+    field_mapping_file: "data/external/flight_field_mapping.md"
+    audit_file: "docs/data/flight_data_audit.md"
+
+weather_data:
+  source_id: "noaa_ghcnh"
+
+  dataset:
+    name: "Global Historical Climatology Network hourly"
+    abbreviation: "GHCNh"
+    publisher: "National Oceanic and Atmospheric Administration"
+    source_url: "to_be_recorded_before_download"
+    licence_or_terms: "to_be_recorded_before_download"
+
+  local_files:
+    raw_directory: "data/raw/noaa_ghcnh"
+    standardised_directory: "data/interim/weather_standardised"
+
+  acquisition:
+    access_date: "not_yet_acquired"
+    raw_data_immutable: true
+    raw_data_tracked_by_git: false
+    global_archive_download_allowed: false
+
+  selection_policy:
+    select_stations_after_flight_airport_audit: true
+    retrieve_only_required_airports: true
+    retrieve_only_required_stations: true
+    retrieve_only_required_date_ranges: true
+    retrieve_only_required_variables: true
+
+  required_metadata_per_observation:
+    - "station_id"
+    - "station_latitude"
+    - "station_longitude"
+    - "observation_timestamp_utc"
+    - "weather_value"
+    - "quality_metadata"
+    - "airport_station_matching_method"
+    - "weather_to_prediction_time_gap"
+
+  required_documentation:
+    source_metadata_file: "docs/data/source_metadata.md"
+    field_mapping_file: "data/external/ghcnh_field_mapping.md"
+    station_mapping_file: "data/external/airport_station_mapping.csv"
+    audit_file: "docs/data/weather_data_audit.md"
+
+storage_policy:
+  raw_data_location: "data/raw"
+  interim_data_location: "data/interim"
+  processed_data_location: "data/processed"
+  feature_data_location: "data/features"
+
+  raw_data_immutable: true
+  analytical_storage_format: "parquet"
+
+  git_rules:
+    raw_data_tracked: false
+    interim_data_tracked: false
+    processed_data_tracked: false
+    feature_data_tracked: false
+    only_small_safe_samples_may_be_tracked: true
+    

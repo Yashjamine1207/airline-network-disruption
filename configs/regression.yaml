@@ -1,0 +1,189 @@
+# Arrival-delay regression configuration for:
+# Airline Network Disruption Intelligence:
+# Delay Prediction, Propagation, Recovery and Network Resilience
+
+version: "0.1.0"
+
+general:
+  task_type: "regression"
+
+  target_name: "arrival_delay_minutes"
+  target_config_file: "configs/targets.yaml"
+
+  prediction_timestamp_field: "prediction_timestamp_utc"
+
+  chronological_validation_required: true
+  random_train_test_split_allowed_for_headline_results: false
+
+  final_test_set_locked_until_selection_complete: true
+
+  use_future_information: false
+  use_delay_cause_fields_in_preflight_models: false
+
+eligible_cohort:
+  require_valid_final_arrival_delay: true
+  exclude_cancelled_flights: true
+
+  diverted_flight_policy: "to_be_confirmed_after_source_audit"
+
+  require_valid_prediction_timestamp: true
+
+  record_exclusion_reason: true
+
+target:
+  unit: "minutes"
+
+  definition: >
+    Final arrival delay in minutes for the documented eligible completed-flight
+    cohort.
+
+  target_transformation:
+    enabled_by_default: false
+    permitted_only_if_documented: true
+    evaluate_on_original_minutes_scale: true
+
+models:
+  baselines:
+    enabled: true
+
+    models:
+      - model_id: "global_mean_baseline"
+        description: >
+          Predict the past training-fold mean arrival delay for all eligible
+          flights.
+
+      - model_id: "global_median_baseline"
+        description: >
+          Predict the past training-fold median arrival delay for all eligible
+          flights.
+
+      - model_id: "historical_route_median_baseline"
+        description: >
+          Predict the past-only route-level median arrival delay, calculated
+          within the relevant training fold.
+
+      - model_id: "historical_carrier_route_median_baseline"
+        description: >
+          Predict the past-only carrier-route median arrival delay, calculated
+          within the relevant training fold where sufficient history exists.
+
+  linear_regression:
+    enabled: true
+    library: "scikit_learn"
+
+  ridge_regression:
+    enabled: true
+    library: "scikit_learn"
+
+    hyperparameter_tuning:
+      enabled: true
+      validation_only: true
+
+      candidate_alpha:
+        - 0.01
+        - 0.1
+        - 1.0
+        - 10.0
+        - 100.0
+
+  elastic_net:
+    enabled: true
+    library: "scikit_learn"
+
+    hyperparameter_tuning:
+      enabled: true
+      validation_only: true
+
+      candidate_alpha:
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1.0
+
+      candidate_l1_ratio:
+        - 0.1
+        - 0.5
+        - 0.9
+
+  lightgbm:
+    enabled: true
+    configuration_file: "configs/lightgbm.yaml"
+
+  xgboost:
+    enabled: true
+    configuration_file: "configs/xgboost.yaml"
+
+feature_sets:
+  use_ablation_feature_sets_from: "configs/features.yaml"
+
+  required_comparisons:
+    - "base"
+    - "base_plus_historical"
+    - "base_plus_historical_plus_rotation"
+    - "base_plus_historical_plus_rotation_plus_network"
+    - "full_feature_set"
+
+metrics:
+  primary_metric: "mae"
+
+  secondary_metrics:
+    - "rmse"
+    - "median_absolute_error"
+    - "bias"
+    - "residual_distribution"
+    - "upper_tail_error"
+
+  report_metrics_in_unit: "minutes"
+
+upper_tail_evaluation:
+  enabled: true
+
+  subsets:
+    - subset_name: "severe_delay_60_minutes"
+      condition: "arrival_delay_minutes_greater_than_or_equal_to_60"
+
+    - subset_name: "severe_delay_90_minutes"
+      condition: "arrival_delay_minutes_greater_than_or_equal_to_90"
+
+    - subset_name: "severe_delay_120_minutes"
+      condition: "arrival_delay_minutes_greater_than_or_equal_to_120"
+
+    - subset_name: "severe_delay_180_minutes"
+      condition: "arrival_delay_minutes_greater_than_or_equal_to_180"
+
+  report:
+    - "mae"
+    - "rmse"
+    - "median_absolute_error"
+    - "bias"
+    - "residual_distribution"
+
+preprocessing:
+  fit_imputers_on_training_data_only: true
+  fit_encoders_on_training_data_only: true
+  fit_scalers_on_training_data_only: true
+  fit_feature_selection_on_training_data_only: true
+
+  outlier_policy: >
+    Do not remove valid severe arrival delays merely because they are large.
+    Investigate invalid values during the data-quality audit and document all
+    exclusion or clipping decisions.
+
+reporting:
+  report_by_regime: true
+  report_by_carrier_when_sample_size_allows: true
+  report_by_origin_airport_when_sample_size_allows: true
+  report_by_destination_airport_when_sample_size_allows: true
+  report_by_route_when_sample_size_allows: true
+  report_by_weather_coverage_when_available: true
+  report_by_rotation_eligibility_when_available: true
+
+interpretation:
+  project_type: "retrospective_analytical_study"
+
+  prohibited_claims:
+    - "Real-time airline delay forecast"
+    - "Guaranteed minute-level operational prediction"
+    - "Automated dispatch recommendation"
+    - "Causal proof of delay causes"
+    - "Guaranteed operational or financial benefit"

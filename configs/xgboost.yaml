@@ -1,0 +1,223 @@
+# XGBoost configuration for:
+# Airline Network Disruption Intelligence:
+# Delay Prediction, Propagation, Recovery and Network Resilience
+
+version: "0.1.0"
+
+general:
+  library: "xgboost"
+  random_seed: 42
+  n_jobs: -1
+
+  chronological_validation_required: true
+  final_test_set_used_for_tuning: false
+
+  configuration_selection_dataset: "validation_only"
+
+classification:
+  enabled: true
+
+  objectives:
+    severe_arrival_delay: "binary:logistic"
+    cancellation: "binary:logistic"
+
+  evaluation_metrics:
+    primary: "aucpr"
+
+    secondary:
+      - "logloss"
+      - "auc"
+
+  class_imbalance:
+    primary_strategy: "scale_pos_weight_from_training_fold"
+
+    compute_using: >
+      Number of negative examples divided by number of positive examples in the
+      relevant training fold only.
+
+    resampling_enabled_by_default: false
+
+  initial_parameters:
+    learning_rate: 0.05
+    n_estimators: 1000
+    max_depth: 6
+    min_child_weight: 1
+    subsample: 0.8
+    colsample_bytree: 0.8
+    gamma: 0.0
+    reg_alpha: 0.0
+    reg_lambda: 1.0
+    tree_method: "hist"
+
+  early_stopping:
+    enabled: true
+    rounds: 100
+    evaluation_dataset: "chronological_validation_only"
+
+  hyperparameter_search:
+    enabled: true
+    search_dataset: "chronological_validation_only"
+    final_test_set_allowed: false
+
+    candidate_parameters:
+      learning_rate:
+        - 0.01
+        - 0.03
+        - 0.05
+
+      max_depth:
+        - 3
+        - 6
+        - 10
+
+      min_child_weight:
+        - 1
+        - 5
+        - 10
+
+      subsample:
+        - 0.7
+        - 0.8
+        - 1.0
+
+      colsample_bytree:
+        - 0.7
+        - 0.8
+        - 1.0
+
+      gamma:
+        - 0.0
+        - 0.1
+        - 1.0
+
+      reg_alpha:
+        - 0.0
+        - 0.1
+        - 1.0
+
+      reg_lambda:
+        - 0.1
+        - 1.0
+        - 5.0
+
+regression:
+  enabled: true
+
+  objective: "reg:absoluteerror"
+
+  evaluation_metrics:
+    primary: "mae"
+
+    secondary:
+      - "rmse"
+
+  initial_parameters:
+    learning_rate: 0.05
+    n_estimators: 1000
+    max_depth: 6
+    min_child_weight: 1
+    subsample: 0.8
+    colsample_bytree: 0.8
+    gamma: 0.0
+    reg_alpha: 0.0
+    reg_lambda: 1.0
+    tree_method: "hist"
+
+  early_stopping:
+    enabled: true
+    rounds: 100
+    evaluation_dataset: "chronological_validation_only"
+
+  hyperparameter_search:
+    enabled: true
+    search_dataset: "chronological_validation_only"
+    final_test_set_allowed: false
+
+    candidate_parameters:
+      learning_rate:
+        - 0.01
+        - 0.03
+        - 0.05
+
+      max_depth:
+        - 3
+        - 6
+        - 10
+
+      min_child_weight:
+        - 1
+        - 5
+        - 10
+
+      subsample:
+        - 0.7
+        - 0.8
+        - 1.0
+
+      colsample_bytree:
+        - 0.7
+        - 0.8
+        - 1.0
+
+      gamma:
+        - 0.0
+        - 0.1
+        - 1.0
+
+      reg_alpha:
+        - 0.0
+        - 0.1
+        - 1.0
+
+      reg_lambda:
+        - 0.1
+        - 1.0
+        - 5.0
+
+feature_policy:
+  feature_configuration_file: "configs/features.yaml"
+
+  required_ablation_sets:
+    - "base"
+    - "base_plus_historical"
+    - "base_plus_historical_plus_rotation"
+    - "base_plus_historical_plus_rotation_plus_network"
+    - "full_feature_set"
+
+  prohibited_features:
+    - "Actual outcomes from the predicted flight"
+    - "Delay-cause fields in pre-flight models"
+    - "Future weather observations"
+    - "Future aircraft legs"
+    - "Future network information"
+
+calibration:
+  apply_to_classification_only: true
+  configuration_file: "configs/calibration.yaml"
+  calibration_selection_dataset: "validation_only"
+
+reporting:
+  classification_primary_metric: "pr_auc"
+  regression_primary_metric: "mae"
+
+  include:
+    - "hyperparameters"
+    - "training_fold_event_prevalence"
+    - "class_weight_or_scale_pos_weight"
+    - "early_stopping_iteration"
+    - "validation_metrics"
+    - "final_test_metrics_after_selection_is_locked"
+    - "feature_ablation_results"
+    - "feature_importance"
+    - "calibration_results_for_classification"
+    - "regime_specific_results"
+
+interpretation:
+  shap_enabled_after_valid_evaluation: true
+
+  feature_importance_is_causal_evidence: false
+
+  model_retention_rule: >
+    Retain XGBoost only when it provides meaningful incremental value over
+    simpler baselines or statistical models in predictive performance,
+    calibration, robustness, or analytical insight.

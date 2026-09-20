@@ -1,0 +1,144 @@
+# Historical weather-matching configuration for:
+# Airline Network Disruption Intelligence:
+# Delay Prediction, Propagation, Recovery and Network Resilience
+
+version: "0.1.0"
+
+weather_source:
+  source_name: "NOAA Global Historical Climatology Network hourly"
+  source_abbreviation: "GHCNh"
+  raw_directory: "data/raw/noaa_ghcnh"
+  standardised_directory: "data/interim/weather_standardised"
+  source_status: "not_yet_acquired"
+
+scope_control:
+  retrieve_global_noaa_archive: false
+  retrieve_only_required_airport_stations: true
+  retrieve_only_required_date_ranges: true
+  retrieve_only_required_weather_variables: true
+
+airport_station_mapping:
+  mapping_file: "data/external/airport_station_mapping.csv"
+  mapping_status: "to_be_built_after_flight_airport_audit"
+
+  required_columns:
+    - "airport_id"
+    - "airport_latitude"
+    - "airport_longitude"
+    - "station_id"
+    - "station_name"
+    - "station_latitude"
+    - "station_longitude"
+    - "distance_km"
+    - "matching_method"
+    - "station_selection_reason"
+    - "mapping_version"
+    - "mapping_notes"
+
+  station_selection_rules:
+    require_station_coordinates: true
+    prefer_nearby_station: true
+    require_required_variables_when_possible: true
+    require_usable_observation_coverage: true
+    document_fallback_station_choice: true
+
+  unmatched_airport_policy: "flag_as_unmatched_and_report_coverage"
+  guessed_station_match_allowed: false
+
+time_policy:
+  canonical_timezone: "UTC"
+
+  prediction_timestamp_field: "prediction_timestamp_utc"
+
+  weather_observation_eligibility_rule: >
+    weather_observation_timestamp_utc must be less than or equal to
+    prediction_timestamp_utc
+
+  future_weather_allowed: false
+  complete_day_future_aggregate_allowed: false
+
+matching_method:
+  primary_method: "nearest_valid_observation_at_or_before_prediction_timestamp"
+
+  fallback_method:
+    enabled: true
+    method: "preceding_aggregation_window"
+    window_hours: "to_be_finalised_after_weather_coverage_audit"
+
+  no_eligible_observation_policy: "set_weather_features_missing_and_record_reason"
+
+quality_controls:
+  retain_station_identity: true
+  retain_station_coordinates: true
+  retain_observation_timestamp_utc: true
+  retain_quality_metadata: true
+  retain_observation_to_prediction_gap_minutes: true
+  retain_airport_station_matching_method: true
+
+  required_quality_output_fields:
+    - "matched_station_id"
+    - "matched_station_latitude"
+    - "matched_station_longitude"
+    - "weather_observation_timestamp_utc"
+    - "weather_prediction_gap_minutes"
+    - "weather_match_status"
+    - "weather_match_reason"
+    - "weather_quality_metadata"
+    - "airport_station_mapping_method"
+
+weather_variables:
+  selection_status: "to_be_finalised_before_noaa_retrieval"
+
+  candidate_feature_families:
+    - "air_temperature"
+    - "dew_point_temperature"
+    - "wind_speed"
+    - "wind_direction"
+    - "wind_gust"
+    - "precipitation"
+    - "visibility"
+    - "cloud_conditions"
+    - "sea_level_pressure"
+    - "weather_present_conditions"
+
+  rule: >
+    Only variables supported by the acquired GHCNh extracts, documented field
+    mapping, sufficient coverage, and quality checks may be used.
+
+derived_weather_features:
+  allowed: true
+
+  examples:
+    - "temperature"
+    - "wind_speed"
+    - "gust_indicator"
+    - "low_visibility_indicator"
+    - "precipitation_indicator"
+    - "weather_observation_age_minutes"
+
+  severity_score:
+    allowed: true
+    rule: >
+      Any combined weather severity score must be documented as a
+      project-derived feature and must not be presented as an official NOAA measure.
+
+coverage_reporting:
+  required: true
+
+  report:
+    - "airport_count_requested"
+    - "airport_count_matched_to_station"
+    - "airport_count_unmatched"
+    - "station_count_used"
+    - "weather_observation_coverage_rate"
+    - "weather_match_rate"
+    - "weather_time_gap_distribution"
+    - "weather_missingness_by_airport"
+    - "weather_missingness_by_period"
+    - "quality_issue_summary"
+
+documentation:
+  field_mapping_file: "data/external/ghcnh_field_mapping.md"
+  station_mapping_file: "data/external/airport_station_mapping.csv"
+  audit_file: "docs/data/weather_data_audit.md"
+  feature_catalog_file: "docs/data/feature_catalog.md"

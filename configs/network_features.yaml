@@ -1,0 +1,182 @@
+# Airport-route network feature configuration for:
+# Airline Network Disruption Intelligence:
+# Delay Prediction, Propagation, Recovery and Network Resilience
+
+version: "0.1.0"
+
+purpose: >
+  Build retrospective airport-route network measures from flight records to
+  analyse disruption exposure, propagation patterns, resilience, and the
+  incremental predictive value of past-only network features.
+
+network_definition:
+  graph_type: "directed_airport_route_graph"
+
+  node_definition: "airport"
+
+  edge_definition: >
+    A directed edge from origin airport to destination airport represents an
+    eligible flight route observed within a documented historical time window.
+
+  edge_direction: "origin_to_destination"
+
+  graph_library: "networkx"
+
+time_policy:
+  canonical_timezone: "UTC"
+
+  prediction_feature_rule: >
+    A network feature for a flight may use only graph information derived from
+    eligible records available on or before that flight's prediction_timestamp_utc.
+
+  future_network_information_allowed: false
+
+  final_test_graph_used_for_earlier_predictions_allowed: false
+
+  same_day_future_flights_allowed: false
+
+  graph_window_end_rule: "window_end_utc_must_be_less_than_or_equal_to_prediction_timestamp_utc"
+
+dynamic_windows:
+  enabled: true
+
+  candidate_lookback_windows:
+    - "7_days"
+    - "30_days"
+    - "90_days"
+
+  final_window_selection: "to_be_selected_using_development_and_validation_periods_only"
+
+  window_type: "rolling_past_only"
+
+  missing_history_policy: "set_network_features_missing_or_use_documented_default_with_indicator"
+
+flight_eligibility_for_graph:
+  source_status: "to_be_finalised_after_source_audit"
+
+  include:
+    - "Flights with valid origin and destination airport identifiers"
+    - "Flights with valid schedule timestamps for schedule-based network measures"
+
+  completed_flight_outcomes:
+    policy: >
+      Outcome-based disruption measures may use only outcomes that were known
+      by the feature availability time and must obey the project prediction
+      timestamp policy.
+
+  exclude_or_flag:
+    - "Records with invalid airport identifiers"
+    - "Records with unresolved timestamp conversion required for the analysis"
+    - "Duplicate records after documented deduplication checks"
+
+edge_weights:
+  candidate_weights:
+    flight_count:
+      definition: "Number of eligible flights on the route within the past-only window"
+
+    scheduled_flight_count:
+      definition: "Number of eligible scheduled flights on the route within the past-only window"
+
+    severe_delay_count:
+      definition: >
+        Number of severe-delay outcomes available within the past-only window,
+        subject to point-in-time outcome availability.
+
+    cancellation_count:
+      definition: >
+        Number of cancellation outcomes available within the past-only window,
+        subject to point-in-time outcome availability.
+
+    delay_pressure:
+      definition: >
+        Documented aggregate of eligible historical arrival-delay outcomes in
+        the past-only window.
+
+  final_weight_selection: "to_be_documented_in_feature_catalog"
+
+candidate_node_features:
+  - "in_degree"
+  - "out_degree"
+  - "weighted_in_degree"
+  - "weighted_out_degree"
+  - "betweenness_centrality"
+  - "closeness_centrality"
+  - "pagerank"
+  - "route_diversity"
+  - "route_concentration"
+  - "airport_historical_severe_delay_rate"
+  - "airport_historical_cancellation_rate"
+  - "airport_delay_pressure"
+  - "airport_disruption_exposure"
+
+candidate_edge_features:
+  - "route_flight_count"
+  - "route_scheduled_flight_count"
+  - "route_historical_severe_delay_rate"
+  - "route_historical_cancellation_rate"
+  - "route_delay_pressure"
+  - "route_exposure"
+  - "route_weighted_importance"
+
+candidate_network_level_measures:
+  - "node_count"
+  - "edge_count"
+  - "network_density"
+  - "connected_component_structure"
+  - "centrality_distribution"
+  - "route_diversity_distribution"
+  - "network_disruption_pressure"
+  - "network_recovery_measure"
+
+network_analysis:
+  descriptive_analysis_enabled: true
+  predictive_feature_analysis_enabled: true
+
+  compare_periods:
+    - "normal_or_lower_disruption_periods"
+    - "high_disruption_periods"
+    - "pre_covid_2019"
+    - "covid_shock_2020"
+    - "recovery_transition_2021_to_2023"
+
+  causal_interpretation_allowed: false
+
+quality_controls:
+  required:
+    - "record_graph_window_start_utc"
+    - "record_graph_window_end_utc"
+    - "record_feature_availability_time"
+    - "record_eligible_flight_count"
+    - "record_node_count"
+    - "record_edge_count"
+    - "validate_no_future_flights_in_graph"
+    - "validate_no_future_outcomes_in_outcome_based_features"
+
+evaluation:
+  assess_incremental_value_against:
+    - "base_schedule_carrier_airport_route_features"
+    - "base_plus_historical_features"
+    - "base_plus_historical_plus_rotation_features"
+    - "base_plus_historical_plus_rotation_plus_network_features"
+    - "base_plus_historical_plus_rotation_plus_network_plus_weather_features"
+
+  report:
+    - "classification_pr_auc"
+    - "classification_calibration"
+    - "classification_precision_at_k"
+    - "classification_recall_at_k"
+    - "regression_mae"
+    - "subgroup_results"
+    - "feature_ablation_results"
+
+documentation:
+  feature_catalog_file: "docs/data/feature_catalog.md"
+  leakage_audit_file: "docs/data/leakage_audit.md"
+  network_analysis_plan: "docs/experiments/network_analysis_plan.md"
+  network_report: "reports/evaluation/network_resilience_report.md"
+
+interpretation_rules:
+  - "Network measures are descriptive and analytical measures."
+  - "Do not invent a single network accuracy metric."
+  - "Do not claim centrality, exposure, or correlation proves causal disruption effects."
+  - "Do not use future graph states to create pre-flight prediction features."

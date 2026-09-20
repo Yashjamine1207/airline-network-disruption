@@ -1,0 +1,204 @@
+# TensorFlow/Keras LSTM configuration for:
+# Airline Network Disruption Intelligence:
+# Delay Prediction, Propagation, Recovery and Network Resilience
+
+version: "0.1.0"
+
+general:
+  library: "tensorflow_keras"
+  model_family: "lstm"
+  random_seed: 42
+
+  status: "challenger_model"
+
+  prerequisite: >
+    Train and evaluate baseline, statistical, LightGBM, and XGBoost models
+    before beginning LSTM experiments.
+
+  chronological_validation_required: true
+  final_test_set_used_for_tuning: false
+
+  use_pytorch: false
+
+task:
+  primary_task: "severe_arrival_delay_classification"
+  secondary_task: "cancellation_classification_if_supported"
+
+  target_configuration_file: "configs/targets.yaml"
+  classification_configuration_file: "configs/classification.yaml"
+
+sequence_design:
+  primary_sequence_type: "eligible_aircraft_rotation_sequence"
+
+  alternative_sequence_type: "documented_past_operational_time_steps"
+
+  require_past_only_sequence_elements: true
+  require_valid_utc_ordering: true
+  require_rotation_eligibility_for_tail_sequences: true
+
+  prohibited_sequence_content:
+    - "Future aircraft legs"
+    - "Future flight outcomes"
+    - "Future weather observations"
+    - "Future network information"
+    - "Actual outcomes from the predicted flight"
+    - "Delay-cause fields from the predicted flight"
+
+  sequence_length_candidates:
+    - 3
+    - 5
+    - 10
+
+  final_sequence_length_selection_dataset: "validation_only"
+
+sequence_features:
+  candidate_feature_families:
+    - "prior_leg_delay_features"
+    - "prior_leg_severe_delay_features"
+    - "prior_leg_cancellation_features"
+    - "turnaround_features"
+    - "schedule_features"
+    - "historical_features"
+    - "weather_features_available_at_prediction_time"
+    - "network_features_available_at_prediction_time"
+
+  missing_sequence_policy: >
+    To be selected and documented after auditing tail-number completeness,
+    rotation eligibility, and sequence coverage.
+
+architecture:
+  input_masking:
+    enabled: true
+
+  lstm_layers:
+    candidates:
+      - 1
+      - 2
+
+  units_per_layer_candidates:
+    - 32
+    - 64
+    - 128
+
+  dropout_candidates:
+    - 0.0
+    - 0.2
+    - 0.4
+
+  recurrent_dropout_candidates:
+    - 0.0
+    - 0.2
+
+  dense_layer_units_candidates:
+    - 16
+    - 32
+    - 64
+
+  output_layer:
+    severe_delay: "sigmoid"
+    cancellation: "sigmoid"
+
+training:
+  optimiser: "adam"
+
+  learning_rate_candidates:
+    - 0.0001
+    - 0.0005
+    - 0.001
+
+  batch_size_candidates:
+    - 128
+    - 256
+    - 512
+
+  max_epochs: 100
+
+  early_stopping:
+    enabled: true
+    monitor: "val_pr_auc"
+    mode: "max"
+    patience: 10
+    restore_best_weights: true
+
+  reduce_learning_rate_on_plateau:
+    enabled: true
+    monitor: "val_pr_auc"
+    mode: "max"
+    factor: 0.5
+    patience: 5
+    minimum_learning_rate: 0.00001
+
+class_imbalance:
+  enabled: true
+
+  primary_strategy: "class_weight_from_training_fold"
+
+  resampling_enabled_by_default: false
+  smote_allowed: false
+
+metrics:
+  primary_metric: "pr_auc"
+
+  secondary_metrics:
+    - "precision"
+    - "recall"
+    - "f1"
+    - "roc_auc"
+    - "brier_score"
+    - "precision_at_k"
+    - "recall_at_k"
+
+comparison:
+  required_comparators:
+    - "majority_class_baseline"
+    - "historical_risk_baselines"
+    - "logistic_regression"
+    - "lightgbm"
+    - "xgboost"
+    - "gru"
+    - "compact_transformer"
+
+  required_lstm_variants:
+    - "lstm_with_base_past_only_sequence"
+    - "lstm_with_eligible_rotation_sequence"
+
+  retain_model_only_if: >
+    The LSTM shows meaningful incremental value in PR-AUC, calibration,
+    robustness, ranking quality, or analytical insight compared with strong
+    simpler tabular models.
+
+calibration:
+  enabled: true
+  configuration_file: "configs/calibration.yaml"
+  calibration_selection_dataset: "validation_only"
+
+explainability:
+  use_attention_as_causal_proof: false
+
+  approved_methods:
+    - "temporal_ablation"
+    - "sequence_masking"
+    - "feature_family_removal"
+    - "permutation_importance"
+
+reporting:
+  include:
+    - "sequence_eligibility_coverage"
+    - "tail_identifier_coverage"
+    - "sequence_length"
+    - "architecture"
+    - "parameter_count"
+    - "training_time"
+    - "training_curves"
+    - "validation_metrics"
+    - "final_test_metrics_after_selection_is_locked"
+    - "calibration_metrics"
+    - "error_analysis"
+    - "regime_specific_results"
+    - "comparison_with_tabular_models"
+
+interpretation_rules:
+  - "The LSTM is an ablation challenger, not a required winning model."
+  - "A simpler model outperforming the LSTM is a valid result."
+  - "Sequence-model outputs are retrospective analytical evidence."
+  - "Do not present sequence-model predictions as real-time airline control."

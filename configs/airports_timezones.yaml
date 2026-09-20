@@ -1,0 +1,130 @@
+# Airport timezone and timestamp-normalisation configuration for:
+# Airline Network Disruption Intelligence:
+# Delay Prediction, Propagation, Recovery and Network Resilience
+
+version: "0.1.0"
+
+timezone_standard:
+  canonical_timezone: "UTC"
+  python_timezone_library: "zoneinfo"
+  use_iana_timezone_names: true
+
+airport_mapping:
+  mapping_file: "data/external/airport_timezone_mapping.csv"
+  mapping_status: "to_be_built_after_flight_data_audit"
+
+  required_columns:
+    - "airport_id"
+    - "airport_name"
+    - "airport_latitude"
+    - "airport_longitude"
+    - "iana_timezone"
+    - "mapping_method"
+    - "mapping_source"
+    - "mapping_version"
+    - "mapping_notes"
+
+  unmapped_airport_policy: "flag_and_exclude_from_timestamp_dependent_analyses"
+  guessed_timezone_allowed: false
+
+source_time_policy:
+  preserve_original_local_date_fields: true
+  preserve_original_local_time_fields: true
+  preserve_original_raw_time_values: true
+
+  source_field_names: "to_be_confirmed_after_flight_data_audit"
+
+derived_timestamp_fields:
+  - "scheduled_departure_local"
+  - "scheduled_departure_utc"
+  - "scheduled_arrival_local"
+  - "scheduled_arrival_utc"
+  - "actual_departure_local"
+  - "actual_departure_utc"
+  - "actual_arrival_local"
+  - "actual_arrival_utc"
+  - "prediction_timestamp_utc"
+
+clock_time_parsing:
+  input_format: "HHMM_or_equivalent_source_format"
+  zero_pad_short_values: true
+
+  examples:
+    "5": "00:05"
+    "45": "00:45"
+    "930": "09:30"
+    "1545": "15:45"
+
+  midnight_value:
+    source_value: "2400"
+    interpretation: "00:00_on_following_local_calendar_day"
+
+  invalid_time_policy: "flag_as_invalid_and_do_not_silently_correct"
+  retain_raw_value_when_invalid: true
+
+date_rollover:
+  enabled: true
+
+  use_consistency_checks:
+    - "scheduled_elapsed_time_when_valid"
+    - "actual_elapsed_time_when_valid"
+    - "utc_time_ordering"
+    - "flight_status_cancellation_or_diversion"
+    - "plausible_duration_checks"
+
+  unresolved_rollover_policy: "flag_as_ambiguous"
+
+daylight_saving_time:
+  enabled: true
+
+  ambiguous_local_time_policy: "flag_and_document_conversion_decision"
+  nonexistent_local_time_policy: "flag_and_exclude_when_no_reliable_conversion_exists"
+
+  required_test_cases:
+    - "normal_same_day_flight"
+    - "cross_midnight_flight"
+    - "different_origin_destination_timezones"
+    - "spring_dst_transition"
+    - "autumn_dst_transition"
+    - "missing_local_clock_time"
+    - "invalid_local_clock_time"
+    - "2400_clock_time"
+
+prediction_timestamp:
+  rule: "scheduled_departure_utc_minus_2_hours"
+  horizon_hours_before_scheduled_departure: 2
+  timezone: "UTC"
+
+flight_status_handling:
+  cancelled_flights:
+    scheduled_timestamp_reconstruction_allowed: true
+    actual_timestamp_required: false
+    actual_timestamp_policy: "leave_missing_when_not_available"
+
+  diverted_flights:
+    final_policy: "to_be_confirmed_after_source_audit"
+    require_documented_treatment_before_modelling: true
+
+quality_flags:
+  required:
+    - "has_valid_origin_timezone"
+    - "has_valid_destination_timezone"
+    - "has_valid_scheduled_departure_time"
+    - "has_valid_scheduled_arrival_time"
+    - "has_valid_actual_departure_time"
+    - "has_valid_actual_arrival_time"
+    - "scheduled_departure_rollover_applied"
+    - "scheduled_arrival_rollover_applied"
+    - "actual_departure_rollover_applied"
+    - "actual_arrival_rollover_applied"
+    - "dst_ambiguous"
+    - "dst_nonexistent"
+    - "timestamp_conversion_status"
+    - "timestamp_conversion_reason"
+
+prohibited_practices:
+  - "Subtracting local timestamps from different airport timezones"
+  - "Sorting aircraft rotations using unvalidated local timestamps"
+  - "Matching weather using unnormalised local timestamps"
+  - "Using actual timestamps from the predicted flight in preflight models"
+  - "Guessing a timezone for an unmapped airport"

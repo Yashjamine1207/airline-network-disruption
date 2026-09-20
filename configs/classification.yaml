@@ -1,0 +1,195 @@
+# Classification modelling configuration for:
+# Airline Network Disruption Intelligence:
+# Delay Prediction, Propagation, Recovery and Network Resilience
+
+version: "0.1.0"
+
+general:
+  task_type: "binary_classification"
+
+  prediction_timestamp_field: "prediction_timestamp_utc"
+
+  chronological_validation_required: true
+  random_train_test_split_allowed_for_headline_results: false
+
+  final_test_set_locked_until_selection_complete: true
+
+  use_future_information: false
+  use_delay_cause_fields_in_preflight_models: false
+
+tasks:
+  severe_arrival_delay:
+    enabled: true
+    target_name: "severe_delay_120"
+    target_config_file: "configs/targets.yaml"
+
+    primary_threshold_minutes: 120
+
+    sensitivity_thresholds_minutes:
+      - 60
+      - 90
+      - 120
+      - 180
+
+    eligible_cohort:
+      require_valid_arrival_delay: true
+      exclude_cancelled_flights: true
+      diverted_flight_policy: "to_be_confirmed_after_source_audit"
+
+  cancellation:
+    enabled: true
+    target_name: "cancelled"
+    target_config_file: "configs/targets.yaml"
+
+    eligible_cohort:
+      require_valid_cancellation_indicator: true
+
+    source_cancellation_field: "to_be_confirmed_after_source_audit"
+
+class_imbalance:
+  expected_rare_events: true
+
+  primary_strategy:
+    - "class_weighting"
+    - "probability_calibration"
+    - "validation_based_threshold_optimisation"
+    - "ranked_alert_evaluation"
+
+  smote:
+    enabled_by_default: false
+    allowed_only_inside_training_folds: true
+    prohibited_across_full_temporal_dataset: true
+    documentation_required_if_used: true
+
+models:
+  baselines:
+    enabled: true
+
+    models:
+      - model_id: "majority_class_baseline"
+        description: "Predict the majority class for every eligible flight"
+
+      - model_id: "historical_route_risk_baseline"
+        description: >
+          Use a past-only historical route disruption rate calculated within
+          each training fold.
+
+      - model_id: "historical_carrier_risk_baseline"
+        description: >
+          Use a past-only historical carrier disruption rate calculated within
+          each training fold.
+
+      - model_id: "historical_airport_risk_baseline"
+        description: >
+          Use a past-only historical airport disruption rate calculated within
+          each training fold.
+
+  logistic_regression:
+    enabled: true
+    library: "scikit_learn"
+
+    class_weight: "balanced"
+
+    use_regularisation: true
+
+    hyperparameter_tuning:
+      enabled: true
+      validation_only: true
+      candidate_C:
+        - 0.01
+        - 0.1
+        - 1.0
+        - 10.0
+
+  lightgbm:
+    enabled: true
+    configuration_file: "configs/lightgbm.yaml"
+
+  xgboost:
+    enabled: true
+    configuration_file: "configs/xgboost.yaml"
+
+feature_sets:
+  use_ablation_feature_sets_from: "configs/features.yaml"
+
+  required_comparisons:
+    - "base"
+    - "base_plus_historical"
+    - "base_plus_historical_plus_rotation"
+    - "base_plus_historical_plus_rotation_plus_network"
+    - "full_feature_set"
+
+metrics:
+  primary_metric: "pr_auc"
+
+  secondary_metrics:
+    - "precision"
+    - "recall"
+    - "f1"
+    - "roc_auc"
+    - "brier_score"
+    - "precision_at_k"
+    - "recall_at_k"
+    - "confusion_matrix"
+
+  report_event_prevalence: true
+  report_reliability_curve: true
+  report_calibration_curve: true
+
+ranked_alert_evaluation:
+  enabled: true
+
+  review_capacities:
+    - 0.005
+    - 0.01
+    - 0.05
+    - 0.10
+
+  report:
+    - "precision_at_k"
+    - "recall_at_k"
+    - "events_captured_at_k"
+    - "false_alerts_at_k"
+
+threshold_selection:
+  enabled: true
+
+  selection_dataset: "validation_only"
+
+  candidate_methods:
+    - "maximise_f1"
+    - "minimum_required_precision"
+    - "minimum_required_recall"
+    - "illustrative_utility_scenario"
+
+  final_test_threshold_selection_allowed: false
+
+calibration:
+  enabled: true
+  configuration_file: "configs/calibration.yaml"
+
+  candidate_methods:
+    - "uncalibrated"
+    - "platt_sigmoid"
+    - "isotonic"
+
+  fitting_dataset: "validation_only"
+
+reporting:
+  report_by_regime: true
+  report_by_carrier_when_sample_size_allows: true
+  report_by_origin_airport_when_sample_size_allows: true
+  report_by_destination_airport_when_sample_size_allows: true
+  report_by_route_when_sample_size_allows: true
+  report_by_weather_coverage_when_available: true
+  report_by_rotation_eligibility_when_available: true
+
+interpretation:
+  project_type: "retrospective_analytical_study"
+
+  prohibited_claims:
+    - "Real-time airline decision support"
+    - "Automated dispatch recommendation"
+    - "Crew or aircraft assignment recommendation"
+    - "Causal proof of disruption causes"
+    - "Guaranteed operational or financial benefit"

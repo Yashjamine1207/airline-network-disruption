@@ -1,0 +1,70 @@
+default_language_version:
+  python: python3.11
+
+exclude: >
+  ^(
+    data/raw/|
+    data/interim/|
+    data/processed/|
+    data/features/|
+    models/artifacts/|
+    models/checkpoints/|
+    mlruns/|
+    logs/
+  )
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+        args: ["--maxkb=1024"]
+
+      - id: check-ast
+
+      - id: check-case-conflict
+
+      - id: check-merge-conflict
+
+      - id: check-toml
+
+      - id: check-yaml
+
+      - id: check-json
+
+      - id: end-of-file-fixer
+
+      - id: trailing-whitespace
+
+      - id: mixed-line-ending
+        args: ["--fix=lf"]
+
+      - id: detect-private-key
+
+      - id: debug-statements
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
+    hooks:
+      - id: ruff
+        args: ["--fix"]
+
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.11.2
+    hooks:
+      - id: mypy
+        additional_dependencies:
+          - pandas-stubs>=2.2,<3.0
+          - types-PyYAML>=6.0,<7.0
+
+  - repo: local
+    hooks:
+      - id: prevent-large-data-files
+        name: Prevent raw and generated data from entering Git
+        entry: >
+          python -c "import sys; blocked=('data/raw/', 'data/interim/', 'data/processed/', 'data/features/', 'models/artifacts/', 'models/checkpoints/', 'mlruns/'); bad=[p for p in sys.argv[1:] if p.replace('\\', '/').startswith(blocked)]; print('Blocked generated or raw file(s): ' + ', '.join(bad)) if bad else None; sys.exit(1 if bad else 0)"
+        language: system
+        pass_filenames: true
+        files: .

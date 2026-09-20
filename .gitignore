@@ -1,0 +1,68 @@
+# Raw and generated project data
+data/raw/
+data/interim/
+data/processed/
+data/features/
+
+# Allow only small, safe sample files to be committed
+!data/sample/
+!data/sample/**
+
+# Large analytical files and local databases
+*.parquet
+*.feather
+*.duckdb
+*.db
+*.sqlite
+*.sqlite3
+
+# Model artefacts and experiment outputs
+models/artifacts/
+models/checkpoints/
+mlruns/
+mlartifacts/
+*.h5
+*.keras
+*.ckpt
+*.pb
+*.joblib
+*.pkl
+*.pickle
+
+# Python virtual environments and environment variables
+.venv/
+venv/
+env/
+ENV/
+.env
+.env.*
+!.env.example
+
+# Kaggle credentials and secrets
+kaggle.json
+*.key
+*.pem
+
+# Python cache, test, coverage, and notebook checkpoints
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# Logs and temporary/generated files
+logs/
+*.log
+tmp/
+temp/
+.cache/
+
+# VS Code and operating-system files
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.DS_Store
+Thumbs.db

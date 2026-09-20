@@ -1,0 +1,143 @@
+# Alert-threshold and ranking-policy configuration for:
+# Airline Network Disruption Intelligence:
+# Delay Prediction, Propagation, Recovery and Network Resilience
+
+version: "0.1.0"
+
+project_scope:
+  purpose: "retrospective analytical prioritisation"
+  real_time_alerting_system: false
+  airline_dispatch_system: false
+  autonomous_decision_system: false
+  airline_operational_policy: false
+
+applies_to:
+  - "severe_arrival_delay_classification"
+  - "cancellation_classification"
+
+primary_policy:
+  name: "ranked_review_capacity_policy"
+
+  description: >
+    Rank eligible flights by predicted disruption probability and evaluate the
+    proportion of actual disruption events captured within a fixed hypothetical
+    review capacity.
+
+  use_probability_threshold_as_primary_decision_rule: false
+
+review_capacities:
+  - capacity_id: "top_0_5_percent"
+    proportion_of_eligible_flights: 0.005
+    description: "Very limited hypothetical analytical review capacity"
+
+  - capacity_id: "top_1_percent"
+    proportion_of_eligible_flights: 0.01
+    description: "Limited hypothetical analytical review capacity"
+
+  - capacity_id: "top_5_percent"
+    proportion_of_eligible_flights: 0.05
+    description: "Moderate hypothetical analytical review capacity"
+
+  - capacity_id: "top_10_percent"
+    proportion_of_eligible_flights: 0.10
+    description: "Broad hypothetical analytical review capacity"
+
+ranking:
+  sort_direction: "descending_predicted_probability"
+
+  rank_population: "eligible_evaluation_flights_only"
+
+  calculate_k_rule: >
+    K equals the ceiling of eligible_flight_count multiplied by the selected
+    review_capacity proportion.
+
+  tie_breaking_policy: "to_be_documented_in_implementation"
+
+  required_outputs:
+    - "eligible_flight_count"
+    - "event_prevalence"
+    - "review_capacity"
+    - "k_flights_reviewed"
+    - "events_captured_at_k"
+    - "false_alerts_at_k"
+    - "precision_at_k"
+    - "recall_at_k"
+
+probability_thresholds:
+  enabled_as_secondary_analysis: true
+
+  threshold_selection_dataset: "validation_only"
+
+  final_test_set_allowed_for_threshold_selection: false
+
+  candidate_selection_methods:
+    - "maximise_validation_f1"
+    - "minimum_validation_precision"
+    - "minimum_validation_recall"
+    - "illustrative_utility_scenario"
+
+  reporting_requirements:
+    - "selected_threshold"
+    - "validation_selection_method"
+    - "validation_precision"
+    - "validation_recall"
+    - "validation_f1"
+    - "validation_confusion_matrix"
+    - "final_test_precision"
+    - "final_test_recall"
+    - "final_test_f1"
+    - "final_test_confusion_matrix"
+
+illustrative_utility_analysis:
+  enabled: true
+
+  purpose: >
+    Compare model-ranking scenarios using hypothetical analytical assumptions,
+    not verified airline costs or real operational policy.
+
+  utility_formula: >
+    illustrative_utility equals events_captured multiplied by assumed_event_value
+    minus false_alerts multiplied by assumed_false_alert_cost.
+
+  assumptions:
+    must_be_explicitly_labelled_illustrative: true
+    airline_financial_estimate: false
+    airline_operational_policy: false
+    passenger_compensation_estimate: false
+    staffing_cost_estimate: false
+
+  final_assumption_values: "to_be_selected_and_documented_after_validation"
+
+evaluation_rules:
+  calibration_required_before_probability_interpretation: true
+
+  report_by_operating_regime_when_sample_size_allows: true
+
+  report_by_target:
+    - "severe_delay_60"
+    - "severe_delay_90"
+    - "severe_delay_120"
+    - "severe_delay_180"
+    - "cancellation"
+
+  report_by_subgroup_when_sample_size_allows:
+    - "carrier"
+    - "origin_airport"
+    - "destination_airport"
+    - "route"
+    - "weather_coverage_status"
+    - "rotation_eligibility_status"
+
+interpretation_rules:
+  - "Capacity values are hypothetical analyst-review scenarios."
+  - "Ranked flights are not instructions to delay, cancel, reroute, or reassign aircraft."
+  - "Results do not demonstrate airline financial benefit."
+  - "Results do not demonstrate safety benefit."
+  - "Results do not prove that acting on a ranking would reduce disruption."
+  - "Final-test outcomes must not influence capacity, threshold, or utility-policy selection."
+
+documentation:
+  utility_scenarios_file: "docs/decisions/utility_scenarios.md"
+  metric_definitions_file: "docs/decisions/metric_definitions.md"
+  calibration_configuration_file: "configs/calibration.yaml"
+  final_report: "reports/evaluation/calibration_and_alert_policy_report.md"

@@ -1,0 +1,152 @@
+# Aircraft-rotation reconstruction configuration for:
+# Airline Network Disruption Intelligence:
+# Delay Prediction, Propagation, Recovery and Network Resilience
+
+version: "0.1.0"
+
+purpose: >
+  Reconstruct eligible historical aircraft-flight sequences for retrospective
+  propagation and recovery analysis. This is not a live aircraft-tracking,
+  dispatch, or optimisation system.
+
+required_source_fields:
+  status: "to_be_confirmed_after_flight_data_audit"
+
+  expected_field_families:
+    - "tail_identifier"
+    - "flight_date"
+    - "origin_airport"
+    - "destination_airport"
+    - "scheduled_departure_time"
+    - "scheduled_arrival_time"
+    - "actual_departure_time"
+    - "actual_arrival_time"
+    - "arrival_delay_minutes"
+    - "cancelled_indicator"
+    - "diverted_indicator"
+    - "carrier_identifier"
+    - "flight_number_or_equivalent"
+
+ordering:
+  primary_ordering_field: "actual_arrival_utc"
+  fallback_ordering_policy: "to_be_defined_after_source_audit"
+  canonical_timezone: "UTC"
+
+  forbidden_ordering_methods:
+    - "Unvalidated local timestamps across different airports"
+    - "Carrier and route similarity without tail-identifier evidence"
+    - "Scheduled time alone when actual outcome ordering is required"
+
+tail_identifier_policy:
+  require_tail_identifier: true
+  missing_tail_identifier_policy: "exclude_from_aircraft_level_propagation_and_recovery"
+  normalisation_policy: "to_be_defined_after_source_audit"
+  audit_tail_completeness: true
+
+rotation_link_eligibility:
+  require_same_tail_identifier: true
+  require_valid_utc_ordering: true
+  require_prior_leg_destination_matches_current_origin: true
+  allow_airport_mismatch_only_with_documented_reason: false
+
+  require_valid_prior_actual_arrival_utc: true
+  require_valid_current_scheduled_departure_utc: true
+
+  turnaround_time:
+    calculate_in_utc: true
+    formula: "current_scheduled_departure_utc_minus_prior_actual_arrival_utc"
+
+    minimum_minutes: "to_be_finalised_after_data_audit"
+    maximum_minutes: "to_be_finalised_after_data_audit"
+
+    implausible_turnaround_policy: "flag_and_exclude_from_eligible_rotation_links"
+
+  timestamp_quality:
+    exclude_invalid_timestamp_conversion: true
+    exclude_unresolved_date_rollover: true
+    exclude_unresolved_dst_ambiguity_when_ordering_is_affected: true
+
+flight_outcome_handling:
+  cancelled_prior_leg:
+    policy: "to_be_finalised_after_source_audit"
+
+  diverted_prior_leg:
+    policy: "to_be_finalised_after_source_audit"
+
+  missing_actual_arrival:
+    policy: "do_not_use_for_actual_prior_leg_outcome_features"
+
+prior_leg_feature_availability:
+  enabled: true
+
+  rule: >
+    A previous-leg actual outcome may be used as a feature for the current
+    flight only when prior_actual_arrival_utc is less than or equal to
+    current_prediction_timestamp_utc.
+
+  formula: "prior_actual_arrival_utc <= current_prediction_timestamp_utc"
+
+  if_not_available:
+    policy: "set_prior_leg_actual_features_missing_or_use_documented_unavailable_indicator"
+
+  prohibited:
+    - "Using prior-leg outcomes that occurred after the current prediction timestamp"
+    - "Using later legs in the same aircraft rotation"
+    - "Using inferred rotations without a validated tail identifier"
+
+propagation_measures:
+  enabled: true
+
+  candidate_measures:
+    - "prior_leg_arrival_delay_minutes"
+    - "current_leg_arrival_delay_minutes"
+    - "prior_leg_severe_delay"
+    - "current_leg_severe_delay"
+    - "current_leg_cancelled"
+    - "delay_amplification_minutes"
+    - "cascade_depth"
+    - "cascade_duration_minutes"
+    - "cumulative_rotation_delay_minutes"
+    - "subsequent_severe_delay_risk"
+    - "subsequent_cancellation_risk"
+
+recovery_analysis:
+  enabled: true
+
+  episode_start_trigger:
+    primary_type: "arrival_delay_minutes"
+    primary_threshold_minutes: 120
+
+  normal_operation:
+    type: "arrival_delay_minutes"
+    threshold_minutes: 15
+    comparison: "less_than"
+
+  right_censoring:
+    enabled: true
+    censor_when_no_later_eligible_recovery_observed: true
+
+required_audit_outputs:
+  - "tail_identifier_completeness"
+  - "tail_identifier_normalisation_summary"
+  - "flight_ordering_quality"
+  - "candidate_rotation_link_count"
+  - "eligible_rotation_link_count"
+  - "excluded_link_count_by_reason"
+  - "turnaround_time_distribution"
+  - "missing_actual_arrival_summary"
+  - "cancelled_and_diverted_handling_summary"
+  - "prior_leg_feature_availability_rate"
+  - "eligible_rotation_coverage_by_period"
+  - "eligible_rotation_coverage_by_carrier"
+  - "eligible_rotation_coverage_by_airport"
+
+documentation:
+  audit_file: "docs/data/rotation_reconstruction_audit.md"
+  propagation_plan: "docs/experiments/propagation_analysis_plan.md"
+  recovery_definition: "docs/decisions/recovery_definition.md"
+
+interpretation_rules:
+  - "Do not claim reliable aircraft-level propagation outside eligible validated rotations."
+  - "Do not infer a rotation merely because two flights share a carrier, route, airport, or schedule pattern."
+  - "Describe propagation findings as retrospective associations, not causal proof."

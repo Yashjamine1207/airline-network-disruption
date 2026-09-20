@@ -1,0 +1,96 @@
+# Core configuration for:
+# Airline Network Disruption Intelligence:
+# Delay Prediction, Propagation, Recovery and Network Resilience
+
+project:
+  name: "Airline Network Disruption Intelligence"
+  full_title: "Airline Network Disruption Intelligence: Delay Prediction, Propagation, Recovery and Network Resilience"
+  repository_name: "airline-network-disruption-intelligence"
+  project_type: "retrospective aviation data science portfolio study"
+  status: "development"
+  protocol_version: "0.1.0"
+  created_date: "2026-09-20"
+
+appropriate_use:
+  retrospective_analysis_only: true
+  production_airline_system: false
+  real_time_scoring: false
+  dispatch_system: false
+  crew_or_aircraft_optimisation: false
+  booking_or_rebooking_system: false
+  passenger_level_analysis: false
+  live_api_integration: false
+
+data_scope:
+  official_external_source_count: 2
+
+  source_1:
+    name: "Flight Delay and Cancellation Dataset"
+    platform: "Kaggle"
+    raw_directory: "data/raw/flights_kaggle"
+    local_file: "data/raw/flights_kaggle/flights_sample_3m.csv"
+    dictionary_file: "data/raw/flights_kaggle/dictionary.html"
+
+  source_2:
+    name: "NOAA Global Historical Climatology Network hourly"
+    abbreviation: "GHCNh"
+    publisher: "NOAA"
+    raw_directory: "data/raw/noaa_ghcnh"
+
+data_paths:
+  external: "data/external"
+  raw: "data/raw"
+  interim: "data/interim"
+  processed: "data/processed"
+  features: "data/features"
+  sample: "data/sample"
+
+documentation_paths:
+  architecture: "docs/architecture"
+  data: "docs/data"
+  decisions: "docs/decisions"
+  experiments: "docs/experiments"
+
+output_paths:
+  reports: "reports"
+  figures: "reports/figures"
+  tables: "reports/tables"
+  evaluation: "reports/evaluation"
+  model_metrics: "models/metrics"
+  model_registry: "models/registry"
+
+timestamp_policy:
+  storage_timezone: "UTC"
+  preserve_original_local_time_fields: true
+  airport_timezone_mapping_file: "data/external/airport_timezone_mapping.csv"
+  prediction_horizon_hours_before_scheduled_departure: 2
+  prediction_timestamp_rule: "scheduled_departure_utc_minus_2_hours"
+  use_zoneinfo: true
+
+data_handling:
+  raw_data_immutable: true
+  processed_data_format: "parquet"
+  raw_data_in_git: false
+  processed_data_in_git: false
+  feature_data_in_git: false
+  model_artifacts_in_git: false
+  checkpoints_in_git: false
+  experiment_runs_in_git: false
+
+reproducibility:
+  random_seed: 42
+  experiment_tracking: "reproducible_experiment_table"
+  save_package_versions: true
+  save_data_hashes_when_feasible: true
+  save_git_commit_hash_when_available: true
+
+quality_rules:
+  chronological_validation_required: true
+  random_train_test_split_allowed_for_headline_results: false
+  future_information_allowed: false
+  delay_cause_features_allowed_in_preflight_models: false
+  require_point_in_time_feature_validation: true
+  require_timezone_tests: true
+  require_leakage_tests: true
+  require_rotation_eligibility_checks: true
+  require_weather_availability_checks: true

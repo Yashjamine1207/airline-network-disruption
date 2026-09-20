@@ -1,0 +1,159 @@
+# Survival and recovery-analysis configuration for:
+# Airline Network Disruption Intelligence:
+# Delay Prediction, Propagation, Recovery and Network Resilience
+
+version: "0.1.0"
+
+general:
+  analysis_type: "retrospective_survival_and_recovery_analysis"
+
+  primary_analysis_level: "eligible_aircraft_rotation"
+
+  additional_analysis_levels:
+    - "airport"
+    - "network"
+
+  canonical_timezone: "UTC"
+
+  causal_interpretation_allowed: false
+
+eligibility:
+  require_valid_tail_identifier: true
+  require_valid_utc_sequence_ordering: true
+  require_rotation_eligibility: true
+  require_valid_episode_start_timestamp: true
+
+  missing_tail_identifier_policy: "exclude_from_aircraft_level_recovery_analysis"
+  invalid_timestamp_policy: "exclude_when_reliable_ordering_is_not_possible"
+  ambiguous_rotation_policy: "exclude_from_aircraft_level_recovery_analysis"
+
+episode_definition:
+  primary_disruption_trigger:
+    field: "arrival_delay_minutes"
+    comparison: "greater_than_or_equal_to"
+    threshold_minutes: 120
+
+  sensitivity_disruption_thresholds_minutes:
+    - 60
+    - 90
+    - 120
+    - 180
+
+  episode_start_time_field: "episode_start_actual_arrival_utc"
+
+  primary_normal_operation_definition:
+    field: "arrival_delay_minutes"
+    comparison: "less_than"
+    threshold_minutes: 15
+
+  recovery_event_definition: >
+    The first later eligible operated flight in the same validated aircraft
+    rotation with final arrival delay below 15 minutes.
+
+  recovery_event_time_field: "recovery_actual_arrival_utc"
+
+recovery_time:
+  unit: "minutes"
+
+  formula: >
+    recovery_time_minutes equals recovery_actual_arrival_utc minus
+    episode_start_actual_arrival_utc.
+
+  calculate_using_utc_only: true
+  local_timestamp_subtraction_allowed: false
+
+censoring:
+  enabled: true
+
+  right_censoring_events:
+    - "No later eligible flight is observed in the available data"
+    - "Available dataset period ends before recovery is observed"
+    - "Later flight outcome is missing or invalid"
+    - "Sequence fails rotation eligibility before recovery is observed"
+    - "Timestamp ambiguity prevents reliable recovery ordering"
+
+  observed_recovery_indicator:
+    recovered: 1
+    right_censored: 0
+
+  censoring_time_field: "censoring_timestamp_utc"
+
+flight_status_handling:
+  cancelled_flight_policy: "to_be_finalised_after_source_audit"
+  diverted_flight_policy: "to_be_finalised_after_source_audit"
+
+  rule: >
+    Missing actual-arrival outcomes must never be silently treated as a
+    recovery event.
+
+models:
+  kaplan_meier:
+    enabled: true
+
+    report:
+      - "survival_curve"
+      - "recovery_curve"
+      - "median_recovery_time_when_estimable"
+      - "number_of_episodes"
+      - "observed_recovery_count"
+      - "right_censored_count"
+
+  cox_proportional_hazards:
+    enabled: "conditional_on_sample_size_and_assumption_checks"
+
+    assumption_checks_required: true
+
+  accelerated_failure_time:
+    enabled: "conditional_on_sample_size_and_assumption_checks"
+
+metrics:
+  primary_outputs:
+    - "kaplan_meier_recovery_curve"
+    - "median_recovery_time"
+    - "observed_recovery_rate"
+    - "right_censoring_rate"
+
+  secondary_outputs:
+    - "concordance_index"
+    - "survival_calibration"
+    - "integrated_brier_score"
+
+  conditional_metric_rule: >
+    Concordance index, survival calibration, and integrated Brier score are
+    reported only when a suitable fitted survival model and valid evaluation
+    design support them.
+
+subgroup_analysis:
+  enabled_when_sample_size_allows: true
+
+  candidate_subgroups:
+    - "operating_regime"
+    - "carrier"
+    - "origin_airport"
+    - "destination_airport"
+    - "route"
+    - "disruption_severity"
+    - "weather_coverage_status"
+    - "rotation_quality_group"
+
+sensitivity_analysis:
+  enabled: true
+
+  required_variations:
+    - "Disruption threshold at 60, 90, 120, and 180 minutes"
+    - "Alternative normal-operation delay thresholds where documented"
+    - "Stricter timestamp-quality and turnaround-eligibility rules"
+    - "Alternative documented cancelled-flight treatment"
+    - "Alternative documented diverted-flight treatment"
+
+documentation:
+  recovery_definition_file: "docs/decisions/recovery_definition.md"
+  rotation_audit_file: "docs/data/rotation_reconstruction_audit.md"
+  survival_analysis_plan: "docs/experiments/survival_analysis_plan.md"
+  survival_report: "reports/evaluation/survival_recovery_report.md"
+
+interpretation_rules:
+  - "Recovery findings describe historical patterns in eligible cohorts."
+  - "Do not claim a variable caused faster or slower recovery."
+  - "Always report episode definitions, eligibility criteria, censoring rules, and coverage limits."
+  - "Do not present recovery analysis as real-time airline recovery control."

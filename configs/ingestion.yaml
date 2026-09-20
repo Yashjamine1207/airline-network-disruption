@@ -1,0 +1,133 @@
+# Data-ingestion configuration for:
+# Airline Network Disruption Intelligence:
+# Delay Prediction, Propagation, Recovery and Network Resilience
+
+version: "0.1.0"
+
+general:
+  raw_data_immutable: true
+  raw_data_tracked_by_git: false
+
+  analytical_storage_format: "parquet"
+
+  canonical_timezone: "UTC"
+
+  source_schema_must_be_audited_before_standardisation: true
+
+flight_ingestion:
+  enabled: true
+
+  source:
+    raw_file: "data/raw/flights_kaggle/flights_sample_3m.csv"
+    dictionary_file: "data/raw/flights_kaggle/dictionary.html"
+    format: "csv"
+    encoding: "to_be_confirmed_after_source_audit"
+
+  output:
+    standardised_directory: "data/interim/flights_standardised"
+    output_format: "parquet"
+
+  loading_policy:
+    do_not_load_entire_raw_csv_without_planned_strategy: true
+
+    approved_processing_tools:
+      - "duckdb"
+      - "polars"
+      - "pandas_with_chunking"
+
+    preferred_initial_audit_approach: "polars_or_pandas_chunked_read"
+
+  source_audit:
+    required_before_modelling: true
+
+    checks:
+      - "raw_file_exists"
+      - "file_size"
+      - "file_hash_when_feasible"
+      - "encoding"
+      - "delimiter"
+      - "raw_row_count"
+      - "column_names"
+      - "data_types"
+      - "date_coverage"
+      - "duplicate_record_assessment"
+      - "missingness_by_field"
+      - "invalid_value_assessment"
+      - "candidate_record_key_assessment"
+      - "carrier_identifier_assessment"
+      - "airport_identifier_assessment"
+      - "tail_identifier_completeness"
+      - "time_field_assessment"
+      - "delay_field_assessment"
+      - "cancellation_field_assessment"
+      - "diversion_field_assessment"
+      - "dictionary_html_comparison"
+
+  source_field_mapping:
+    mapping_file: "data/external/flight_field_mapping.md"
+    status: "to_be_created_after_source_audit"
+
+  output_requirements:
+    preserve_raw_source_column_names: true
+    create_standardised_column_names: true
+    retain_source_file_name: true
+    retain_ingestion_timestamp_utc: true
+    retain_row_identifier_or_source_lineage_when_feasible: true
+    record_schema_version: true
+    record_data_quality_flags: true
+
+  data_quality:
+    do_not_silently_drop_rows: true
+    record_exclusion_reason_when_rows_are_excluded: true
+    preserve_missing_values_until_documented_handling_stage: true
+    preserve_cancelled_records: true
+    preserve_diverted_records: true
+
+weather_ingestion:
+  enabled: false
+
+  activation_rule: >
+    Enable only after the flight-data audit confirms airport coverage, required
+    date range, station-matching method, and selected weather variables.
+
+  source:
+    raw_directory: "data/raw/noaa_ghcnh"
+    format: "to_be_confirmed_before_retrieval"
+
+  output:
+    standardised_directory: "data/interim/weather_standardised"
+    output_format: "parquet"
+
+  required_retained_fields:
+    - "station_id"
+    - "station_latitude"
+    - "station_longitude"
+    - "observation_timestamp_utc"
+    - "weather_measurement_fields"
+    - "quality_metadata"
+    - "source_file_name"
+    - "ingestion_timestamp_utc"
+
+  source_field_mapping:
+    mapping_file: "data/external/ghcnh_field_mapping.md"
+    status: "to_be_created_after_weather_acquisition"
+
+logging:
+  enabled: true
+
+  log_directory: "logs"
+  record:
+    - "source_file"
+    - "file_hash_when_feasible"
+    - "input_row_count"
+    - "output_row_count"
+    - "schema_version"
+    - "processing_timestamp_utc"
+    - "validation_failures"
+    - "exclusion_summary"
+
+documentation:
+  flight_data_audit: "docs/data/flight_data_audit.md"
+  weather_data_audit: "docs/data/weather_data_audit.md"
+  source_metadata: "docs/data/source_metadata.md"
+  source_register: "data/external/source_register.csv"
