@@ -54,7 +54,8 @@ dependencies = [
   "ipykernel>=6.0,<7.0",
   "tqdm>=4.66,<5.0",
   "python-dotenv>=1.0,<2.0",
-  "joblib>=1.4,<2.0"
+  "joblib>=1.4,<2.0",
+  "tzdata>=2025.2"
 ]
 
 [project.optional-dependencies]

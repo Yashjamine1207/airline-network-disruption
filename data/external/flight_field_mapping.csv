@@ -1,0 +1,31 @@
+updated_header,source_header,data_type,description,present_in_raw_csv,canonical_field_name
+FL_DATE,FlightDate,object,Flight Date (yyyymmdd),True,flight_date_local
+AIRLINE_CODE,Reporting_Airline,object,"Unique Carrier Code. When the same code has been used by multiple carriers, a numeric suffix is used for earlier users, for example, PA, PA(1), PA(2). Use this field for analysis across a range of years.",True,reporting_airline_code
+DOT_CODE,DOT_ID_Reporting_Airline,int64,"An identification number assigned by US DOT to identify a unique airline (carrier). A unique airline (carrier) is defined as one holding and reporting under the same DOT certificate regardless of its Code, Name, or holding company/corporation.",True,reporting_airline_dot_id
+FL_NUMBER,Flight_Number_Reporting_Airline,int64,Flight Number,True,flight_number
+ORIGIN,Origin,object,Origin Airport,True,origin_airport
+ORIGIN_CITY,OriginCityName,object,"Origin Airport, City Name",True,origin_city
+DEST,Dest,object,Destination Airport,True,destination_airport
+DEST_CITY,DestCityName,object,"Destination Airport, City Name",True,destination_city
+CRS_DEP_TIME,CRSDepTime,int64,CRS Departure Time (local time: hhmm),True,scheduled_departure_time_local_hhmm
+DEP_TIME,DepTime,float64,Actual Departure Time (local time: hhmm),True,actual_departure_time_local_hhmm
+DEP_DELAY,DepDelay,float64,Difference in minutes between scheduled and actual departure time. Early departures show negative numbers.,True,departure_delay_minutes
+TAXI_OUT,TaxiOut,float64,"Taxi Out Time, in Minutes",True,taxi_out_minutes
+WHEELS_OFF,WheelsOff,float64,Wheels Off Time (local time: hhmm),True,wheels_off_time_local_hhmm
+WHEELS_ON,WheelsOn,float64,Wheels On Time (local time: hhmm),True,wheels_on_time_local_hhmm
+TAXI_IN,TaxiIn,float64,"Taxi In Time, in Minutes",True,taxi_in_minutes
+CRS_ARR_TIME,CRSArrTime,int64,CRS Arrival Time (local time: hhmm),True,scheduled_arrival_time_local_hhmm
+ARR_TIME,ArrTime,float64,Actual Arrival Time (local time: hhmm),True,actual_arrival_time_local_hhmm
+ARR_DELAY,ArrDelay,float64,Difference in minutes between scheduled and actual arrival time. Early arrivals show negative numbers.,True,arrival_delay_minutes
+CANCELLED,Cancelled,float64,Cancelled Flight Indicator (1=Yes),True,cancelled_indicator
+CANCELLATION_CODE,CancellationCode,object,Specifies The Reason For Cancellation,True,cancellation_reason_code
+DIVERTED,Diverted,float64,Diverted Flight Indicator (1=Yes),True,diverted_indicator
+CRS_ELAPSED_TIME,CRSElapsedTime,float64,"CRS Elapsed Time of Flight, in Minutes",True,scheduled_elapsed_minutes
+ELAPSED_TIME,ActualElapsedTime,float64,"Elapsed Time of Flight, in Minutes",True,actual_elapsed_minutes
+AIR_TIME,AirTime,float64,"Flight Time, in Minutes",True,air_time_minutes
+DISTANCE,Distance,float64,Distance between airports (miles),True,distance_miles
+DELAY_DUE_CARRIER,CarrierDelay,float64,"Carrier Delay, in Minutes",True,delay_due_carrier_minutes
+DELAY_DUE_WEATHER,WeatherDelay,float64,"Weather Delay, in Minutes",True,delay_due_weather_minutes
+DELAY_DUE_NAS,NASDelay,float64,"National Air System Delay, in Minutes",True,delay_due_national_air_system_minutes
+DELAY_DUE_SECURITY,SecurityDelay,float64,"Security Delay, in Minutes",True,delay_due_security_minutes
+DELAY_DUE_LATE_AIRCRAFT,LateAircraftDelay,float64,"Late Aircraft Delay, in Minutes",True,delay_due_late_aircraft_minutes

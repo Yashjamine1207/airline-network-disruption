@@ -1,0 +1,452 @@
+{
+  "total_rows": 3000000,
+  "columns": [
+    "FL_DATE",
+    "AIRLINE",
+    "AIRLINE_DOT",
+    "AIRLINE_CODE",
+    "DOT_CODE",
+    "FL_NUMBER",
+    "ORIGIN",
+    "ORIGIN_CITY",
+    "DEST",
+    "DEST_CITY",
+    "CRS_DEP_TIME",
+    "DEP_TIME",
+    "DEP_DELAY",
+    "TAXI_OUT",
+    "WHEELS_OFF",
+    "WHEELS_ON",
+    "TAXI_IN",
+    "CRS_ARR_TIME",
+    "ARR_TIME",
+    "ARR_DELAY",
+    "CANCELLED",
+    "CANCELLATION_CODE",
+    "DIVERTED",
+    "CRS_ELAPSED_TIME",
+    "ELAPSED_TIME",
+    "AIR_TIME",
+    "DISTANCE",
+    "DELAY_DUE_CARRIER",
+    "DELAY_DUE_WEATHER",
+    "DELAY_DUE_NAS",
+    "DELAY_DUE_SECURITY",
+    "DELAY_DUE_LATE_AIRCRAFT"
+  ],
+  "dtypes": {
+    "FL_DATE": "object",
+    "AIRLINE": "object",
+    "AIRLINE_DOT": "object",
+    "AIRLINE_CODE": "object",
+    "DOT_CODE": "object",
+    "FL_NUMBER": "object",
+    "ORIGIN": "object",
+    "ORIGIN_CITY": "object",
+    "DEST": "object",
+    "DEST_CITY": "object",
+    "CRS_DEP_TIME": "object",
+    "DEP_TIME": "object",
+    "DEP_DELAY": "object",
+    "TAXI_OUT": "object",
+    "WHEELS_OFF": "object",
+    "WHEELS_ON": "object",
+    "TAXI_IN": "object",
+    "CRS_ARR_TIME": "object",
+    "ARR_TIME": "object",
+    "ARR_DELAY": "object",
+    "CANCELLED": "object",
+    "CANCELLATION_CODE": "object",
+    "DIVERTED": "object",
+    "CRS_ELAPSED_TIME": "object",
+    "ELAPSED_TIME": "object",
+    "AIR_TIME": "object",
+    "DISTANCE": "object",
+    "DELAY_DUE_CARRIER": "object",
+    "DELAY_DUE_WEATHER": "object",
+    "DELAY_DUE_NAS": "object",
+    "DELAY_DUE_SECURITY": "object",
+    "DELAY_DUE_LATE_AIRCRAFT": "object"
+  },
+  "date_coverage": {
+    "date_column": "FL_DATE",
+    "min_date": "2019-01-01",
+    "max_date": "2023-08-31",
+    "n_unique_raw_date_values": 1704,
+    "n_valid_dates": 3000000,
+    "n_invalid_or_missing_dates": 0,
+    "years_present": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ],
+    "detected_date_formats": {
+      "YYYY-MM-DD": 3000000
+    },
+    "status": "parsed_successfully"
+  },
+  "key_uniqueness": {
+    "key_columns": [
+      "FL_DATE",
+      "AIRLINE_CODE",
+      "FL_NUMBER",
+      "ORIGIN",
+      "DEST"
+    ],
+    "total_rows": 3000000,
+    "non_null_key_rows": 3000000,
+    "duplicate_key_rows": 0,
+    "is_unique_key": true
+  },
+  "missingness_summary": [
+    {
+      "column": "CANCELLATION_CODE",
+      "count_missing": 2920860,
+      "pct_missing": 97.36200000000001
+    },
+    {
+      "column": "DELAY_DUE_LATE_AIRCRAFT",
+      "count_missing": 2466137,
+      "pct_missing": 82.20456666666666
+    },
+    {
+      "column": "DELAY_DUE_CARRIER",
+      "count_missing": 2466137,
+      "pct_missing": 82.20456666666666
+    },
+    {
+      "column": "DELAY_DUE_SECURITY",
+      "count_missing": 2466137,
+      "pct_missing": 82.20456666666666
+    },
+    {
+      "column": "DELAY_DUE_NAS",
+      "count_missing": 2466137,
+      "pct_missing": 82.20456666666666
+    },
+    {
+      "column": "DELAY_DUE_WEATHER",
+      "count_missing": 2466137,
+      "pct_missing": 82.20456666666666
+    },
+    {
+      "column": "ARR_DELAY",
+      "count_missing": 86198,
+      "pct_missing": 2.873266666666667
+    },
+    {
+      "column": "ELAPSED_TIME",
+      "count_missing": 86198,
+      "pct_missing": 2.873266666666667
+    },
+    {
+      "column": "AIR_TIME",
+      "count_missing": 86198,
+      "pct_missing": 2.873266666666667
+    },
+    {
+      "column": "WHEELS_ON",
+      "count_missing": 79944,
+      "pct_missing": 2.6648
+    },
+    {
+      "column": "TAXI_IN",
+      "count_missing": 79944,
+      "pct_missing": 2.6648
+    },
+    {
+      "column": "ARR_TIME",
+      "count_missing": 79942,
+      "pct_missing": 2.6647333333333334
+    },
+    {
+      "column": "WHEELS_OFF",
+      "count_missing": 78806,
+      "pct_missing": 2.6268666666666665
+    },
+    {
+      "column": "TAXI_OUT",
+      "count_missing": 78806,
+      "pct_missing": 2.6268666666666665
+    },
+    {
+      "column": "DEP_DELAY",
+      "count_missing": 77644,
+      "pct_missing": 2.5881333333333334
+    },
+    {
+      "column": "DEP_TIME",
+      "count_missing": 77615,
+      "pct_missing": 2.5871666666666666
+    },
+    {
+      "column": "CRS_ELAPSED_TIME",
+      "count_missing": 14,
+      "pct_missing": 0.0004666666666666666
+    },
+    {
+      "column": "DEST_CITY",
+      "count_missing": 0,
+      "pct_missing": 0.0
+    },
+    {
+      "column": "CRS_DEP_TIME",
+      "count_missing": 0,
+      "pct_missing": 0.0
+    },
+    {
+      "column": "DEST",
+      "count_missing": 0,
+      "pct_missing": 0.0
+    },
+    {
+      "column": "DOT_CODE",
+      "count_missing": 0,
+      "pct_missing": 0.0
+    },
+    {
+      "column": "FL_NUMBER",
+      "count_missing": 0,
+      "pct_missing": 0.0
+    },
+    {
+      "column": "ORIGIN",
+      "count_missing": 0,
+      "pct_missing": 0.0
+    },
+    {
+      "column": "ORIGIN_CITY",
+      "count_missing": 0,
+      "pct_missing": 0.0
+    },
+    {
+      "column": "AIRLINE",
+      "count_missing": 0,
+      "pct_missing": 0.0
+    },
+    {
+      "column": "AIRLINE_DOT",
+      "count_missing": 0,
+      "pct_missing": 0.0
+    },
+    {
+      "column": "FL_DATE",
+      "count_missing": 0,
+      "pct_missing": 0.0
+    },
+    {
+      "column": "AIRLINE_CODE",
+      "count_missing": 0,
+      "pct_missing": 0.0
+    },
+    {
+      "column": "DIVERTED",
+      "count_missing": 0,
+      "pct_missing": 0.0
+    },
+    {
+      "column": "CANCELLED",
+      "count_missing": 0,
+      "pct_missing": 0.0
+    },
+    {
+      "column": "CRS_ARR_TIME",
+      "count_missing": 0,
+      "pct_missing": 0.0
+    },
+    {
+      "column": "DISTANCE",
+      "count_missing": 0,
+      "pct_missing": 0.0
+    }
+  ],
+  "categorical_summaries": {
+    "AIRLINE_CODE": {
+      "column": "AIRLINE_CODE",
+      "n_unique": 18,
+      "n_missing": 0,
+      "top_values": {
+        "WN": 576470,
+        "DL": 395239,
+        "AA": 383106,
+        "OO": 343737,
+        "UA": 254504,
+        "YX": 143107,
+        "MQ": 121256,
+        "B6": 112844,
+        "9E": 112463,
+        "OH": 107050,
+        "AS": 100467,
+        "NK": 95711,
+        "YV": 65012,
+        "F9": 64466,
+        "G4": 52738,
+        "HA": 32114,
+        "QX": 20634,
+        "EV": 19082
+      }
+    },
+    "DOT_CODE": {
+      "column": "DOT_CODE",
+      "n_unique": 18,
+      "n_missing": 0,
+      "top_values": {
+        "19393": 576470,
+        "19790": 395239,
+        "19805": 383106,
+        "20304": 343737,
+        "19977": 254504,
+        "20452": 143107,
+        "20398": 121256,
+        "20409": 112844,
+        "20363": 112463,
+        "20397": 107050,
+        "19930": 100467,
+        "20416": 95711,
+        "20378": 65012,
+        "20436": 64466,
+        "20368": 52738,
+        "19690": 32114,
+        "19687": 20634,
+        "20366": 19082
+      }
+    },
+    "ORIGIN": {
+      "column": "ORIGIN",
+      "n_unique": 380,
+      "n_missing": 0,
+      "top_values": {
+        "ATL": 153556,
+        "DFW": 130334,
+        "ORD": 122296,
+        "DEN": 119919,
+        "CLT": 94304,
+        "LAX": 85872,
+        "PHX": 74815,
+        "LAS": 73470,
+        "SEA": 70906,
+        "MCO": 63883,
+        "LGA": 62574,
+        "IAH": 62542,
+        "DTW": 62279,
+        "MSP": 60061,
+        "SFO": 59531,
+        "BOS": 55394,
+        "DCA": 53283,
+        "EWR": 52989,
+        "SLC": 52027,
+        "JFK": 50466
+      }
+    },
+    "DEST": {
+      "column": "DEST",
+      "n_unique": 380,
+      "n_missing": 0,
+      "top_values": {
+        "ATL": 153569,
+        "DFW": 129770,
+        "ORD": 123334,
+        "DEN": 119592,
+        "CLT": 95413,
+        "LAX": 85621,
+        "PHX": 75605,
+        "LAS": 73462,
+        "SEA": 70832,
+        "MCO": 63818,
+        "IAH": 62201,
+        "DTW": 62187,
+        "LGA": 61968,
+        "MSP": 59729,
+        "SFO": 59008,
+        "BOS": 55611,
+        "DCA": 53501,
+        "EWR": 52824,
+        "SLC": 52063,
+        "JFK": 50268
+      }
+    },
+    "CANCELLATION_CODE": {
+      "column": "CANCELLATION_CODE",
+      "n_unique": 4,
+      "n_missing": 2920860,
+      "top_values": {
+        "B": 28772,
+        "D": 24417,
+        "A": 19476,
+        "C": 6475
+      }
+    },
+    "DIVERTED": {
+      "column": "DIVERTED",
+      "n_unique": 2,
+      "n_missing": 0,
+      "top_values": {
+        "0.0": 2992944,
+        "1.0": 7056
+      }
+    },
+    "CANCELLED": {
+      "column": "CANCELLED",
+      "n_unique": 2,
+      "n_missing": 0,
+      "top_values": {
+        "0.0": 2920860,
+        "1.0": 79140
+      }
+    }
+  },
+  "numeric_delay_summaries": {
+    "DEP_DELAY": {
+      "count_non_missing": 2922356,
+      "min": -90.0,
+      "max": 2966.0,
+      "mean": 10.123326179288219,
+      "median": -2.0
+    },
+    "ARR_DELAY": {
+      "count_non_missing": 2913802,
+      "min": -96.0,
+      "max": 2934.0,
+      "mean": 4.260858150279257,
+      "median": -7.0
+    },
+    "DELAY_DUE_CARRIER": {
+      "count_non_missing": 533863,
+      "min": 0.0,
+      "max": 2934.0,
+      "mean": 24.759086132584578,
+      "median": 4.0
+    },
+    "DELAY_DUE_WEATHER": {
+      "count_non_missing": 533863,
+      "min": 0.0,
+      "max": 1653.0,
+      "mean": 3.9852602634009098,
+      "median": 0.0
+    },
+    "DELAY_DUE_NAS": {
+      "count_non_missing": 533863,
+      "min": 0.0,
+      "max": 1741.0,
+      "mean": 13.164727654847779,
+      "median": 0.0
+    },
+    "DELAY_DUE_SECURITY": {
+      "count_non_missing": 533863,
+      "min": 0.0,
+      "max": 1185.0,
+      "mean": 0.14593069757596985,
+      "median": 0.0
+    },
+    "DELAY_DUE_LATE_AIRCRAFT": {
+      "count_non_missing": 533863,
+      "min": 0.0,
+      "max": 2557.0,
+      "mean": 25.471281958105358,
+      "median": 0.0
+    }
+  },
+  "generated_at": "2026-09-22T02:09:43.858361Z"
+}

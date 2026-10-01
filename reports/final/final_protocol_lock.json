@@ -1,0 +1,272 @@
+{
+  "lock_version": 1,
+  "created_utc": "2026-10-01T08:57:11+00:00",
+  "smoke": false,
+  "tag": "",
+  "purpose": "Pre-registration of the one-time final test. Written before any 2023 row is read.",
+  "prediction_time": "scheduled departure UTC minus 2 hours",
+  "feature_version": "phase6_features_v1",
+  "feature_set": "base_no_year",
+  "seed": 42,
+  "n_jobs": 8,
+  "max_fit_rows": null,
+  "params_file": "configs/lightgbm_benchmark_selected.json",
+  "params": {
+    "objective": "binary",
+    "metric": "average_precision",
+    "n_estimators": 1200,
+    "learning_rate": 0.05,
+    "num_leaves": 15,
+    "min_child_samples": 100,
+    "reg_lambda": 10.0,
+    "verbosity": -1,
+    "colsample_bytree": 0.8,
+    "subsample": 0.7,
+    "cat_smooth": 10,
+    "min_data_per_group": 500,
+    "cat_l2": 10,
+    "max_cat_threshold": 16,
+    "subsample_freq": 1
+  },
+  "model_policy": {
+    "refit_on_2022_before_final_test": false,
+    "reason": "The model that was validated is the model that is tested. Refitting on 2019 to 2022 would test a different model whose tree count and calibration were never validated.",
+    "consequence": "The model has seen nothing after 2021-06 and the calibrator nothing after 2021-12 (or 2022-12 under DEC-024). The final test is 14 to 26 months later. That gap is a limitation to report."
+  },
+  "periods": {
+    "fit": "2019-01 to 2021-06 (UTC prediction time)",
+    "early_stop": "2021-07 to 2021-12",
+    "validation": "2022",
+    "final_test": "2023-01-01 to 2023-08-31 local flight date (UTC prediction time from 2023-01-01)"
+  },
+  "calibration": {
+    "method": "platt",
+    "primary_fit_rows": "early_stop",
+    "basis": "DEC-023 Rule 2 as run (pre-registered)",
+    "applies_to": [
+      "severe_delay_120"
+    ],
+    "diagnostic_fit_rows": "validation_2022",
+    "note": "The primary calibrator is the only one used for any probability statement. The diagnostic is shown beside it and is never chosen after the final test.",
+    "ranking_score": "uncalibrated LightGBM score. Platt is strictly increasing, so rankings are identical"
+  },
+  "capacities": [
+    0.005,
+    0.01,
+    0.05,
+    0.1
+  ],
+  "bootstrap": {
+    "unit": "whole UTC prediction days",
+    "resamples": 1000,
+    "seed": 42,
+    "confidence": 0.95
+  },
+  "review_schemes": {
+    "whole_year": "top K% of every flight in the period (the final period is Jan to Aug 2023, not a full year)",
+    "by_month": "top K% within each UTC prediction month",
+    "by_day": "top K% within each UTC prediction day"
+  },
+  "preregistered_claims": {
+    "claims": {
+      "C1_skill_over_chance": "The lower end of the 95% day-bootstrap interval of PR-AUC lift (PR-AUC divided by the 2023 event rate) is above 1.0.",
+      "C2_beats_history": "The whole 95% paired day-bootstrap interval of PR-AUC(LightGBM) minus PR-AUC(best_history_baseline) is above 0. The baseline is the one of carrier, origin, destination and route rate with the highest 2022 PR-AUC, fixed in this lock.",
+      "C3_ranking_not_only_seasonal": "The lower end of the 95% day-bootstrap interval of Precision@10% with a fixed review capacity inside every day is above the 2023 event rate."
+    },
+    "note": "These are the only pass/fail statements. Everything else in the final report is descriptive. Claims are judged the same way for both targets."
+  },
+  "rejected_challengers": {
+    "lstm": "did not beat the MLP control that never sees the lookback (DEC-020)",
+    "gru": "no clear gain over the LSTM or the MLP control (DEC-020)",
+    "transformer": "whole interval below zero against both the MLP control and tuned LightGBM, overfits from epoch 1 (DEC-022)",
+    "mlp_control": "not better than tuned LightGBM on validation"
+  },
+  "challengers_scored_on_final_test": [],
+  "challenger_note": "Rejected challengers are not scored on 2023. They were rejected on 2022, and scoring them on the final test would turn it into a second selection round.",
+  "targets": {
+    "severe_delay_120": {
+      "role": "selected model (settings tuned for this target, DEC-019)",
+      "label": "Severe delay (arrival delay of 120 minutes or more)",
+      "calibrate": true,
+      "best_iteration": 53,
+      "n_features": 12,
+      "validation_rows": 667616,
+      "validation_events": 17820,
+      "validation_prevalence": 0.02669199060537794,
+      "validation_pr_auc": 0.04792840382302811,
+      "validation_roc_auc": 0.6430433759150129,
+      "validation_score_sum": 13397.467462158276,
+      "fit_rows": 1454352,
+      "fit_span": "2018-12-31 21:15 to 2021-06-30 23:57 UTC",
+      "early_stop_rows": 337156,
+      "early_stop_span": "2021-07-01 00:00 to 2021-12-31 23:59 UTC",
+      "stored_score_reproduction": {
+        "checked": true,
+        "file": "C:\\Users\\Softmgmt\\Desktop\\MAIN_FOLDER\\WHOLE_DATA\\ML_JOBS\\MACHINE_LEARNING_PROJECTS\\Airline Network Disruption Intelligence\\data\\processed\\phase6\\predictions\\lightgbm_validation_phase6_tuned_ladder.parquet",
+        "column": "lightgbm_base_no_year",
+        "pr_auc_difference": 0.0,
+        "largest_score_difference": 0.0
+      },
+      "history_baselines_validation_pr_auc": {
+        "baseline_carrier_rate": 0.036735678134947554,
+        "baseline_origin_rate": 0.033481614653077085,
+        "baseline_destination_rate": 0.03226731237559302,
+        "baseline_route_rate": 0.033967041492806035
+      },
+      "best_history_baseline": "baseline_carrier_rate",
+      "operating_points": {
+        "capacity_0.5pct": {
+          "kind": "capacity",
+          "fraction": 0.005,
+          "cutoff_score": 0.06647247744633333,
+          "validation_alert_rate": 0.005001378037674351,
+          "validation_precision": 0.09523809523809523,
+          "validation_recall": 0.017845117845117844
+        },
+        "capacity_1pct": {
+          "kind": "capacity",
+          "fraction": 0.01,
+          "cutoff_score": 0.05932335780487977,
+          "validation_alert_rate": 0.009999760341274026,
+          "validation_precision": 0.08807669263031756,
+          "validation_recall": 0.032996632996632996
+        },
+        "capacity_5pct": {
+          "kind": "capacity",
+          "fraction": 0.05,
+          "cutoff_score": 0.04282162189710317,
+          "validation_alert_rate": 0.050000299573407465,
+          "validation_precision": 0.06776309876876067,
+          "validation_recall": 0.12693602693602693
+        },
+        "capacity_10pct": {
+          "kind": "capacity",
+          "fraction": 0.1,
+          "cutoff_score": 0.03496009764716202,
+          "validation_alert_rate": 0.1000065906149643,
+          "validation_precision": 0.058487853098882665,
+          "validation_recall": 0.2191358024691358
+        },
+        "f1_optimal": {
+          "kind": "f1_optimal",
+          "fraction": null,
+          "cutoff_score": 0.03612575188784845,
+          "validation_f1": 0.09324721978063974,
+          "validation_alert_rate": 0.09089206969275751,
+          "validation_precision": 0.06031541998319079,
+          "validation_recall": 0.2053872053872054
+        }
+      },
+      "calibrator_primary": {
+        "method": "platt",
+        "fit_rows": 337156,
+        "fit_events": 8154,
+        "intercept": 0.5090985087434912,
+        "slope": 1.0780694121598413,
+        "fit_rows_source": "early_stop",
+        "fit_period": "2021-07-01 to 2021-12-31 UTC (the early-stopping rows)",
+        "fit_event_rate": 0.024184650428881585
+      },
+      "calibrator_diagnostic": {
+        "method": "platt",
+        "fit_rows": 667616,
+        "fit_events": 17820,
+        "intercept": 0.22895233435664192,
+        "slope": 0.9826610881974643,
+        "fit_rows_source": "validation_2022",
+        "fit_period": "2022-01-01 to 2022-12-31 UTC (the whole validation year)",
+        "fit_event_rate": 0.02669199060537794
+      },
+      "validation_calibration_primary": {
+        "rows": 667616,
+        "events": 17820,
+        "prevalence": 0.02669199060537794,
+        "mean_predicted": 0.024759235138368335,
+        "predicted_to_observed": 0.9275904335654834,
+        "brier": 0.02578116561820454,
+        "brier_skill": 0.007875426630833182,
+        "calibration_slope": 0.9115007597026742,
+        "calibration_in_the_large": 0.07789556115050751,
+        "ece": 0.0021060509633990254,
+        "pr_auc": 0.04792840382302811,
+        "roc_auc": 0.6430433759150129,
+        "distinct_scores": 215767,
+        "in_sample_for_the_calibrator": false
+      }
+    },
+    "cancelled": {
+      "role": "untuned baseline (the severe-delay settings reused; ranking only, no calibration, no thresholds)",
+      "label": "Cancellation",
+      "calibrate": false,
+      "best_iteration": 59,
+      "n_features": 12,
+      "validation_rows": 687710,
+      "validation_events": 18444,
+      "validation_prevalence": 0.026819444242485932,
+      "validation_pr_auc": 0.03003715234242324,
+      "validation_roc_auc": 0.5662332622440822,
+      "validation_score_sum": 18587.38996620103,
+      "fit_rows": 1504223,
+      "fit_span": "2018-12-31 21:15 to 2021-06-30 23:57 UTC",
+      "early_stop_rows": 344295,
+      "early_stop_span": "2021-07-01 00:00 to 2021-12-31 23:59 UTC",
+      "stored_score_reproduction": {
+        "checked": false
+      },
+      "history_baselines_validation_pr_auc": {
+        "baseline_carrier_rate": 0.030368033830079733,
+        "baseline_origin_rate": 0.03280768511904901,
+        "baseline_destination_rate": 0.0327109839930139,
+        "baseline_route_rate": 0.034263655757188746
+      },
+      "best_history_baseline": "baseline_route_rate",
+      "operating_points": {}
+    }
+  },
+  "files": {
+    "data/processed/phase6/phase6_cohort_v1.parquet": {
+      "sha256": "ee1cf474afac59e4c06c8946f79d02a8b5a1ab6cdc4d9306dc031c176f66bc61",
+      "bytes": 51631234
+    },
+    "data/processed/phase6/phase6_predictors_v1.parquet": {
+      "sha256": "bebe5fffa657ed463001856a215a6ab5bf511a7a46909394027fb4d690bb3246",
+      "bytes": 96339122
+    },
+    "configs/lightgbm_benchmark_selected.json": {
+      "sha256": "24f3254d46be3f46981da060e62660a9fda9ab82120f0de4553fff2e024581af",
+      "bytes": 2840
+    },
+    "configs/calibration.yaml": {
+      "sha256": "155a0bc466fe835d82ab6a200b5a9fae14b46e7dc4b5fbfb6cabbe920a806cf9",
+      "bytes": 2972
+    },
+    "configs/calibration_selected.json": {
+      "sha256": "bc10644c4e2cb5de5c934f1bc0ca3142110d04f390c77e22ed2a565a3380caa4",
+      "bytes": 1371
+    }
+  },
+  "not_in_this_test": [
+    "regression (MAE): no locked regression model is part of this lock",
+    "airport recovery episodes",
+    "sequence models"
+  ],
+  "environment": {
+    "hardware": {
+      "python": "3.13.5",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "cpu_logical_cores": 16,
+      "ram_total_gb": 33.7
+    },
+    "packages": {
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "pyarrow": "19.0.0",
+      "scikit-learn": "1.6.1",
+      "lightgbm": "4.7.0",
+      "tensorflow": "2.20.0",
+      "keras": "3.11.3"
+    }
+  },
+  "final_test_used": false,
+  "lock_sha256": "e9d60fd5184a9e382814af84cae153f605e64b39b180e76642866076fc408f10"
+}

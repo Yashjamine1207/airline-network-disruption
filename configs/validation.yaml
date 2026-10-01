@@ -1,147 +1,90 @@
-# Chronological validation configuration for:
-# Airline Network Disruption Intelligence:
-# Delay Prediction, Propagation, Recovery and Network Resilience
+# Chronological validation configuration
+#
+# The boundaries below were confirmed from the audited raw Kaggle CSV:
+# - Earliest flight date: 2019-01-01
+# - Latest flight date:   2023-08-31
+# - Valid FL_DATE rows:   3,000,000 / 3,000,000
+#
+# This is a retrospective portfolio study. All headline evaluation uses
+# chronological splits only. Random train/test splitting is prohibited.
 
-version: "0.1.0"
+data_coverage:
+  flight_date_column: "FL_DATE"
+  source_date_format: "%Y-%m-%d"
+  audited_start_date: "2019-01-01"
+  audited_end_date: "2023-08-31"
+  audited_years_present:
+    - 2019
+    - 2020
+    - 2021
+    - 2022
+    - 2023
+  final_year_coverage_note: >
+    The dataset contains flights through 2023-08-31 only. The final test
+    period is therefore a partial-year test period and must never be
+    described as full-year 2023 coverage.
 
-primary_validation_design:
-  name: "chronological_holdout"
-  random_train_test_split_allowed_for_headline_results: false
-  final_test_set_locked_until_model_selection_complete: true
+primary_temporal_split:
+  # Development/training data. These dates may be used for training and
+  # expanding-window development experiments only.
+  development_train_start: "2019-01-01"
+  development_train_end: "2021-12-31"
 
-proposed_periods:
-  status: "provisional_pending_phase_1_source_audit"
+  # Used for model selection, hyperparameter tuning, probability calibration,
+  # and alert-threshold selection. Do not train final models on this period
+  # until all choices are locked.
+  validation_start: "2022-01-01"
+  validation_end: "2022-12-31"
 
-  development_training:
-    start_year: 2019
-    end_year: 2021
-
-  validation:
-    start_year: 2022
-    end_year: 2022
-
-  final_test:
-    start_year: 2023
-    end_year: 2023
-
-coverage_rule: >
-  All date boundaries must be confirmed from the downloaded flight data before
-  modelling begins. If actual coverage differs, update this configuration and
-  record the decision in the project decision log.
-
-rolling_origin_backtests:
-  enabled: true
-
-  proposed_folds:
-    - fold_id: "backtest_01"
-      train_start_year: 2019
-      train_end_year: 2019
-      validation_start_year: 2020
-      validation_end_year: 2020
-
-    - fold_id: "backtest_02"
-      train_start_year: 2019
-      train_end_year: 2020
-      validation_start_year: 2021
-      validation_end_year: 2021
-
-    - fold_id: "backtest_03"
-      train_start_year: 2019
-      train_end_year: 2021
-      validation_start_year: 2022
-      validation_end_year: 2022
-
-  finalisation_rule: >
-    Proposed folds are not final until the Phase 1 source-data audit confirms
-    actual start dates, end dates, missing periods, and sufficient event counts.
+  # Untouched final evaluation period. It must not affect feature selection,
+  # preprocessing, model selection, calibration, or threshold choice.
+  final_test_start: "2023-01-01"
+  final_test_end: "2023-08-31"
+  final_test_is_partial_year: true
 
 operating_regimes:
-  enabled: true
+  pre_covid_reference:
+    start_date: "2019-01-01"
+    end_date: "2019-12-31"
+    label: "2019 pre-COVID reference"
 
-  regimes:
-    - regime_id: "pre_covid_reference"
-      start_year: 2019
-      end_year: 2019
-      description: "Pre-COVID reference operating regime"
+  covid_shock:
+    start_date: "2020-01-01"
+    end_date: "2020-12-31"
+    label: "2020 COVID operational shock"
 
-    - regime_id: "covid_shock"
-      start_year: 2020
-      end_year: 2020
-      description: "COVID-related operational disruption and distribution shift"
+  recovery_transition:
+    start_date: "2021-01-01"
+    end_date: "2023-08-31"
+    label: "2021-2023 recovery and transition"
 
-    - regime_id: "recovery_transition"
-      start_year: 2021
-      end_year: 2023
-      description: "Recovery and transition operating regime"
+rolling_origin_backtests:
+  # These backtests are for development analysis. They do not replace the
+  # untouched final test period.
+  - name: "backtest_train_2019_validate_2020"
+    train_start: "2019-01-01"
+    train_end: "2019-12-31"
+    validation_start: "2020-01-01"
+    validation_end: "2020-12-31"
 
-  rules:
-    do_not_automatically_remove_2020: true
-    evaluate_train_with_and_without_2020_when_feasible: true
-    report_results_by_regime_when_sample_size_allows: true
+  - name: "backtest_train_2019_2020_validate_2021"
+    train_start: "2019-01-01"
+    train_end: "2020-12-31"
+    validation_start: "2021-01-01"
+    validation_end: "2021-12-31"
 
-fold_safety:
-  fit_historical_features_on_training_data_only: true
-  fit_imputers_on_training_data_only: true
-  fit_encoders_on_training_data_only: true
-  fit_scalers_on_training_data_only: true
-  fit_feature_selection_on_training_data_only: true
-  fit_resampling_on_training_data_only: true
-  fit_calibration_on_validation_data_only: true
-  optimise_threshold_on_validation_data_only: true
-  allow_final_test_data_in_model_selection: false
-  allow_final_test_data_in_calibration: false
-  allow_final_test_data_in_threshold_selection: false
+  - name: "backtest_train_2019_2021_validate_2022"
+    train_start: "2019-01-01"
+    train_end: "2021-12-31"
+    validation_start: "2022-01-01"
+    validation_end: "2022-12-31"
 
-entity_generalisation:
-  enabled_when_data_supports_it: true
-
-  experiments:
-    carrier_holdout:
-      enabled: true
-      purpose: "Assess generalisation to held-out carriers"
-      replaces_temporal_validation: false
-
-    airport_holdout:
-      enabled: true
-      purpose: "Assess generalisation to held-out airports"
-      replaces_temporal_validation: false
-
-subgroup_reporting:
-  enabled: true
-
-  candidate_subgroups:
-    - "operating_regime"
-    - "carrier"
-    - "origin_airport"
-    - "destination_airport"
-    - "route"
-    - "severe_delay_threshold"
-    - "weather_coverage_status"
-    - "tail_number_availability"
-    - "rotation_eligibility_status"
-    - "flight_outcome_status"
-
-experiment_tracking:
-  required_fields:
-    - "experiment_id"
-    - "run_timestamp_utc"
-    - "data_version"
-    - "raw_data_file_name"
-    - "raw_data_hash"
-    - "target_version"
-    - "feature_version"
-    - "prediction_timestamp_policy_version"
-    - "split_version"
-    - "train_period"
-    - "validation_period"
-    - "test_period"
-    - "model_name"
-    - "model_parameters"
-    - "random_seed"
-    - "class_weighting_or_resampling"
-    - "calibration_method"
-    - "decision_threshold_or_ranking_capacity"
-    - "evaluation_metrics"
-    - "notes"
-
-  tracking_method: "reproducible_experiment_table"
+rules:
+  chronological_splitting_only: true
+  random_split_prohibited: true
+  final_test_must_remain_untouched: true
+  fit_preprocessing_on_training_only: true
+  fit_calibration_on_validation_only: true
+  choose_threshold_on_validation_only: true
+  report_results_by_operating_regime: true
+  do_not_drop_2020_as_outlier: true
