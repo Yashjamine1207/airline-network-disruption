@@ -245,6 +245,4 @@ The evidence does not support:
 
 This project tests flight-level disruption prediction using date-based validation, features known two hours before departure, calibrated probabilities, a sealed once-only final test, airport and route network analysis, airport-level recovery analysis, sequence-model challengers, SHAP explanations, error analysis and what-if review lists. The simpler tabular model won, and the evidence for that is in the reports.
 
-## Licence
 
-No licence file has been chosen yet. The flight data are third-party and are not covered by any licence for this code.
