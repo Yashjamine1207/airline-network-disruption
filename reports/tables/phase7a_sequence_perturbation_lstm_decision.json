@@ -1,0 +1,106 @@
+{
+  "created_utc": "2026-09-30T19:33:47+00:00",
+  "tag": "",
+  "smoke_run": false,
+  "arch": "lstm",
+  "model_file": "lstm_c0_s42.keras",
+  "seed_of_saved_model": 42,
+  "lookback_bins": 16,
+  "rows_scored": 341232,
+  "period": "2022 second half (validation)",
+  "reproduction_check": {
+    "pr_auc_reloaded": 0.04538950129113999,
+    "pr_auc_stored": 0.04538950129113999,
+    "pr_auc_difference": 0.0,
+    "max_abs_score_difference": 7.450580596923828e-09,
+    "tolerance": 0.0001
+  },
+  "bootstrap_resamples": 100,
+  "passes": [
+    {
+      "perturbation": "no_sequence",
+      "delta_pr_auc": -0.0011358792866340353,
+      "ci_low": -0.0025511866742614206,
+      "ci_high": -0.00013957245049141728,
+      "verdict": "PR-AUC falls, whole interval below zero: the network relies on this input"
+    },
+    {
+      "perturbation": "shuffled_lookbacks",
+      "delta_pr_auc": -0.003653238842886951,
+      "ci_low": -0.005685272067717205,
+      "ci_high": -0.0020603689038459516,
+      "verdict": "PR-AUC falls, whole interval below zero: the network relies on this input"
+    },
+    {
+      "perturbation": "keep_newest_1",
+      "delta_pr_auc": -0.00023552742724454456,
+      "ci_low": -0.0010104228325727078,
+      "ci_high": 0.0005655043392579931,
+      "verdict": "no clear change: the interval includes zero"
+    },
+    {
+      "perturbation": "keep_newest_4",
+      "delta_pr_auc": -0.00034622692932955584,
+      "ci_low": -0.0010769040639655046,
+      "ci_high": 0.00027494011012730484,
+      "verdict": "no clear change: the interval includes zero"
+    },
+    {
+      "perturbation": "keep_newest_8",
+      "delta_pr_auc": 0.00013431706068214172,
+      "ci_low": -0.0001106729140795436,
+      "ci_high": 0.00036541183754041154,
+      "verdict": "no clear change: the interval includes zero"
+    },
+    {
+      "perturbation": "mask_oldest_quarter",
+      "delta_pr_auc": -1.118065066768592e-05,
+      "ci_low": -0.00011924929420554522,
+      "ci_high": 8.667020208549989e-05,
+      "verdict": "no clear change: the interval includes zero"
+    },
+    {
+      "perturbation": "mask_second_oldest_quarter",
+      "delta_pr_auc": 4.849818431423847e-05,
+      "ci_low": -0.0002357493378408633,
+      "ci_high": 0.0003918091989822604,
+      "verdict": "no clear change: the interval includes zero"
+    },
+    {
+      "perturbation": "mask_second_newest_quarter",
+      "delta_pr_auc": -0.0006417326710334362,
+      "ci_low": -0.0015638259670008978,
+      "ci_high": 1.431558530578122e-05,
+      "verdict": "no clear change: the interval includes zero"
+    },
+    {
+      "perturbation": "mask_newest_quarter",
+      "delta_pr_auc": -0.0013196925430966205,
+      "ci_low": -0.0021859267122806354,
+      "ci_high": -0.000502042882834141,
+      "verdict": "PR-AUC falls, whole interval below zero: the network relies on this input"
+    }
+  ],
+  "limits": [
+    "describes this trained network, not the airline system",
+    "an empty or shuffled lookback is outside what the network saw in training, so drops are an upper bound",
+    "one saved seed; seed spread is in the training decision file"
+  ],
+  "final_test_used": false,
+  "total_seconds": 182.3,
+  "hardware": {
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu_logical_cores": 16,
+    "ram_total_gb": 33.7
+  },
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "pyarrow": "19.0.0",
+    "scikit-learn": "1.6.1",
+    "lightgbm": "4.7.0",
+    "tensorflow": "2.20.0",
+    "keras": "3.11.3"
+  }
+}

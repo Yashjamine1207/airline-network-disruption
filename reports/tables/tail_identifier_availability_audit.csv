@@ -1,0 +1,2 @@
+tail_identifier_column,source_field_available,total_rows,non_missing_tail_rows,missing_tail_rows,tail_completeness_pct,unique_non_missing_tail_identifiers,rotation_analysis_status
+,False,3000000,0,3000000,0.0,0,not_supported_by_this_source_file_no_tail_identifier_field

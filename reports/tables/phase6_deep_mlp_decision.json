@@ -1,0 +1,157 @@
+{
+  "created_utc": "2026-09-30T12:41:57+00:00",
+  "architecture": "mlp",
+  "tag": "",
+  "smoke_run": false,
+  "target": "severe_delay_120",
+  "prediction_time": "scheduled departure UTC minus 2 hours",
+  "input_version": "phase6_deep_inputs_v1",
+  "feature_version": "phase6_features_v1",
+  "static_inputs": "base_no_year (DEC-018)",
+  "sequence": {
+    "version": "phase6_sequences_v1",
+    "entity": "none (control)",
+    "lookback_bins": null,
+    "lookback_hours": null,
+    "bin_hours": 3,
+    "channels": [
+      "scheduled_departures",
+      "scheduled_arrivals",
+      "distinct_destinations"
+    ],
+    "padding": "zeros, masked; the mask is passed to the recurrent layer",
+    "outcome_columns_read": false
+  },
+  "protocol": "phase6 (fit < 2021-07-01 <= early stop; validation = 2022)",
+  "training": {
+    "batch_size": 2048,
+    "max_epochs": 15,
+    "patience": 3,
+    "loss": "binary cross-entropy, unweighted",
+    "optimiser": "Adam",
+    "early_stopping_monitor": "val_pr_auc on the early-stop rows"
+  },
+  "rows": {
+    "fit": 1454352,
+    "early_stop": 337156,
+    "validation": 667616
+  },
+  "n_random_draws": 0,
+  "search_space": {
+    "units": [
+      16,
+      32,
+      64
+    ],
+    "dense": [
+      32,
+      64,
+      128
+    ],
+    "dropout": [
+      0.1,
+      0.2,
+      0.3
+    ],
+    "learning_rate": [
+      0.001,
+      0.0003
+    ]
+  },
+  "default_config": {
+    "units": 32,
+    "dense": 64,
+    "dropout": 0.2,
+    "learning_rate": 0.001
+  },
+  "seed": 42,
+  "n_threads": 8,
+  "selection_period": "2022, prediction time before 2022-07-01 UTC",
+  "confirmation_period": "2022, prediction time from 2022-07-01 UTC",
+  "challenger_config": null,
+  "challenger_overrides": null,
+  "challenger_adopted": false,
+  "confirmation_bootstrap": null,
+  "final_config_index": 0,
+  "final_config": {
+    "units": 32,
+    "dense": 64,
+    "dropout": 0.2,
+    "learning_rate": 0.001
+  },
+  "parameter_count": 213625,
+  "primary_train_seconds": 16.3,
+  "primary_best_epoch": 1,
+  "primary_epochs_run": 4,
+  "seed_check": {
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "pr_auc_confirmation_half": [
+      0.045735596407875875,
+      0.046975108355189164,
+      0.04692879072701337
+    ],
+    "spread": 0.001239511947313289
+  },
+  "benchmark": {
+    "file": "data/processed/phase6/predictions/lightgbm_validation_phase6_tuned_ladder.parquet",
+    "column": "lightgbm_base_no_year"
+  },
+  "comparisons": [
+    {
+      "challenger": "mlp",
+      "reference": "lightgbm_base_no_year",
+      "period": "2022 second half (confirmation)",
+      "pr_auc_reference": 0.046797301415135384,
+      "pr_auc_challenger": 0.045735596407875875,
+      "difference": -0.0010617050072595086,
+      "ci_low": -0.002363940939215202,
+      "ci_high": 0.000481236059303723,
+      "share_challenger_better": 0.1,
+      "n_boot": 200,
+      "n_days": 184,
+      "verdict": "No clear difference between mlp and lightgbm_base_no_year: the 95% interval includes zero (point estimate -0.00106)."
+    },
+    {
+      "challenger": "mlp",
+      "reference": "lightgbm_base_no_year",
+      "period": "2022 full year",
+      "pr_auc_reference": 0.04792840382302811,
+      "pr_auc_challenger": 0.04690580408819551,
+      "difference": -0.0010225997348326035,
+      "ci_low": -0.0019018426574898245,
+      "ci_high": 5.185354829393832e-05,
+      "share_challenger_better": 0.04,
+      "n_boot": 200,
+      "n_days": 365,
+      "verdict": "No clear difference between mlp and lightgbm_base_no_year: the 95% interval includes zero (point estimate -0.00102)."
+    }
+  ],
+  "model_file": "data\\processed\\phase6\\models\\mlp_c0_s42.keras",
+  "review_fractions": [
+    0.005,
+    0.01,
+    0.05,
+    0.1
+  ],
+  "final_test_used": false,
+  "total_seconds": 159.0,
+  "hardware": {
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu_logical_cores": 16,
+    "ram_total_gb": 33.7
+  },
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "pyarrow": "19.0.0",
+    "scikit-learn": "1.6.1",
+    "lightgbm": "4.7.0",
+    "tensorflow": "2.20.0",
+    "keras": "3.11.3"
+  }
+}

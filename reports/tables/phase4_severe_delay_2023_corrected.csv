@@ -1,0 +1,2 @@
+target,model,feature_set,training_split,calibration_split,test_split,test_rows,test_event_rate,average_precision,roc_auc,brier_score,mean_predicted_probability,random_seed,lightgbm_version
+severe_delay_120,lightgbm_isotonic_disjoint_calibration,base_numeric_categorical_encoded,2019_2021,2022,2023_final_test_locked,454413,0.03187408810927504,0.057414718294416016,0.6400289503200188,0.03059652496981621,0.026692216352324872,42,4.7.0

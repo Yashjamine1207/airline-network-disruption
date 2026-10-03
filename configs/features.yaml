@@ -129,75 +129,28 @@ route_features:
     - "route_historical_flight_volume"
 
 rotation_features:
-  enabled: true
-
-  availability_rule: >
-    Previous-leg actual outcome features may be used only if the previous
-    flight passes all rotation eligibility checks and its actual arrival time
-    is on or before the current flight prediction_timestamp_utc.
-
-  candidate_features:
-    - "has_eligible_prior_leg"
-    - "prior_leg_arrival_delay_minutes"
-    - "prior_leg_severe_delay"
-    - "prior_leg_cancelled"
-    - "prior_leg_actual_arrival_utc"
-    - "available_turnaround_minutes"
-    - "cumulative_rotation_delay_minutes"
-    - "prior_leg_feature_available"
-
-  unavailable_prior_leg_policy: >
-    Set outcome-based prior-leg features to missing and create a documented
-    availability indicator. Do not substitute future or unavailable outcomes.
+  enabled: false
+  exclusion_reason: >
+    The audited flight source contains no usable tail-number or aircraft
+    identifier. Aircraft rotation, prior-leg, propagation, cascade, and
+    tail-based recovery features are not supported.
+  candidate_features: []
 
 weather_features:
-  enabled: true
-
-  availability_rule: >
-    Use only valid NOAA GHCNh weather observations whose UTC observation time
-    is on or before the flight prediction_timestamp_utc.
-
-  candidate_features:
-    - "origin_temperature"
-    - "destination_temperature"
-    - "origin_wind_speed"
-    - "destination_wind_speed"
-    - "origin_wind_gust_indicator"
-    - "destination_wind_gust_indicator"
-    - "origin_visibility_indicator"
-    - "destination_visibility_indicator"
-    - "origin_precipitation_indicator"
-    - "destination_precipitation_indicator"
-    - "origin_weather_observation_age_minutes"
-    - "destination_weather_observation_age_minutes"
-    - "origin_weather_match_status"
-    - "destination_weather_match_status"
-
-  derived_weather_severity_score:
-    allowed: true
-    must_be_labelled_project_derived: true
-    official_noaa_measure: false
+  enabled: false
+  exclusion_reason: >
+    NOAA weather data was excluded from the final project scope. No weather
+    features, weather matching, or weather event analysis will be performed.
+  candidate_features: []
 
 network_features:
-  enabled: true
-
-  availability_rule: >
-    Each network feature must be calculated from a past-only graph window
-    ending on or before the flight prediction_timestamp_utc.
-
-  candidate_features:
-    - "origin_out_degree"
-    - "origin_weighted_out_degree"
-    - "origin_betweenness_centrality"
-    - "origin_pagerank"
-    - "destination_in_degree"
-    - "destination_weighted_in_degree"
-    - "destination_betweenness_centrality"
-    - "destination_pagerank"
-    - "route_historical_weight"
-    - "origin_network_disruption_exposure"
-    - "destination_network_disruption_exposure"
-    - "network_density"
+  enabled: false
+  status: "deferred"
+  exclusion_reason: >
+    Network features will be considered only after the base and historical
+    feature pipelines are implemented and a separate past-only network design
+    and leakage test are approved.
+  candidate_features: []
 
 sequence_features:
   enabled: true
@@ -246,11 +199,12 @@ missing_data:
 
 ablation_feature_sets:
   - feature_set_id: "base"
+    status: "planned"
     includes:
       - "base_schedule_features"
       - "calendar_features"
-
   - feature_set_id: "base_plus_historical"
+    status: "planned"
     includes:
       - "base_schedule_features"
       - "calendar_features"
@@ -258,39 +212,6 @@ ablation_feature_sets:
       - "carrier_features"
       - "airport_features"
       - "route_features"
-
-  - feature_set_id: "base_plus_historical_plus_rotation"
-    includes:
-      - "base_schedule_features"
-      - "calendar_features"
-      - "historical_features"
-      - "carrier_features"
-      - "airport_features"
-      - "route_features"
-      - "rotation_features"
-
-  - feature_set_id: "base_plus_historical_plus_rotation_plus_network"
-    includes:
-      - "base_schedule_features"
-      - "calendar_features"
-      - "historical_features"
-      - "carrier_features"
-      - "airport_features"
-      - "route_features"
-      - "rotation_features"
-      - "network_features"
-
-  - feature_set_id: "full_feature_set"
-    includes:
-      - "base_schedule_features"
-      - "calendar_features"
-      - "historical_features"
-      - "carrier_features"
-      - "airport_features"
-      - "route_features"
-      - "rotation_features"
-      - "network_features"
-      - "weather_features"
 
 documentation:
   feature_catalog_file: "docs/data/feature_catalog.md"

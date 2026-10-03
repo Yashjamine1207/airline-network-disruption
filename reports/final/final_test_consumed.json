@@ -1,0 +1,17 @@
+{
+  "lock_sha256": "e9d60fd5184a9e382814af84cae153f605e64b39b180e76642866076fc408f10",
+  "first_run_utc": "2026-10-01T11:16:28+00:00",
+  "targets": {
+    "severe_delay_120": {
+      "rows": 454413,
+      "events": 14484,
+      "score_file": "C:\\Users\\Softmgmt\\Desktop\\MAIN_FOLDER\\WHOLE_DATA\\ML_JOBS\\MACHINE_LEARNING_PROJECTS\\Airline Network Disruption Intelligence\\data\\processed\\phase7\\final\\final_test_scores_severe_delay_120.parquet"
+    },
+    "cancelled": {
+      "rows": 463484,
+      "events": 7809,
+      "score_file": "C:\\Users\\Softmgmt\\Desktop\\MAIN_FOLDER\\WHOLE_DATA\\ML_JOBS\\MACHINE_LEARNING_PROJECTS\\Airline Network Disruption Intelligence\\data\\processed\\phase7\\final\\final_test_scores_cancelled.parquet"
+    }
+  },
+  "reruns": []
+}

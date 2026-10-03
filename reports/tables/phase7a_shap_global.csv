@@ -1,0 +1,13 @@
+feature,mean_abs_shap,share_of_total,family
+carrier_identifier,0.21383029322973066,0.24771263947641653,carrier
+scheduled_departure_hour_local,0.15157831385598233,0.17559656139231006,calendar and clock
+scheduled_departure_month,0.14486210831186608,0.16781614367192757,calendar and clock
+destination_airport,0.11887986917311287,0.13771690497494232,airport
+origin_airport,0.09571656832460435,0.110883277683388,airport
+scheduled_arrival_hour_local,0.09567180107579598,0.11083141686798659,calendar and clock
+route,0.04016329976142985,0.04652735046898879,route
+scheduled_departure_day_of_week,0.0025168927821568234,0.002915705464040033,calendar and clock
+scheduled_departure_minute_local,0.0,0.0,calendar and clock
+distance_miles,0.0,0.0,trip length
+scheduled_arrival_minute_local,0.0,0.0,calendar and clock
+scheduled_elapsed_time_minutes,0.0,0.0,trip length

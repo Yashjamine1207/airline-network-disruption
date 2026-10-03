@@ -1,0 +1,4 @@
+sequence_entity,flights_measured,p10_prior_flights,median_prior_flights,p90_prior_flights,share_with_zero_prior_flights,share_with_fewer_than_5
+origin airport,1848518,5.0,54.0,159.0,0.01869443521783396,0.09454492734179488
+route (origin to destination),1848518,0.0,1.0,4.0,0.34856896173042407,0.9402434815349378
+carrier at origin airport,1848518,0.0,9.0,43.0,0.10393352945440618,0.3649902246015457

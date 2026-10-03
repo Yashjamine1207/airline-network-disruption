@@ -1,0 +1,5 @@
+cohort,episodes,observed_recoveries,censored_episodes,observation_gap_censored,censoring_fraction,km_median_recovery_days,episodes_with_follow_up_to_day_7,episodes_with_follow_up_to_day_14,km_recovery_fraction_by_day_7,km_recovery_fraction_by_day_14,interpretation
+All 2019-2022,2547,1677,870,853,0.3415783274440518,5.0,574,148,0.7061892852935594,0.9113963089756232,exploratory; observation-gap censoring may be informative
+2019,910,617,293,292,0.321978021978022,5.0,224,58,0.6914626437978766,0.9087847144861504,exploratory; observation-gap censoring may be informative
+2020,202,145,57,57,0.28217821782178215,4.0,18,0,0.9222388236854783,,exploratory; observation-gap censoring may be informative
+2021-2022,1435,915,520,504,0.3623693379790941,5.0,332,90,0.6838398452786651,0.8991135780490043,exploratory; observation-gap censoring may be informative

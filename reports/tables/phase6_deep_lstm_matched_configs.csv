@@ -1,0 +1,2 @@
+config,label,overrides,parameters,best_epoch,epochs_run,train_seconds,stop_pr_auc_keras,pr_auc_selection_half,pr_auc_confirmation_half,pr_auc_full_year
+0,default,"{""units"": 32, ""dense"": 64, ""dropout"": 0.2, ""learning_rate"": 0.001}",220281,1,4,72.5,0.047993,0.04792054225932504,0.04419745990832509,0.045960737065587905

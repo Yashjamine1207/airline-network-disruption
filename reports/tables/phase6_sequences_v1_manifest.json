@@ -1,0 +1,53 @@
+{
+  "created_utc": "2026-09-29T13:25:33+00:00",
+  "sequence_version": "phase6_sequences_v1",
+  "entity": "origin airport (destination index also stored)",
+  "bin_hours": 3,
+  "lookback_bins": 16,
+  "lookback_hours": 48,
+  "burn_in_hours": 24,
+  "first_valid_bin": 8,
+  "channels": [
+    "scheduled_departures",
+    "scheduled_arrivals",
+    "distinct_destinations"
+  ],
+  "source_columns": [
+    "origin_airport",
+    "destination_airport",
+    "scheduled_departure_utc",
+    "scheduled_elapsed_time_minutes"
+  ],
+  "prediction_lead_hours": 2,
+  "grid_start_utc": "2018-12-31T00:00:00+00:00",
+  "n_bins": 13645,
+  "n_airports": 380,
+  "rows": 2999999,
+  "arrivals_counted": 2999985,
+  "arrivals_not_placeable": 14,
+  "table_shape": [
+    380,
+    13645,
+    3
+  ],
+  "table_sha256": "641e525171780c0f058131edb922116422e76f267ddd5b8eda6f7c4a1c07dc9b",
+  "recounted_cells": 200,
+  "outcome_columns_read": false,
+  "final_test_used": false,
+  "build_seconds": 23.2,
+  "hardware": {
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu_logical_cores": 16,
+    "ram_total_gb": 33.7
+  },
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "pyarrow": "19.0.0",
+    "scikit-learn": "1.6.1",
+    "lightgbm": "4.7.0",
+    "tensorflow": "2.20.0",
+    "keras": "3.11.3"
+  }
+}

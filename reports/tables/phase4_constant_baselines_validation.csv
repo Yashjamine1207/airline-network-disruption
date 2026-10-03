@@ -1,0 +1,5 @@
+task,target,model,feature_set,training_rows,validation_rows,training_event_rate,validation_event_rate,average_precision,brier_score,mae_minutes,rmse_minutes,baseline_prediction
+classification,cancelled_target,training_prevalence,none,1848655,687860,0.028606202888045634,0.02681941092664205,0.02681941092664205,0.026103322749703298,,,0.028606202888045634
+classification,severe_delay_120,training_prevalence,none,1791627,667761,0.020926788890768,0.026692184778685787,0.026692184778685787,0.02601295184017071,,,0.020926788890768
+regression,arrival_delay_minutes,global_mean,none,1791627,667761,,,,,23.861136673287497,53.959640489074985,1.9776923433281592
+regression,arrival_delay_minutes,global_median,none,1791627,667761,,,,,22.8548103288452,55.7644949908367,-8.0

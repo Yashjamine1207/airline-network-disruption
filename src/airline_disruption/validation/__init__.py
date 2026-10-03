@@ -1,0 +1,1 @@
+"""Validation utilities: chronological splits, UTC embargo, regimes."""

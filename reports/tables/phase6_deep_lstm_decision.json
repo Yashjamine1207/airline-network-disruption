@@ -1,0 +1,185 @@
+{
+  "created_utc": "2026-09-30T12:50:00+00:00",
+  "architecture": "lstm",
+  "tag": "",
+  "smoke_run": false,
+  "target": "severe_delay_120",
+  "prediction_time": "scheduled departure UTC minus 2 hours",
+  "input_version": "phase6_deep_inputs_v1",
+  "feature_version": "phase6_features_v1",
+  "static_inputs": "base_no_year (DEC-018)",
+  "sequence": {
+    "version": "phase6_sequences_v1",
+    "entity": "origin airport schedule (DEC-017)",
+    "lookback_bins": 16,
+    "lookback_hours": 48,
+    "bin_hours": 3,
+    "channels": [
+      "scheduled_departures",
+      "scheduled_arrivals",
+      "distinct_destinations"
+    ],
+    "padding": "zeros, masked; the mask is passed to the recurrent layer",
+    "outcome_columns_read": false
+  },
+  "protocol": "phase6 (fit < 2021-07-01 <= early stop; validation = 2022)",
+  "training": {
+    "batch_size": 2048,
+    "max_epochs": 15,
+    "patience": 3,
+    "loss": "binary cross-entropy, unweighted",
+    "optimiser": "Adam",
+    "early_stopping_monitor": "val_pr_auc on the early-stop rows"
+  },
+  "rows": {
+    "fit": 1454352,
+    "early_stop": 337156,
+    "validation": 667616
+  },
+  "n_random_draws": 0,
+  "search_space": {
+    "units": [
+      16,
+      32,
+      64
+    ],
+    "dense": [
+      32,
+      64,
+      128
+    ],
+    "dropout": [
+      0.1,
+      0.2,
+      0.3
+    ],
+    "learning_rate": [
+      0.001,
+      0.0003
+    ]
+  },
+  "default_config": {
+    "units": 32,
+    "dense": 64,
+    "dropout": 0.2,
+    "learning_rate": 0.001
+  },
+  "seed": 42,
+  "n_threads": 8,
+  "selection_period": "2022, prediction time before 2022-07-01 UTC",
+  "confirmation_period": "2022, prediction time from 2022-07-01 UTC",
+  "challenger_config": null,
+  "challenger_overrides": null,
+  "challenger_adopted": false,
+  "confirmation_bootstrap": null,
+  "final_config_index": 0,
+  "final_config": {
+    "units": 32,
+    "dense": 64,
+    "dropout": 0.2,
+    "learning_rate": 0.001
+  },
+  "parameter_count": 220281,
+  "primary_train_seconds": 103.0,
+  "primary_best_epoch": 1,
+  "primary_epochs_run": 4,
+  "seed_check": {
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "pr_auc_confirmation_half": [
+      0.04538950129113999,
+      0.04616697973055808,
+      0.04585959717619978
+    ],
+    "spread": 0.0007774784394180903
+  },
+  "benchmark": {
+    "file": "data/processed/phase6/predictions/lightgbm_validation_phase6_tuned_ladder.parquet",
+    "column": "lightgbm_base_no_year"
+  },
+  "comparisons": [
+    {
+      "challenger": "lstm",
+      "reference": "lightgbm_base_no_year",
+      "period": "2022 second half (confirmation)",
+      "pr_auc_reference": 0.046797301415135384,
+      "pr_auc_challenger": 0.04538950129113999,
+      "difference": -0.001407800123995391,
+      "ci_low": -0.0027579698443550857,
+      "ci_high": 9.214628808277853e-05,
+      "share_challenger_better": 0.035,
+      "n_boot": 200,
+      "n_days": 184,
+      "verdict": "No clear difference between lstm and lightgbm_base_no_year: the 95% interval includes zero (point estimate -0.00141)."
+    },
+    {
+      "challenger": "lstm",
+      "reference": "lightgbm_base_no_year",
+      "period": "2022 full year",
+      "pr_auc_reference": 0.04792840382302811,
+      "pr_auc_challenger": 0.04712238663844464,
+      "difference": -0.0008060171845834727,
+      "ci_low": -0.0016775597682939006,
+      "ci_high": 0.0004263097303237442,
+      "share_challenger_better": 0.085,
+      "n_boot": 200,
+      "n_days": 365,
+      "verdict": "No clear difference between lstm and lightgbm_base_no_year: the 95% interval includes zero (point estimate -0.00081)."
+    },
+    {
+      "challenger": "lstm",
+      "reference": "mlp (control, no sequence)",
+      "period": "2022 second half (confirmation)",
+      "pr_auc_reference": 0.045735596407875875,
+      "pr_auc_challenger": 0.04538950129113999,
+      "difference": -0.0003460951167358825,
+      "ci_low": -0.0011769791983384438,
+      "ci_high": 0.0003831823717085718,
+      "share_challenger_better": 0.185,
+      "n_boot": 200,
+      "n_days": 184,
+      "verdict": "No clear difference between lstm and mlp (control, no sequence): the 95% interval includes zero (point estimate -0.00035)."
+    },
+    {
+      "challenger": "lstm",
+      "reference": "mlp (control, no sequence)",
+      "period": "2022 full year",
+      "pr_auc_reference": 0.04690580408819551,
+      "pr_auc_challenger": 0.04712238663844464,
+      "difference": 0.00021658255024913087,
+      "ci_low": -0.0003005401043982803,
+      "ci_high": 0.0008404873645850784,
+      "share_challenger_better": 0.835,
+      "n_boot": 200,
+      "n_days": 365,
+      "verdict": "No clear difference between lstm and mlp (control, no sequence): the 95% interval includes zero (point estimate +0.00022)."
+    }
+  ],
+  "model_file": "data\\processed\\phase6\\models\\lstm_c0_s42.keras",
+  "review_fractions": [
+    0.005,
+    0.01,
+    0.05,
+    0.1
+  ],
+  "final_test_used": false,
+  "total_seconds": 480.3,
+  "hardware": {
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu_logical_cores": 16,
+    "ram_total_gb": 33.7
+  },
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "pyarrow": "19.0.0",
+    "scikit-learn": "1.6.1",
+    "lightgbm": "4.7.0",
+    "tensorflow": "2.20.0",
+    "keras": "3.11.3"
+  }
+}

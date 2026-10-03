@@ -1,0 +1,70 @@
+{
+  "created_utc": "2026-09-30T12:39:17+00:00",
+  "input_version": "phase6_deep_inputs_v1",
+  "feature_version": "phase6_features_v1",
+  "feature_set": "base_no_year",
+  "sequence_version": "phase6_sequences_v1",
+  "sequence_entity": "origin airport",
+  "lookback_bins": 16,
+  "bin_hours": 3,
+  "protocol": "phase6",
+  "target": "severe_delay_120",
+  "vocabulary_sizes": {
+    "origin_airport": 370,
+    "destination_airport": 369,
+    "route": 5570,
+    "carrier_identifier": 19
+  },
+  "min_level_count": 20,
+  "numeric_inputs": [
+    "month_sin",
+    "month_cos",
+    "day_of_week_sin",
+    "day_of_week_cos",
+    "departure_time_sin",
+    "departure_time_cos",
+    "arrival_time_sin",
+    "arrival_time_cos",
+    "log_distance_z",
+    "log_elapsed_z"
+  ],
+  "sequence_scaler_sample_rows": 200000,
+  "seed": 42,
+  "rows_by_role": {
+    "fit": {
+      "rows": 1454352,
+      "event_rate": 0.02017049517585839,
+      "first_prediction_utc": "2018-12-31T21:15:00+00:00",
+      "last_prediction_utc": "2021-06-30T23:57:00+00:00"
+    },
+    "early_stop": {
+      "rows": 337156,
+      "event_rate": 0.024184650428881585,
+      "first_prediction_utc": "2021-07-01T00:00:00+00:00",
+      "last_prediction_utc": "2021-12-31T23:59:00+00:00"
+    },
+    "validation": {
+      "rows": 667616,
+      "event_rate": 0.02669199060537794,
+      "first_prediction_utc": "2022-01-01T03:59:00+00:00",
+      "last_prediction_utc": "2022-12-31T23:57:00+00:00"
+    }
+  },
+  "final_test_used": false,
+  "build_seconds": 7.1,
+  "hardware": {
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu_logical_cores": 16,
+    "ram_total_gb": 33.7
+  },
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "pyarrow": "19.0.0",
+    "scikit-learn": "1.6.1",
+    "lightgbm": "4.7.0",
+    "tensorflow": "2.20.0",
+    "keras": "3.11.3"
+  }
+}

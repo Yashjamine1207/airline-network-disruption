@@ -1,0 +1,2201 @@
+regime,role,airport,flight_appearances
+2019 pre-COVID reference,destination,ABE,528
+2019 pre-COVID reference,destination,ABI,227
+2019 pre-COVID reference,destination,ABQ,2403
+2019 pre-COVID reference,destination,ABR,73
+2019 pre-COVID reference,destination,ABY,113
+2019 pre-COVID reference,destination,ACK,124
+2019 pre-COVID reference,destination,ACT,167
+2019 pre-COVID reference,destination,ACV,209
+2019 pre-COVID reference,destination,ACY,303
+2019 pre-COVID reference,destination,ADK,12
+2019 pre-COVID reference,destination,ADQ,51
+2019 pre-COVID reference,destination,AEX,328
+2019 pre-COVID reference,destination,AGS,490
+2019 pre-COVID reference,destination,AKN,4
+2019 pre-COVID reference,destination,ALB,1251
+2019 pre-COVID reference,destination,ALO,75
+2019 pre-COVID reference,destination,AMA,498
+2019 pre-COVID reference,destination,ANC,1972
+2019 pre-COVID reference,destination,APN,50
+2019 pre-COVID reference,destination,ART,26
+2019 pre-COVID reference,destination,ASE,695
+2019 pre-COVID reference,destination,ATL,40227
+2019 pre-COVID reference,destination,ATW,449
+2019 pre-COVID reference,destination,ATY,57
+2019 pre-COVID reference,destination,AUS,6982
+2019 pre-COVID reference,destination,AVL,981
+2019 pre-COVID reference,destination,AVP,341
+2019 pre-COVID reference,destination,AZA,583
+2019 pre-COVID reference,destination,AZO,202
+2019 pre-COVID reference,destination,BDL,2926
+2019 pre-COVID reference,destination,BET,77
+2019 pre-COVID reference,destination,BFF,60
+2019 pre-COVID reference,destination,BFL,249
+2019 pre-COVID reference,destination,BFM,19
+2019 pre-COVID reference,destination,BGM,89
+2019 pre-COVID reference,destination,BGR,418
+2019 pre-COVID reference,destination,BHM,2025
+2019 pre-COVID reference,destination,BIL,411
+2019 pre-COVID reference,destination,BIS,436
+2019 pre-COVID reference,destination,BJI,71
+2019 pre-COVID reference,destination,BKG,22
+2019 pre-COVID reference,destination,BLI,201
+2019 pre-COVID reference,destination,BLV,109
+2019 pre-COVID reference,destination,BMI,330
+2019 pre-COVID reference,destination,BNA,8449
+2019 pre-COVID reference,destination,BOI,1998
+2019 pre-COVID reference,destination,BOS,15260
+2019 pre-COVID reference,destination,BPT,119
+2019 pre-COVID reference,destination,BQK,93
+2019 pre-COVID reference,destination,BQN,238
+2019 pre-COVID reference,destination,BRD,52
+2019 pre-COVID reference,destination,BRO,280
+2019 pre-COVID reference,destination,BRW,76
+2019 pre-COVID reference,destination,BTM,62
+2019 pre-COVID reference,destination,BTR,715
+2019 pre-COVID reference,destination,BTV,1012
+2019 pre-COVID reference,destination,BUF,2564
+2019 pre-COVID reference,destination,BUR,3238
+2019 pre-COVID reference,destination,BWI,10828
+2019 pre-COVID reference,destination,BZN,740
+2019 pre-COVID reference,destination,CAE,757
+2019 pre-COVID reference,destination,CAK,625
+2019 pre-COVID reference,destination,CDC,71
+2019 pre-COVID reference,destination,CDV,67
+2019 pre-COVID reference,destination,CGI,97
+2019 pre-COVID reference,destination,CHA,902
+2019 pre-COVID reference,destination,CHO,554
+2019 pre-COVID reference,destination,CHS,2663
+2019 pre-COVID reference,destination,CID,940
+2019 pre-COVID reference,destination,CIU,59
+2019 pre-COVID reference,destination,CKB,77
+2019 pre-COVID reference,destination,CLE,4991
+2019 pre-COVID reference,destination,CLL,225
+2019 pre-COVID reference,destination,CLT,24213
+2019 pre-COVID reference,destination,CMH,4886
+2019 pre-COVID reference,destination,CMI,285
+2019 pre-COVID reference,destination,CMX,62
+2019 pre-COVID reference,destination,CNY,65
+2019 pre-COVID reference,destination,COD,42
+2019 pre-COVID reference,destination,COS,1057
+2019 pre-COVID reference,destination,COU,242
+2019 pre-COVID reference,destination,CPR,116
+2019 pre-COVID reference,destination,CRP,607
+2019 pre-COVID reference,destination,CRW,471
+2019 pre-COVID reference,destination,CSG,135
+2019 pre-COVID reference,destination,CVG,4952
+2019 pre-COVID reference,destination,CWA,236
+2019 pre-COVID reference,destination,CYS,65
+2019 pre-COVID reference,destination,DAB,391
+2019 pre-COVID reference,destination,DAL,7486
+2019 pre-COVID reference,destination,DAY,1388
+2019 pre-COVID reference,destination,DBQ,107
+2019 pre-COVID reference,destination,DCA,14380
+2019 pre-COVID reference,destination,DEN,25667
+2019 pre-COVID reference,destination,DFW,30861
+2019 pre-COVID reference,destination,DHN,144
+2019 pre-COVID reference,destination,DLG,6
+2019 pre-COVID reference,destination,DLH,360
+2019 pre-COVID reference,destination,DRO,328
+2019 pre-COVID reference,destination,DRT,78
+2019 pre-COVID reference,destination,DSM,1717
+2019 pre-COVID reference,destination,DTW,16272
+2019 pre-COVID reference,destination,DVL,58
+2019 pre-COVID reference,destination,EAR,67
+2019 pre-COVID reference,destination,EAU,86
+2019 pre-COVID reference,destination,ECP,710
+2019 pre-COVID reference,destination,EGE,220
+2019 pre-COVID reference,destination,EKO,55
+2019 pre-COVID reference,destination,ELM,56
+2019 pre-COVID reference,destination,ELP,1843
+2019 pre-COVID reference,destination,ERI,99
+2019 pre-COVID reference,destination,ESC,63
+2019 pre-COVID reference,destination,EUG,505
+2019 pre-COVID reference,destination,EVV,393
+2019 pre-COVID reference,destination,EWN,237
+2019 pre-COVID reference,destination,EWR,13816
+2019 pre-COVID reference,destination,EYW,548
+2019 pre-COVID reference,destination,FAI,505
+2019 pre-COVID reference,destination,FAR,645
+2019 pre-COVID reference,destination,FAT,1305
+2019 pre-COVID reference,destination,FAY,365
+2019 pre-COVID reference,destination,FCA,319
+2019 pre-COVID reference,destination,FLG,195
+2019 pre-COVID reference,destination,FLL,10020
+2019 pre-COVID reference,destination,FNT,375
+2019 pre-COVID reference,destination,FSD,733
+2019 pre-COVID reference,destination,FSM,212
+2019 pre-COVID reference,destination,FWA,741
+2019 pre-COVID reference,destination,GCC,100
+2019 pre-COVID reference,destination,GCK,65
+2019 pre-COVID reference,destination,GEG,1224
+2019 pre-COVID reference,destination,GFK,201
+2019 pre-COVID reference,destination,GGG,105
+2019 pre-COVID reference,destination,GJT,445
+2019 pre-COVID reference,destination,GNV,540
+2019 pre-COVID reference,destination,GPT,443
+2019 pre-COVID reference,destination,GRB,576
+2019 pre-COVID reference,destination,GRI,132
+2019 pre-COVID reference,destination,GRK,330
+2019 pre-COVID reference,destination,GRR,1953
+2019 pre-COVID reference,destination,GSO,1465
+2019 pre-COVID reference,destination,GSP,1602
+2019 pre-COVID reference,destination,GST,12
+2019 pre-COVID reference,destination,GTF,185
+2019 pre-COVID reference,destination,GTR,129
+2019 pre-COVID reference,destination,GUC,24
+2019 pre-COVID reference,destination,GUM,79
+2019 pre-COVID reference,destination,HDN,115
+2019 pre-COVID reference,destination,HGR,14
+2019 pre-COVID reference,destination,HHH,215
+2019 pre-COVID reference,destination,HIB,50
+2019 pre-COVID reference,destination,HLN,126
+2019 pre-COVID reference,destination,HNL,5326
+2019 pre-COVID reference,destination,HOB,72
+2019 pre-COVID reference,destination,HOU,6257
+2019 pre-COVID reference,destination,HPN,1191
+2019 pre-COVID reference,destination,HRL,435
+2019 pre-COVID reference,destination,HSV,972
+2019 pre-COVID reference,destination,HTS,80
+2019 pre-COVID reference,destination,HVN,113
+2019 pre-COVID reference,destination,HYA,11
+2019 pre-COVID reference,destination,HYS,108
+2019 pre-COVID reference,destination,IAD,7121
+2019 pre-COVID reference,destination,IAG,86
+2019 pre-COVID reference,destination,IAH,17959
+2019 pre-COVID reference,destination,ICT,1068
+2019 pre-COVID reference,destination,IDA,210
+2019 pre-COVID reference,destination,ILM,711
+2019 pre-COVID reference,destination,IMT,66
+2019 pre-COVID reference,destination,IND,4977
+2019 pre-COVID reference,destination,INL,62
+2019 pre-COVID reference,destination,ISN,65
+2019 pre-COVID reference,destination,ISP,547
+2019 pre-COVID reference,destination,ITH,116
+2019 pre-COVID reference,destination,ITO,607
+2019 pre-COVID reference,destination,JAC,455
+2019 pre-COVID reference,destination,JAN,887
+2019 pre-COVID reference,destination,JAX,3535
+2019 pre-COVID reference,destination,JFK,12854
+2019 pre-COVID reference,destination,JLN,127
+2019 pre-COVID reference,destination,JMS,92
+2019 pre-COVID reference,destination,JNU,463
+2019 pre-COVID reference,destination,KOA,1580
+2019 pre-COVID reference,destination,KTN,242
+2019 pre-COVID reference,destination,LAN,293
+2019 pre-COVID reference,destination,LAR,73
+2019 pre-COVID reference,destination,LAS,16886
+2019 pre-COVID reference,destination,LAW,139
+2019 pre-COVID reference,destination,LAX,22420
+2019 pre-COVID reference,destination,LBB,724
+2019 pre-COVID reference,destination,LBE,103
+2019 pre-COVID reference,destination,LBF,67
+2019 pre-COVID reference,destination,LBL,63
+2019 pre-COVID reference,destination,LCH,206
+2019 pre-COVID reference,destination,LCK,103
+2019 pre-COVID reference,destination,LEX,955
+2019 pre-COVID reference,destination,LFT,511
+2019 pre-COVID reference,destination,LGA,17487
+2019 pre-COVID reference,destination,LGB,1660
+2019 pre-COVID reference,destination,LIH,1408
+2019 pre-COVID reference,destination,LIT,1439
+2019 pre-COVID reference,destination,LNK,232
+2019 pre-COVID reference,destination,LRD,292
+2019 pre-COVID reference,destination,LSE,199
+2019 pre-COVID reference,destination,LWB,58
+2019 pre-COVID reference,destination,LWS,86
+2019 pre-COVID reference,destination,LYH,84
+2019 pre-COVID reference,destination,MAF,987
+2019 pre-COVID reference,destination,MBS,255
+2019 pre-COVID reference,destination,MCI,5597
+2019 pre-COVID reference,destination,MCO,14512
+2019 pre-COVID reference,destination,MDT,644
+2019 pre-COVID reference,destination,MDW,8486
+2019 pre-COVID reference,destination,MEI,125
+2019 pre-COVID reference,destination,MEM,2646
+2019 pre-COVID reference,destination,MFE,577
+2019 pre-COVID reference,destination,MFR,439
+2019 pre-COVID reference,destination,MGM,362
+2019 pre-COVID reference,destination,MHK,221
+2019 pre-COVID reference,destination,MHT,866
+2019 pre-COVID reference,destination,MIA,9151
+2019 pre-COVID reference,destination,MKE,3164
+2019 pre-COVID reference,destination,MKG,67
+2019 pre-COVID reference,destination,MLB,240
+2019 pre-COVID reference,destination,MLI,487
+2019 pre-COVID reference,destination,MLU,298
+2019 pre-COVID reference,destination,MMH,54
+2019 pre-COVID reference,destination,MOB,581
+2019 pre-COVID reference,destination,MOT,235
+2019 pre-COVID reference,destination,MQT,159
+2019 pre-COVID reference,destination,MRY,433
+2019 pre-COVID reference,destination,MSN,1432
+2019 pre-COVID reference,destination,MSO,351
+2019 pre-COVID reference,destination,MSP,16393
+2019 pre-COVID reference,destination,MSY,5886
+2019 pre-COVID reference,destination,MTJ,175
+2019 pre-COVID reference,destination,MVY,46
+2019 pre-COVID reference,destination,MYR,1182
+2019 pre-COVID reference,destination,OAJ,258
+2019 pre-COVID reference,destination,OAK,5416
+2019 pre-COVID reference,destination,OGD,10
+2019 pre-COVID reference,destination,OGG,2795
+2019 pre-COVID reference,destination,OGS,41
+2019 pre-COVID reference,destination,OKC,2395
+2019 pre-COVID reference,destination,OMA,2667
+2019 pre-COVID reference,destination,OME,71
+2019 pre-COVID reference,destination,ONT,2342
+2019 pre-COVID reference,destination,ORD,34761
+2019 pre-COVID reference,destination,ORF,2528
+2019 pre-COVID reference,destination,ORH,114
+2019 pre-COVID reference,destination,OTH,48
+2019 pre-COVID reference,destination,OTZ,72
+2019 pre-COVID reference,destination,OWB,6
+2019 pre-COVID reference,destination,PAE,185
+2019 pre-COVID reference,destination,PAH,143
+2019 pre-COVID reference,destination,PBG,143
+2019 pre-COVID reference,destination,PBI,2638
+2019 pre-COVID reference,destination,PDX,6294
+2019 pre-COVID reference,destination,PGD,534
+2019 pre-COVID reference,destination,PGV,8
+2019 pre-COVID reference,destination,PHF,249
+2019 pre-COVID reference,destination,PHL,12087
+2019 pre-COVID reference,destination,PHX,18328
+2019 pre-COVID reference,destination,PIA,478
+2019 pre-COVID reference,destination,PIB,67
+2019 pre-COVID reference,destination,PIE,804
+2019 pre-COVID reference,destination,PIH,136
+2019 pre-COVID reference,destination,PIR,67
+2019 pre-COVID reference,destination,PIT,5242
+2019 pre-COVID reference,destination,PLN,110
+2019 pre-COVID reference,destination,PNS,1285
+2019 pre-COVID reference,destination,PPG,16
+2019 pre-COVID reference,destination,PRC,69
+2019 pre-COVID reference,destination,PSC,341
+2019 pre-COVID reference,destination,PSE,78
+2019 pre-COVID reference,destination,PSG,68
+2019 pre-COVID reference,destination,PSM,44
+2019 pre-COVID reference,destination,PSP,1300
+2019 pre-COVID reference,destination,PUB,89
+2019 pre-COVID reference,destination,PVD,1842
+2019 pre-COVID reference,destination,PVU,72
+2019 pre-COVID reference,destination,PWM,1076
+2019 pre-COVID reference,destination,RAP,514
+2019 pre-COVID reference,destination,RDD,134
+2019 pre-COVID reference,destination,RDM,439
+2019 pre-COVID reference,destination,RDU,6537
+2019 pre-COVID reference,destination,RFD,82
+2019 pre-COVID reference,destination,RHI,95
+2019 pre-COVID reference,destination,RIC,2541
+2019 pre-COVID reference,destination,RKS,69
+2019 pre-COVID reference,destination,RNO,2078
+2019 pre-COVID reference,destination,ROA,283
+2019 pre-COVID reference,destination,ROC,1586
+2019 pre-COVID reference,destination,ROW,152
+2019 pre-COVID reference,destination,RST,347
+2019 pre-COVID reference,destination,RSW,3583
+2019 pre-COVID reference,destination,SAF,190
+2019 pre-COVID reference,destination,SAN,9526
+2019 pre-COVID reference,destination,SAT,4199
+2019 pre-COVID reference,destination,SAV,1829
+2019 pre-COVID reference,destination,SBA,718
+2019 pre-COVID reference,destination,SBN,711
+2019 pre-COVID reference,destination,SBP,577
+2019 pre-COVID reference,destination,SCC,97
+2019 pre-COVID reference,destination,SCE,193
+2019 pre-COVID reference,destination,SCK,94
+2019 pre-COVID reference,destination,SDF,2509
+2019 pre-COVID reference,destination,SEA,14547
+2019 pre-COVID reference,destination,SFB,1071
+2019 pre-COVID reference,destination,SFO,17428
+2019 pre-COVID reference,destination,SGF,875
+2019 pre-COVID reference,destination,SGU,282
+2019 pre-COVID reference,destination,SHD,59
+2019 pre-COVID reference,destination,SHV,724
+2019 pre-COVID reference,destination,SIT,138
+2019 pre-COVID reference,destination,SJC,6402
+2019 pre-COVID reference,destination,SJT,186
+2019 pre-COVID reference,destination,SJU,2702
+2019 pre-COVID reference,destination,SLC,11823
+2019 pre-COVID reference,destination,SLN,102
+2019 pre-COVID reference,destination,SMF,5292
+2019 pre-COVID reference,destination,SMX,24
+2019 pre-COVID reference,destination,SNA,4250
+2019 pre-COVID reference,destination,SPI,184
+2019 pre-COVID reference,destination,SPN,58
+2019 pre-COVID reference,destination,SPS,135
+2019 pre-COVID reference,destination,SRQ,826
+2019 pre-COVID reference,destination,STC,9
+2019 pre-COVID reference,destination,STL,7003
+2019 pre-COVID reference,destination,STS,283
+2019 pre-COVID reference,destination,STT,417
+2019 pre-COVID reference,destination,STX,98
+2019 pre-COVID reference,destination,SUN,162
+2019 pre-COVID reference,destination,SUX,125
+2019 pre-COVID reference,destination,SWF,180
+2019 pre-COVID reference,destination,SWO,82
+2019 pre-COVID reference,destination,SYR,1459
+2019 pre-COVID reference,destination,TLH,699
+2019 pre-COVID reference,destination,TOL,222
+2019 pre-COVID reference,destination,TPA,7711
+2019 pre-COVID reference,destination,TRI,330
+2019 pre-COVID reference,destination,TTN,309
+2019 pre-COVID reference,destination,TUL,1759
+2019 pre-COVID reference,destination,TUS,2001
+2019 pre-COVID reference,destination,TVC,467
+2019 pre-COVID reference,destination,TWF,122
+2019 pre-COVID reference,destination,TXK,141
+2019 pre-COVID reference,destination,TYR,167
+2019 pre-COVID reference,destination,TYS,1863
+2019 pre-COVID reference,destination,UIN,58
+2019 pre-COVID reference,destination,USA,137
+2019 pre-COVID reference,destination,VEL,59
+2019 pre-COVID reference,destination,VLD,102
+2019 pre-COVID reference,destination,VPS,941
+2019 pre-COVID reference,destination,WRG,86
+2019 pre-COVID reference,destination,WYS,31
+2019 pre-COVID reference,destination,XNA,1385
+2019 pre-COVID reference,destination,XWA,17
+2019 pre-COVID reference,destination,YAK,84
+2019 pre-COVID reference,destination,YUM,186
+2019 pre-COVID reference,origin,ABE,490
+2019 pre-COVID reference,origin,ABI,215
+2019 pre-COVID reference,origin,ABQ,2468
+2019 pre-COVID reference,origin,ABR,68
+2019 pre-COVID reference,origin,ABY,94
+2019 pre-COVID reference,origin,ACK,109
+2019 pre-COVID reference,origin,ACT,188
+2019 pre-COVID reference,origin,ACV,208
+2019 pre-COVID reference,origin,ACY,308
+2019 pre-COVID reference,origin,ADK,7
+2019 pre-COVID reference,origin,ADQ,50
+2019 pre-COVID reference,origin,AEX,369
+2019 pre-COVID reference,origin,AGS,468
+2019 pre-COVID reference,origin,AKN,6
+2019 pre-COVID reference,origin,ALB,1223
+2019 pre-COVID reference,origin,ALO,85
+2019 pre-COVID reference,origin,AMA,528
+2019 pre-COVID reference,origin,ANC,1872
+2019 pre-COVID reference,origin,APN,58
+2019 pre-COVID reference,origin,ART,21
+2019 pre-COVID reference,origin,ASE,685
+2019 pre-COVID reference,origin,ATL,40153
+2019 pre-COVID reference,origin,ATW,415
+2019 pre-COVID reference,origin,ATY,49
+2019 pre-COVID reference,origin,AUS,6919
+2019 pre-COVID reference,origin,AVL,970
+2019 pre-COVID reference,origin,AVP,355
+2019 pre-COVID reference,origin,AZA,629
+2019 pre-COVID reference,origin,AZO,232
+2019 pre-COVID reference,origin,BDL,2994
+2019 pre-COVID reference,origin,BET,81
+2019 pre-COVID reference,origin,BFF,62
+2019 pre-COVID reference,origin,BFL,266
+2019 pre-COVID reference,origin,BFM,22
+2019 pre-COVID reference,origin,BGM,91
+2019 pre-COVID reference,origin,BGR,396
+2019 pre-COVID reference,origin,BHM,1978
+2019 pre-COVID reference,origin,BIL,438
+2019 pre-COVID reference,origin,BIS,415
+2019 pre-COVID reference,origin,BJI,68
+2019 pre-COVID reference,origin,BKG,19
+2019 pre-COVID reference,origin,BLI,193
+2019 pre-COVID reference,origin,BLV,85
+2019 pre-COVID reference,origin,BMI,301
+2019 pre-COVID reference,origin,BNA,8368
+2019 pre-COVID reference,origin,BOI,1993
+2019 pre-COVID reference,origin,BOS,15373
+2019 pre-COVID reference,origin,BPT,88
+2019 pre-COVID reference,origin,BQK,105
+2019 pre-COVID reference,origin,BQN,251
+2019 pre-COVID reference,origin,BRD,59
+2019 pre-COVID reference,origin,BRO,259
+2019 pre-COVID reference,origin,BRW,73
+2019 pre-COVID reference,origin,BTM,78
+2019 pre-COVID reference,origin,BTR,838
+2019 pre-COVID reference,origin,BTV,987
+2019 pre-COVID reference,origin,BUF,2597
+2019 pre-COVID reference,origin,BUR,3219
+2019 pre-COVID reference,origin,BWI,10777
+2019 pre-COVID reference,origin,BZN,707
+2019 pre-COVID reference,origin,CAE,778
+2019 pre-COVID reference,origin,CAK,644
+2019 pre-COVID reference,origin,CDC,83
+2019 pre-COVID reference,origin,CDV,82
+2019 pre-COVID reference,origin,CGI,119
+2019 pre-COVID reference,origin,CHA,918
+2019 pre-COVID reference,origin,CHO,623
+2019 pre-COVID reference,origin,CHS,2633
+2019 pre-COVID reference,origin,CID,968
+2019 pre-COVID reference,origin,CIU,67
+2019 pre-COVID reference,origin,CKB,100
+2019 pre-COVID reference,origin,CLE,5019
+2019 pre-COVID reference,origin,CLL,244
+2019 pre-COVID reference,origin,CLT,24006
+2019 pre-COVID reference,origin,CMH,4922
+2019 pre-COVID reference,origin,CMI,319
+2019 pre-COVID reference,origin,CMX,73
+2019 pre-COVID reference,origin,CNY,73
+2019 pre-COVID reference,origin,COD,47
+2019 pre-COVID reference,origin,COS,995
+2019 pre-COVID reference,origin,COU,215
+2019 pre-COVID reference,origin,CPR,112
+2019 pre-COVID reference,origin,CRP,618
+2019 pre-COVID reference,origin,CRW,489
+2019 pre-COVID reference,origin,CSG,138
+2019 pre-COVID reference,origin,CVG,4942
+2019 pre-COVID reference,origin,CWA,249
+2019 pre-COVID reference,origin,CYS,49
+2019 pre-COVID reference,origin,DAB,338
+2019 pre-COVID reference,origin,DAL,7443
+2019 pre-COVID reference,origin,DAY,1389
+2019 pre-COVID reference,origin,DBQ,104
+2019 pre-COVID reference,origin,DCA,14225
+2019 pre-COVID reference,origin,DEN,25731
+2019 pre-COVID reference,origin,DFW,31386
+2019 pre-COVID reference,origin,DHN,134
+2019 pre-COVID reference,origin,DLG,10
+2019 pre-COVID reference,origin,DLH,323
+2019 pre-COVID reference,origin,DRO,309
+2019 pre-COVID reference,origin,DRT,68
+2019 pre-COVID reference,origin,DSM,1690
+2019 pre-COVID reference,origin,DTW,16468
+2019 pre-COVID reference,origin,DVL,61
+2019 pre-COVID reference,origin,EAR,74
+2019 pre-COVID reference,origin,EAU,71
+2019 pre-COVID reference,origin,ECP,632
+2019 pre-COVID reference,origin,EGE,250
+2019 pre-COVID reference,origin,EKO,66
+2019 pre-COVID reference,origin,ELM,59
+2019 pre-COVID reference,origin,ELP,1745
+2019 pre-COVID reference,origin,ERI,125
+2019 pre-COVID reference,origin,ESC,64
+2019 pre-COVID reference,origin,EUG,535
+2019 pre-COVID reference,origin,EVV,398
+2019 pre-COVID reference,origin,EWN,246
+2019 pre-COVID reference,origin,EWR,13950
+2019 pre-COVID reference,origin,EYW,574
+2019 pre-COVID reference,origin,FAI,511
+2019 pre-COVID reference,origin,FAR,588
+2019 pre-COVID reference,origin,FAT,1252
+2019 pre-COVID reference,origin,FAY,348
+2019 pre-COVID reference,origin,FCA,296
+2019 pre-COVID reference,origin,FLG,199
+2019 pre-COVID reference,origin,FLL,9995
+2019 pre-COVID reference,origin,FNT,372
+2019 pre-COVID reference,origin,FSD,728
+2019 pre-COVID reference,origin,FSM,220
+2019 pre-COVID reference,origin,FWA,740
+2019 pre-COVID reference,origin,GCC,76
+2019 pre-COVID reference,origin,GCK,87
+2019 pre-COVID reference,origin,GEG,1230
+2019 pre-COVID reference,origin,GFK,208
+2019 pre-COVID reference,origin,GGG,82
+2019 pre-COVID reference,origin,GJT,418
+2019 pre-COVID reference,origin,GNV,540
+2019 pre-COVID reference,origin,GPT,457
+2019 pre-COVID reference,origin,GRB,538
+2019 pre-COVID reference,origin,GRI,134
+2019 pre-COVID reference,origin,GRK,365
+2019 pre-COVID reference,origin,GRR,1929
+2019 pre-COVID reference,origin,GSO,1506
+2019 pre-COVID reference,origin,GSP,1673
+2019 pre-COVID reference,origin,GST,8
+2019 pre-COVID reference,origin,GTF,188
+2019 pre-COVID reference,origin,GTR,113
+2019 pre-COVID reference,origin,GUC,21
+2019 pre-COVID reference,origin,GUM,96
+2019 pre-COVID reference,origin,HDN,120
+2019 pre-COVID reference,origin,HGR,15
+2019 pre-COVID reference,origin,HHH,233
+2019 pre-COVID reference,origin,HIB,68
+2019 pre-COVID reference,origin,HLN,145
+2019 pre-COVID reference,origin,HNL,5242
+2019 pre-COVID reference,origin,HOB,79
+2019 pre-COVID reference,origin,HOU,6166
+2019 pre-COVID reference,origin,HPN,1193
+2019 pre-COVID reference,origin,HRL,464
+2019 pre-COVID reference,origin,HSV,954
+2019 pre-COVID reference,origin,HTS,72
+2019 pre-COVID reference,origin,HVN,117
+2019 pre-COVID reference,origin,HYA,6
+2019 pre-COVID reference,origin,HYS,122
+2019 pre-COVID reference,origin,IAD,7097
+2019 pre-COVID reference,origin,IAG,82
+2019 pre-COVID reference,origin,IAH,18302
+2019 pre-COVID reference,origin,ICT,1066
+2019 pre-COVID reference,origin,IDA,203
+2019 pre-COVID reference,origin,ILM,727
+2019 pre-COVID reference,origin,IMT,63
+2019 pre-COVID reference,origin,IND,5029
+2019 pre-COVID reference,origin,INL,73
+2019 pre-COVID reference,origin,ISN,57
+2019 pre-COVID reference,origin,ISP,589
+2019 pre-COVID reference,origin,ITH,111
+2019 pre-COVID reference,origin,ITO,701
+2019 pre-COVID reference,origin,JAC,453
+2019 pre-COVID reference,origin,JAN,873
+2019 pre-COVID reference,origin,JAX,3393
+2019 pre-COVID reference,origin,JFK,13015
+2019 pre-COVID reference,origin,JLN,150
+2019 pre-COVID reference,origin,JMS,103
+2019 pre-COVID reference,origin,JNU,475
+2019 pre-COVID reference,origin,KOA,1599
+2019 pre-COVID reference,origin,KTN,243
+2019 pre-COVID reference,origin,LAN,322
+2019 pre-COVID reference,origin,LAR,67
+2019 pre-COVID reference,origin,LAS,16936
+2019 pre-COVID reference,origin,LAW,147
+2019 pre-COVID reference,origin,LAX,22486
+2019 pre-COVID reference,origin,LBB,721
+2019 pre-COVID reference,origin,LBE,113
+2019 pre-COVID reference,origin,LBF,57
+2019 pre-COVID reference,origin,LBL,62
+2019 pre-COVID reference,origin,LCH,184
+2019 pre-COVID reference,origin,LCK,119
+2019 pre-COVID reference,origin,LEX,959
+2019 pre-COVID reference,origin,LFT,515
+2019 pre-COVID reference,origin,LGA,17540
+2019 pre-COVID reference,origin,LGB,1648
+2019 pre-COVID reference,origin,LIH,1407
+2019 pre-COVID reference,origin,LIT,1395
+2019 pre-COVID reference,origin,LNK,221
+2019 pre-COVID reference,origin,LRD,293
+2019 pre-COVID reference,origin,LSE,199
+2019 pre-COVID reference,origin,LWB,61
+2019 pre-COVID reference,origin,LWS,113
+2019 pre-COVID reference,origin,LYH,82
+2019 pre-COVID reference,origin,MAF,1002
+2019 pre-COVID reference,origin,MBS,248
+2019 pre-COVID reference,origin,MCI,5752
+2019 pre-COVID reference,origin,MCO,14478
+2019 pre-COVID reference,origin,MDT,662
+2019 pre-COVID reference,origin,MDW,8649
+2019 pre-COVID reference,origin,MEI,83
+2019 pre-COVID reference,origin,MEM,2539
+2019 pre-COVID reference,origin,MFE,531
+2019 pre-COVID reference,origin,MFR,406
+2019 pre-COVID reference,origin,MGM,383
+2019 pre-COVID reference,origin,MHK,202
+2019 pre-COVID reference,origin,MHT,837
+2019 pre-COVID reference,origin,MIA,9093
+2019 pre-COVID reference,origin,MKE,3090
+2019 pre-COVID reference,origin,MKG,88
+2019 pre-COVID reference,origin,MLB,260
+2019 pre-COVID reference,origin,MLI,509
+2019 pre-COVID reference,origin,MLU,298
+2019 pre-COVID reference,origin,MMH,53
+2019 pre-COVID reference,origin,MOB,590
+2019 pre-COVID reference,origin,MOT,234
+2019 pre-COVID reference,origin,MQT,146
+2019 pre-COVID reference,origin,MRY,417
+2019 pre-COVID reference,origin,MSN,1472
+2019 pre-COVID reference,origin,MSO,341
+2019 pre-COVID reference,origin,MSP,16544
+2019 pre-COVID reference,origin,MSY,5908
+2019 pre-COVID reference,origin,MTJ,183
+2019 pre-COVID reference,origin,MVY,57
+2019 pre-COVID reference,origin,MYR,1208
+2019 pre-COVID reference,origin,OAJ,313
+2019 pre-COVID reference,origin,OAK,5416
+2019 pre-COVID reference,origin,OGD,4
+2019 pre-COVID reference,origin,OGG,2829
+2019 pre-COVID reference,origin,OGS,51
+2019 pre-COVID reference,origin,OKC,2433
+2019 pre-COVID reference,origin,OMA,2733
+2019 pre-COVID reference,origin,OME,70
+2019 pre-COVID reference,origin,ONT,2368
+2019 pre-COVID reference,origin,ORD,34600
+2019 pre-COVID reference,origin,ORF,2560
+2019 pre-COVID reference,origin,ORH,143
+2019 pre-COVID reference,origin,OTH,43
+2019 pre-COVID reference,origin,OTZ,65
+2019 pre-COVID reference,origin,OWB,9
+2019 pre-COVID reference,origin,PAE,174
+2019 pre-COVID reference,origin,PAH,134
+2019 pre-COVID reference,origin,PBG,133
+2019 pre-COVID reference,origin,PBI,2628
+2019 pre-COVID reference,origin,PDX,6364
+2019 pre-COVID reference,origin,PGD,589
+2019 pre-COVID reference,origin,PGV,8
+2019 pre-COVID reference,origin,PHF,254
+2019 pre-COVID reference,origin,PHL,12048
+2019 pre-COVID reference,origin,PHX,17654
+2019 pre-COVID reference,origin,PIA,487
+2019 pre-COVID reference,origin,PIB,83
+2019 pre-COVID reference,origin,PIE,744
+2019 pre-COVID reference,origin,PIH,100
+2019 pre-COVID reference,origin,PIR,65
+2019 pre-COVID reference,origin,PIT,5152
+2019 pre-COVID reference,origin,PLN,93
+2019 pre-COVID reference,origin,PNS,1263
+2019 pre-COVID reference,origin,PPG,9
+2019 pre-COVID reference,origin,PRC,89
+2019 pre-COVID reference,origin,PSC,296
+2019 pre-COVID reference,origin,PSE,77
+2019 pre-COVID reference,origin,PSG,65
+2019 pre-COVID reference,origin,PSM,38
+2019 pre-COVID reference,origin,PSP,1238
+2019 pre-COVID reference,origin,PUB,96
+2019 pre-COVID reference,origin,PVD,1870
+2019 pre-COVID reference,origin,PVU,76
+2019 pre-COVID reference,origin,PWM,1112
+2019 pre-COVID reference,origin,RAP,506
+2019 pre-COVID reference,origin,RDD,158
+2019 pre-COVID reference,origin,RDM,396
+2019 pre-COVID reference,origin,RDU,6564
+2019 pre-COVID reference,origin,RFD,85
+2019 pre-COVID reference,origin,RHI,82
+2019 pre-COVID reference,origin,RIC,2433
+2019 pre-COVID reference,origin,RKS,67
+2019 pre-COVID reference,origin,RNO,2030
+2019 pre-COVID reference,origin,ROA,310
+2019 pre-COVID reference,origin,ROC,1497
+2019 pre-COVID reference,origin,ROW,127
+2019 pre-COVID reference,origin,RST,343
+2019 pre-COVID reference,origin,RSW,3577
+2019 pre-COVID reference,origin,SAF,173
+2019 pre-COVID reference,origin,SAN,9583
+2019 pre-COVID reference,origin,SAT,4223
+2019 pre-COVID reference,origin,SAV,1840
+2019 pre-COVID reference,origin,SBA,765
+2019 pre-COVID reference,origin,SBN,725
+2019 pre-COVID reference,origin,SBP,540
+2019 pre-COVID reference,origin,SCC,111
+2019 pre-COVID reference,origin,SCE,188
+2019 pre-COVID reference,origin,SCK,97
+2019 pre-COVID reference,origin,SDF,2521
+2019 pre-COVID reference,origin,SEA,14616
+2019 pre-COVID reference,origin,SFB,1090
+2019 pre-COVID reference,origin,SFO,17654
+2019 pre-COVID reference,origin,SGF,856
+2019 pre-COVID reference,origin,SGU,272
+2019 pre-COVID reference,origin,SHD,69
+2019 pre-COVID reference,origin,SHV,715
+2019 pre-COVID reference,origin,SIT,139
+2019 pre-COVID reference,origin,SJC,6387
+2019 pre-COVID reference,origin,SJT,190
+2019 pre-COVID reference,origin,SJU,2645
+2019 pre-COVID reference,origin,SLC,11790
+2019 pre-COVID reference,origin,SLN,99
+2019 pre-COVID reference,origin,SMF,5244
+2019 pre-COVID reference,origin,SMX,17
+2019 pre-COVID reference,origin,SNA,4054
+2019 pre-COVID reference,origin,SPI,179
+2019 pre-COVID reference,origin,SPN,45
+2019 pre-COVID reference,origin,SPS,135
+2019 pre-COVID reference,origin,SRQ,845
+2019 pre-COVID reference,origin,STC,13
+2019 pre-COVID reference,origin,STL,7059
+2019 pre-COVID reference,origin,STS,296
+2019 pre-COVID reference,origin,STT,378
+2019 pre-COVID reference,origin,STX,86
+2019 pre-COVID reference,origin,SUN,172
+2019 pre-COVID reference,origin,SUX,161
+2019 pre-COVID reference,origin,SWF,163
+2019 pre-COVID reference,origin,SWO,82
+2019 pre-COVID reference,origin,SYR,1381
+2019 pre-COVID reference,origin,TLH,663
+2019 pre-COVID reference,origin,TOL,246
+2019 pre-COVID reference,origin,TPA,7665
+2019 pre-COVID reference,origin,TRI,275
+2019 pre-COVID reference,origin,TTN,294
+2019 pre-COVID reference,origin,TUL,1825
+2019 pre-COVID reference,origin,TUS,1966
+2019 pre-COVID reference,origin,TVC,456
+2019 pre-COVID reference,origin,TWF,128
+2019 pre-COVID reference,origin,TXK,112
+2019 pre-COVID reference,origin,TYR,137
+2019 pre-COVID reference,origin,TYS,1813
+2019 pre-COVID reference,origin,UIN,52
+2019 pre-COVID reference,origin,USA,153
+2019 pre-COVID reference,origin,VEL,69
+2019 pre-COVID reference,origin,VLD,111
+2019 pre-COVID reference,origin,VPS,905
+2019 pre-COVID reference,origin,WRG,69
+2019 pre-COVID reference,origin,WYS,32
+2019 pre-COVID reference,origin,XNA,1403
+2019 pre-COVID reference,origin,XWA,20
+2019 pre-COVID reference,origin,YAK,60
+2019 pre-COVID reference,origin,YUM,226
+2020 COVID operational shock,destination,ABE,379
+2020 COVID operational shock,destination,ABI,177
+2020 COVID operational shock,destination,ABQ,1654
+2020 COVID operational shock,destination,ABR,72
+2020 COVID operational shock,destination,ABY,76
+2020 COVID operational shock,destination,ACK,55
+2020 COVID operational shock,destination,ACT,120
+2020 COVID operational shock,destination,ACV,138
+2020 COVID operational shock,destination,ACY,180
+2020 COVID operational shock,destination,ADK,14
+2020 COVID operational shock,destination,ADQ,58
+2020 COVID operational shock,destination,AEX,255
+2020 COVID operational shock,destination,AGS,356
+2020 COVID operational shock,destination,AKN,17
+2020 COVID operational shock,destination,ALB,832
+2020 COVID operational shock,destination,ALO,47
+2020 COVID operational shock,destination,ALS,12
+2020 COVID operational shock,destination,AMA,409
+2020 COVID operational shock,destination,ANC,1296
+2020 COVID operational shock,destination,APN,64
+2020 COVID operational shock,destination,ASE,513
+2020 COVID operational shock,destination,ATL,26029
+2020 COVID operational shock,destination,ATW,377
+2020 COVID operational shock,destination,ATY,49
+2020 COVID operational shock,destination,AUS,3960
+2020 COVID operational shock,destination,AVL,689
+2020 COVID operational shock,destination,AVP,197
+2020 COVID operational shock,destination,AZA,531
+2020 COVID operational shock,destination,AZO,206
+2020 COVID operational shock,destination,BDL,1652
+2020 COVID operational shock,destination,BET,46
+2020 COVID operational shock,destination,BFF,57
+2020 COVID operational shock,destination,BFL,214
+2020 COVID operational shock,destination,BFM,5
+2020 COVID operational shock,destination,BGM,42
+2020 COVID operational shock,destination,BGR,213
+2020 COVID operational shock,destination,BHM,1170
+2020 COVID operational shock,destination,BIL,358
+2020 COVID operational shock,destination,BIS,333
+2020 COVID operational shock,destination,BJI,71
+2020 COVID operational shock,destination,BKG,6
+2020 COVID operational shock,destination,BLI,90
+2020 COVID operational shock,destination,BLV,103
+2020 COVID operational shock,destination,BMI,204
+2020 COVID operational shock,destination,BNA,5907
+2020 COVID operational shock,destination,BOI,1513
+2020 COVID operational shock,destination,BOS,7552
+2020 COVID operational shock,destination,BPT,64
+2020 COVID operational shock,destination,BQK,80
+2020 COVID operational shock,destination,BQN,63
+2020 COVID operational shock,destination,BRD,57
+2020 COVID operational shock,destination,BRO,161
+2020 COVID operational shock,destination,BRW,38
+2020 COVID operational shock,destination,BTM,71
+2020 COVID operational shock,destination,BTR,508
+2020 COVID operational shock,destination,BTV,412
+2020 COVID operational shock,destination,BUF,1282
+2020 COVID operational shock,destination,BUR,1868
+2020 COVID operational shock,destination,BWI,7308
+2020 COVID operational shock,destination,BZN,641
+2020 COVID operational shock,destination,CAE,480
+2020 COVID operational shock,destination,CAK,274
+2020 COVID operational shock,destination,CDB,10
+2020 COVID operational shock,destination,CDC,45
+2020 COVID operational shock,destination,CDV,72
+2020 COVID operational shock,destination,CGI,54
+2020 COVID operational shock,destination,CHA,497
+2020 COVID operational shock,destination,CHO,337
+2020 COVID operational shock,destination,CHS,1602
+2020 COVID operational shock,destination,CID,660
+2020 COVID operational shock,destination,CIU,68
+2020 COVID operational shock,destination,CKB,73
+2020 COVID operational shock,destination,CLE,2826
+2020 COVID operational shock,destination,CLL,150
+2020 COVID operational shock,destination,CLT,17811
+2020 COVID operational shock,destination,CMH,2778
+2020 COVID operational shock,destination,CMI,161
+2020 COVID operational shock,destination,CMX,64
+2020 COVID operational shock,destination,CNY,61
+2020 COVID operational shock,destination,COD,57
+2020 COVID operational shock,destination,COS,647
+2020 COVID operational shock,destination,COU,153
+2020 COVID operational shock,destination,CPR,159
+2020 COVID operational shock,destination,CRP,389
+2020 COVID operational shock,destination,CRW,280
+2020 COVID operational shock,destination,CSG,78
+2020 COVID operational shock,destination,CVG,2945
+2020 COVID operational shock,destination,CWA,140
+2020 COVID operational shock,destination,CYS,9
+2020 COVID operational shock,destination,DAB,253
+2020 COVID operational shock,destination,DAL,5463
+2020 COVID operational shock,destination,DAY,806
+2020 COVID operational shock,destination,DBQ,41
+2020 COVID operational shock,destination,DCA,6657
+2020 COVID operational shock,destination,DDC,44
+2020 COVID operational shock,destination,DEC,45
+2020 COVID operational shock,destination,DEN,20170
+2020 COVID operational shock,destination,DFW,22946
+2020 COVID operational shock,destination,DHN,91
+2020 COVID operational shock,destination,DIK,28
+2020 COVID operational shock,destination,DLG,16
+2020 COVID operational shock,destination,DLH,203
+2020 COVID operational shock,destination,DRO,294
+2020 COVID operational shock,destination,DRT,44
+2020 COVID operational shock,destination,DSM,1139
+2020 COVID operational shock,destination,DTW,11216
+2020 COVID operational shock,destination,DVL,62
+2020 COVID operational shock,destination,EAR,67
+2020 COVID operational shock,destination,EAU,84
+2020 COVID operational shock,destination,ECP,698
+2020 COVID operational shock,destination,EGE,206
+2020 COVID operational shock,destination,EKO,64
+2020 COVID operational shock,destination,ELM,113
+2020 COVID operational shock,destination,ELP,1058
+2020 COVID operational shock,destination,ERI,63
+2020 COVID operational shock,destination,ESC,59
+2020 COVID operational shock,destination,EUG,509
+2020 COVID operational shock,destination,EVV,279
+2020 COVID operational shock,destination,EWN,147
+2020 COVID operational shock,destination,EWR,6953
+2020 COVID operational shock,destination,EYW,568
+2020 COVID operational shock,destination,FAI,249
+2020 COVID operational shock,destination,FAR,513
+2020 COVID operational shock,destination,FAT,800
+2020 COVID operational shock,destination,FAY,284
+2020 COVID operational shock,destination,FCA,360
+2020 COVID operational shock,destination,FLG,160
+2020 COVID operational shock,destination,FLL,6624
+2020 COVID operational shock,destination,FNT,240
+2020 COVID operational shock,destination,FSD,552
+2020 COVID operational shock,destination,FSM,144
+2020 COVID operational shock,destination,FWA,517
+2020 COVID operational shock,destination,GCC,76
+2020 COVID operational shock,destination,GCK,70
+2020 COVID operational shock,destination,GEG,1151
+2020 COVID operational shock,destination,GFK,117
+2020 COVID operational shock,destination,GGG,71
+2020 COVID operational shock,destination,GJT,335
+2020 COVID operational shock,destination,GNV,315
+2020 COVID operational shock,destination,GPT,381
+2020 COVID operational shock,destination,GRB,344
+2020 COVID operational shock,destination,GRI,91
+2020 COVID operational shock,destination,GRK,223
+2020 COVID operational shock,destination,GRR,1350
+2020 COVID operational shock,destination,GSO,765
+2020 COVID operational shock,destination,GSP,993
+2020 COVID operational shock,destination,GST,13
+2020 COVID operational shock,destination,GTF,183
+2020 COVID operational shock,destination,GTR,91
+2020 COVID operational shock,destination,GUC,64
+2020 COVID operational shock,destination,GUM,60
+2020 COVID operational shock,destination,HDN,142
+2020 COVID operational shock,destination,HGR,20
+2020 COVID operational shock,destination,HHH,194
+2020 COVID operational shock,destination,HIB,64
+2020 COVID operational shock,destination,HLN,104
+2020 COVID operational shock,destination,HNL,3152
+2020 COVID operational shock,destination,HOB,44
+2020 COVID operational shock,destination,HOU,4379
+2020 COVID operational shock,destination,HPN,412
+2020 COVID operational shock,destination,HRL,326
+2020 COVID operational shock,destination,HSV,586
+2020 COVID operational shock,destination,HTS,54
+2020 COVID operational shock,destination,HVN,49
+2020 COVID operational shock,destination,HYA,2
+2020 COVID operational shock,destination,HYS,90
+2020 COVID operational shock,destination,IAD,4272
+2020 COVID operational shock,destination,IAG,50
+2020 COVID operational shock,destination,IAH,10322
+2020 COVID operational shock,destination,ICT,736
+2020 COVID operational shock,destination,IDA,204
+2020 COVID operational shock,destination,ILM,482
+2020 COVID operational shock,destination,IMT,60
+2020 COVID operational shock,destination,IND,3127
+2020 COVID operational shock,destination,INL,57
+2020 COVID operational shock,destination,IPT,11
+2020 COVID operational shock,destination,ISP,338
+2020 COVID operational shock,destination,ITH,46
+2020 COVID operational shock,destination,ITO,423
+2020 COVID operational shock,destination,JAC,380
+2020 COVID operational shock,destination,JAN,460
+2020 COVID operational shock,destination,JAX,1818
+2020 COVID operational shock,destination,JFK,5853
+2020 COVID operational shock,destination,JLN,92
+2020 COVID operational shock,destination,JMS,94
+2020 COVID operational shock,destination,JNU,359
+2020 COVID operational shock,destination,JST,8
+2020 COVID operational shock,destination,KOA,862
+2020 COVID operational shock,destination,KTN,187
+2020 COVID operational shock,destination,LAN,199
+2020 COVID operational shock,destination,LAR,67
+2020 COVID operational shock,destination,LAS,11469
+2020 COVID operational shock,destination,LAW,86
+2020 COVID operational shock,destination,LAX,12611
+2020 COVID operational shock,destination,LBB,506
+2020 COVID operational shock,destination,LBE,59
+2020 COVID operational shock,destination,LBF,56
+2020 COVID operational shock,destination,LBL,54
+2020 COVID operational shock,destination,LCH,115
+2020 COVID operational shock,destination,LCK,106
+2020 COVID operational shock,destination,LEX,598
+2020 COVID operational shock,destination,LFT,335
+2020 COVID operational shock,destination,LGA,7005
+2020 COVID operational shock,destination,LGB,866
+2020 COVID operational shock,destination,LIH,739
+2020 COVID operational shock,destination,LIT,887
+2020 COVID operational shock,destination,LNK,128
+2020 COVID operational shock,destination,LRD,176
+2020 COVID operational shock,destination,LSE,148
+2020 COVID operational shock,destination,LWB,62
+2020 COVID operational shock,destination,LWS,70
+2020 COVID operational shock,destination,LYH,75
+2020 COVID operational shock,destination,MAF,702
+2020 COVID operational shock,destination,MBS,149
+2020 COVID operational shock,destination,MCI,3329
+2020 COVID operational shock,destination,MCO,9801
+2020 COVID operational shock,destination,MDT,438
+2020 COVID operational shock,destination,MDW,6121
+2020 COVID operational shock,destination,MEI,61
+2020 COVID operational shock,destination,MEM,1580
+2020 COVID operational shock,destination,MFE,385
+2020 COVID operational shock,destination,MFR,397
+2020 COVID operational shock,destination,MGM,225
+2020 COVID operational shock,destination,MHK,99
+2020 COVID operational shock,destination,MHT,523
+2020 COVID operational shock,destination,MIA,5709
+2020 COVID operational shock,destination,MKE,1990
+2020 COVID operational shock,destination,MKG,64
+2020 COVID operational shock,destination,MLB,217
+2020 COVID operational shock,destination,MLI,335
+2020 COVID operational shock,destination,MLU,224
+2020 COVID operational shock,destination,MMH,18
+2020 COVID operational shock,destination,MOB,317
+2020 COVID operational shock,destination,MOT,240
+2020 COVID operational shock,destination,MQT,105
+2020 COVID operational shock,destination,MRY,258
+2020 COVID operational shock,destination,MSN,796
+2020 COVID operational shock,destination,MSO,306
+2020 COVID operational shock,destination,MSP,10404
+2020 COVID operational shock,destination,MSY,3357
+2020 COVID operational shock,destination,MTJ,210
+2020 COVID operational shock,destination,MVY,36
+2020 COVID operational shock,destination,MYR,843
+2020 COVID operational shock,destination,OAJ,233
+2020 COVID operational shock,destination,OAK,3220
+2020 COVID operational shock,destination,OGD,11
+2020 COVID operational shock,destination,OGG,1333
+2020 COVID operational shock,destination,OGS,63
+2020 COVID operational shock,destination,OKC,1611
+2020 COVID operational shock,destination,OMA,1727
+2020 COVID operational shock,destination,OME,45
+2020 COVID operational shock,destination,ONT,1594
+2020 COVID operational shock,destination,ORD,19530
+2020 COVID operational shock,destination,ORF,1407
+2020 COVID operational shock,destination,ORH,53
+2020 COVID operational shock,destination,OTH,34
+2020 COVID operational shock,destination,OTZ,39
+2020 COVID operational shock,destination,OWB,12
+2020 COVID operational shock,destination,PAE,59
+2020 COVID operational shock,destination,PAH,57
+2020 COVID operational shock,destination,PBG,109
+2020 COVID operational shock,destination,PBI,1753
+2020 COVID operational shock,destination,PDX,3787
+2020 COVID operational shock,destination,PGD,583
+2020 COVID operational shock,destination,PHF,131
+2020 COVID operational shock,destination,PHL,7345
+2020 COVID operational shock,destination,PHX,12552
+2020 COVID operational shock,destination,PIA,312
+2020 COVID operational shock,destination,PIB,56
+2020 COVID operational shock,destination,PIE,706
+2020 COVID operational shock,destination,PIH,100
+2020 COVID operational shock,destination,PIR,62
+2020 COVID operational shock,destination,PIT,2990
+2020 COVID operational shock,destination,PLN,86
+2020 COVID operational shock,destination,PNS,954
+2020 COVID operational shock,destination,PPG,3
+2020 COVID operational shock,destination,PRC,66
+2020 COVID operational shock,destination,PSC,317
+2020 COVID operational shock,destination,PSE,9
+2020 COVID operational shock,destination,PSG,68
+2020 COVID operational shock,destination,PSM,32
+2020 COVID operational shock,destination,PSP,939
+2020 COVID operational shock,destination,PUB,83
+2020 COVID operational shock,destination,PVD,945
+2020 COVID operational shock,destination,PVU,75
+2020 COVID operational shock,destination,PWM,718
+2020 COVID operational shock,destination,RAP,436
+2020 COVID operational shock,destination,RDD,61
+2020 COVID operational shock,destination,RDM,437
+2020 COVID operational shock,destination,RDU,3472
+2020 COVID operational shock,destination,RFD,73
+2020 COVID operational shock,destination,RHI,67
+2020 COVID operational shock,destination,RIC,1285
+2020 COVID operational shock,destination,RIW,47
+2020 COVID operational shock,destination,RKS,51
+2020 COVID operational shock,destination,RNO,1284
+2020 COVID operational shock,destination,ROA,160
+2020 COVID operational shock,destination,ROC,735
+2020 COVID operational shock,destination,ROW,86
+2020 COVID operational shock,destination,RST,209
+2020 COVID operational shock,destination,RSW,3016
+2020 COVID operational shock,destination,SAF,121
+2020 COVID operational shock,destination,SAN,5503
+2020 COVID operational shock,destination,SAT,2426
+2020 COVID operational shock,destination,SAV,1066
+2020 COVID operational shock,destination,SBA,439
+2020 COVID operational shock,destination,SBN,510
+2020 COVID operational shock,destination,SBP,391
+2020 COVID operational shock,destination,SCC,66
+2020 COVID operational shock,destination,SCE,104
+2020 COVID operational shock,destination,SCK,73
+2020 COVID operational shock,destination,SDF,1529
+2020 COVID operational shock,destination,SEA,10375
+2020 COVID operational shock,destination,SFB,915
+2020 COVID operational shock,destination,SFO,9086
+2020 COVID operational shock,destination,SGF,648
+2020 COVID operational shock,destination,SGU,260
+2020 COVID operational shock,destination,SHD,77
+2020 COVID operational shock,destination,SHR,51
+2020 COVID operational shock,destination,SHV,482
+2020 COVID operational shock,destination,SIT,89
+2020 COVID operational shock,destination,SJC,3434
+2020 COVID operational shock,destination,SJT,133
+2020 COVID operational shock,destination,SJU,2052
+2020 COVID operational shock,destination,SLC,9512
+2020 COVID operational shock,destination,SLN,66
+2020 COVID operational shock,destination,SMF,3483
+2020 COVID operational shock,destination,SMX,14
+2020 COVID operational shock,destination,SNA,2423
+2020 COVID operational shock,destination,SPI,112
+2020 COVID operational shock,destination,SPN,25
+2020 COVID operational shock,destination,SPS,76
+2020 COVID operational shock,destination,SRQ,812
+2020 COVID operational shock,destination,STC,18
+2020 COVID operational shock,destination,STL,4652
+2020 COVID operational shock,destination,STS,213
+2020 COVID operational shock,destination,STT,357
+2020 COVID operational shock,destination,STX,76
+2020 COVID operational shock,destination,SUN,119
+2020 COVID operational shock,destination,SUX,66
+2020 COVID operational shock,destination,SWF,82
+2020 COVID operational shock,destination,SWO,59
+2020 COVID operational shock,destination,SYR,724
+2020 COVID operational shock,destination,TLH,437
+2020 COVID operational shock,destination,TOL,90
+2020 COVID operational shock,destination,TPA,5376
+2020 COVID operational shock,destination,TRI,228
+2020 COVID operational shock,destination,TTN,119
+2020 COVID operational shock,destination,TUL,1126
+2020 COVID operational shock,destination,TUS,1319
+2020 COVID operational shock,destination,TVC,348
+2020 COVID operational shock,destination,TWF,82
+2020 COVID operational shock,destination,TXK,83
+2020 COVID operational shock,destination,TYR,120
+2020 COVID operational shock,destination,TYS,1106
+2020 COVID operational shock,destination,UIN,1
+2020 COVID operational shock,destination,USA,108
+2020 COVID operational shock,destination,VCT,9
+2020 COVID operational shock,destination,VEL,50
+2020 COVID operational shock,destination,VLD,76
+2020 COVID operational shock,destination,VPS,750
+2020 COVID operational shock,destination,WRG,70
+2020 COVID operational shock,destination,WYS,29
+2020 COVID operational shock,destination,XNA,845
+2020 COVID operational shock,destination,XWA,51
+2020 COVID operational shock,destination,YAK,80
+2020 COVID operational shock,destination,YUM,132
+2020 COVID operational shock,origin,ABE,360
+2020 COVID operational shock,origin,ABI,173
+2020 COVID operational shock,origin,ABQ,1528
+2020 COVID operational shock,origin,ABR,87
+2020 COVID operational shock,origin,ABY,86
+2020 COVID operational shock,origin,ACK,33
+2020 COVID operational shock,origin,ACT,131
+2020 COVID operational shock,origin,ACV,113
+2020 COVID operational shock,origin,ACY,168
+2020 COVID operational shock,origin,ADK,10
+2020 COVID operational shock,origin,ADQ,52
+2020 COVID operational shock,origin,AEX,229
+2020 COVID operational shock,origin,AGS,331
+2020 COVID operational shock,origin,AKN,19
+2020 COVID operational shock,origin,ALB,743
+2020 COVID operational shock,origin,ALO,57
+2020 COVID operational shock,origin,ALS,7
+2020 COVID operational shock,origin,AMA,356
+2020 COVID operational shock,origin,ANC,1253
+2020 COVID operational shock,origin,APN,66
+2020 COVID operational shock,origin,ASE,489
+2020 COVID operational shock,origin,ATL,26065
+2020 COVID operational shock,origin,ATW,337
+2020 COVID operational shock,origin,ATY,50
+2020 COVID operational shock,origin,AUS,3940
+2020 COVID operational shock,origin,AVL,687
+2020 COVID operational shock,origin,AVP,196
+2020 COVID operational shock,origin,AZA,529
+2020 COVID operational shock,origin,AZO,186
+2020 COVID operational shock,origin,BDL,1680
+2020 COVID operational shock,origin,BET,54
+2020 COVID operational shock,origin,BFF,65
+2020 COVID operational shock,origin,BFL,219
+2020 COVID operational shock,origin,BFM,5
+2020 COVID operational shock,origin,BGM,53
+2020 COVID operational shock,origin,BGR,230
+2020 COVID operational shock,origin,BHM,1225
+2020 COVID operational shock,origin,BIL,320
+2020 COVID operational shock,origin,BIS,313
+2020 COVID operational shock,origin,BJI,75
+2020 COVID operational shock,origin,BKG,9
+2020 COVID operational shock,origin,BLI,87
+2020 COVID operational shock,origin,BLV,119
+2020 COVID operational shock,origin,BMI,203
+2020 COVID operational shock,origin,BNA,5975
+2020 COVID operational shock,origin,BOI,1497
+2020 COVID operational shock,origin,BOS,7514
+2020 COVID operational shock,origin,BPT,71
+2020 COVID operational shock,origin,BQK,84
+2020 COVID operational shock,origin,BQN,69
+2020 COVID operational shock,origin,BRD,60
+2020 COVID operational shock,origin,BRO,169
+2020 COVID operational shock,origin,BRW,46
+2020 COVID operational shock,origin,BTM,85
+2020 COVID operational shock,origin,BTR,429
+2020 COVID operational shock,origin,BTV,440
+2020 COVID operational shock,origin,BUF,1293
+2020 COVID operational shock,origin,BUR,1838
+2020 COVID operational shock,origin,BWI,7297
+2020 COVID operational shock,origin,BZN,623
+2020 COVID operational shock,origin,CAE,512
+2020 COVID operational shock,origin,CAK,284
+2020 COVID operational shock,origin,CDB,12
+2020 COVID operational shock,origin,CDC,48
+2020 COVID operational shock,origin,CDV,73
+2020 COVID operational shock,origin,CGI,72
+2020 COVID operational shock,origin,CHA,518
+2020 COVID operational shock,origin,CHO,322
+2020 COVID operational shock,origin,CHS,1590
+2020 COVID operational shock,origin,CID,645
+2020 COVID operational shock,origin,CIU,74
+2020 COVID operational shock,origin,CKB,87
+2020 COVID operational shock,origin,CLE,2825
+2020 COVID operational shock,origin,CLL,157
+2020 COVID operational shock,origin,CLT,17178
+2020 COVID operational shock,origin,CMH,2785
+2020 COVID operational shock,origin,CMI,131
+2020 COVID operational shock,origin,CMX,65
+2020 COVID operational shock,origin,CNY,50
+2020 COVID operational shock,origin,COD,63
+2020 COVID operational shock,origin,COS,648
+2020 COVID operational shock,origin,COU,120
+2020 COVID operational shock,origin,CPR,153
+2020 COVID operational shock,origin,CRP,368
+2020 COVID operational shock,origin,CRW,304
+2020 COVID operational shock,origin,CSG,81
+2020 COVID operational shock,origin,CVG,2842
+2020 COVID operational shock,origin,CWA,147
+2020 COVID operational shock,origin,CYS,9
+2020 COVID operational shock,origin,DAB,243
+2020 COVID operational shock,origin,DAL,5437
+2020 COVID operational shock,origin,DAY,742
+2020 COVID operational shock,origin,DBQ,54
+2020 COVID operational shock,origin,DCA,6654
+2020 COVID operational shock,origin,DDC,51
+2020 COVID operational shock,origin,DEC,45
+2020 COVID operational shock,origin,DEN,20344
+2020 COVID operational shock,origin,DFW,23207
+2020 COVID operational shock,origin,DHN,92
+2020 COVID operational shock,origin,DIK,29
+2020 COVID operational shock,origin,DLG,16
+2020 COVID operational shock,origin,DLH,181
+2020 COVID operational shock,origin,DRO,258
+2020 COVID operational shock,origin,DRT,47
+2020 COVID operational shock,origin,DSM,1201
+2020 COVID operational shock,origin,DTW,11119
+2020 COVID operational shock,origin,DVL,55
+2020 COVID operational shock,origin,EAR,68
+2020 COVID operational shock,origin,EAU,66
+2020 COVID operational shock,origin,ECP,671
+2020 COVID operational shock,origin,EGE,216
+2020 COVID operational shock,origin,EKO,62
+2020 COVID operational shock,origin,ELM,141
+2020 COVID operational shock,origin,ELP,1111
+2020 COVID operational shock,origin,ERI,60
+2020 COVID operational shock,origin,ESC,64
+2020 COVID operational shock,origin,EUG,489
+2020 COVID operational shock,origin,EVV,289
+2020 COVID operational shock,origin,EWN,146
+2020 COVID operational shock,origin,EWR,6881
+2020 COVID operational shock,origin,EYW,537
+2020 COVID operational shock,origin,FAI,288
+2020 COVID operational shock,origin,FAR,452
+2020 COVID operational shock,origin,FAT,804
+2020 COVID operational shock,origin,FAY,324
+2020 COVID operational shock,origin,FCA,296
+2020 COVID operational shock,origin,FLG,182
+2020 COVID operational shock,origin,FLL,6597
+2020 COVID operational shock,origin,FNT,267
+2020 COVID operational shock,origin,FSD,572
+2020 COVID operational shock,origin,FSM,130
+2020 COVID operational shock,origin,FWA,486
+2020 COVID operational shock,origin,GCC,71
+2020 COVID operational shock,origin,GCK,75
+2020 COVID operational shock,origin,GEG,1126
+2020 COVID operational shock,origin,GFK,137
+2020 COVID operational shock,origin,GGG,64
+2020 COVID operational shock,origin,GJT,371
+2020 COVID operational shock,origin,GNV,322
+2020 COVID operational shock,origin,GPT,359
+2020 COVID operational shock,origin,GRB,345
+2020 COVID operational shock,origin,GRI,84
+2020 COVID operational shock,origin,GRK,235
+2020 COVID operational shock,origin,GRR,1354
+2020 COVID operational shock,origin,GSO,744
+2020 COVID operational shock,origin,GSP,952
+2020 COVID operational shock,origin,GST,11
+2020 COVID operational shock,origin,GTF,188
+2020 COVID operational shock,origin,GTR,91
+2020 COVID operational shock,origin,GUC,46
+2020 COVID operational shock,origin,GUM,58
+2020 COVID operational shock,origin,HDN,146
+2020 COVID operational shock,origin,HGR,16
+2020 COVID operational shock,origin,HHH,245
+2020 COVID operational shock,origin,HIB,61
+2020 COVID operational shock,origin,HLN,118
+2020 COVID operational shock,origin,HNL,3229
+2020 COVID operational shock,origin,HOB,41
+2020 COVID operational shock,origin,HOU,4402
+2020 COVID operational shock,origin,HPN,413
+2020 COVID operational shock,origin,HRL,307
+2020 COVID operational shock,origin,HSV,640
+2020 COVID operational shock,origin,HTS,41
+2020 COVID operational shock,origin,HVN,33
+2020 COVID operational shock,origin,HYS,83
+2020 COVID operational shock,origin,IAD,4383
+2020 COVID operational shock,origin,IAG,55
+2020 COVID operational shock,origin,IAH,10547
+2020 COVID operational shock,origin,ICT,744
+2020 COVID operational shock,origin,IDA,235
+2020 COVID operational shock,origin,ILM,519
+2020 COVID operational shock,origin,IMT,80
+2020 COVID operational shock,origin,IND,3058
+2020 COVID operational shock,origin,INL,66
+2020 COVID operational shock,origin,IPT,6
+2020 COVID operational shock,origin,ISP,365
+2020 COVID operational shock,origin,ITH,52
+2020 COVID operational shock,origin,ITO,439
+2020 COVID operational shock,origin,JAC,427
+2020 COVID operational shock,origin,JAN,523
+2020 COVID operational shock,origin,JAX,1823
+2020 COVID operational shock,origin,JFK,5800
+2020 COVID operational shock,origin,JLN,77
+2020 COVID operational shock,origin,JMS,93
+2020 COVID operational shock,origin,JNU,373
+2020 COVID operational shock,origin,JST,1
+2020 COVID operational shock,origin,KOA,798
+2020 COVID operational shock,origin,KTN,172
+2020 COVID operational shock,origin,LAN,189
+2020 COVID operational shock,origin,LAR,53
+2020 COVID operational shock,origin,LAS,11579
+2020 COVID operational shock,origin,LAW,81
+2020 COVID operational shock,origin,LAX,12646
+2020 COVID operational shock,origin,LBB,497
+2020 COVID operational shock,origin,LBE,79
+2020 COVID operational shock,origin,LBF,60
+2020 COVID operational shock,origin,LBL,68
+2020 COVID operational shock,origin,LCH,103
+2020 COVID operational shock,origin,LCK,93
+2020 COVID operational shock,origin,LEX,566
+2020 COVID operational shock,origin,LFT,305
+2020 COVID operational shock,origin,LGA,7322
+2020 COVID operational shock,origin,LGB,879
+2020 COVID operational shock,origin,LIH,722
+2020 COVID operational shock,origin,LIT,900
+2020 COVID operational shock,origin,LNK,123
+2020 COVID operational shock,origin,LRD,158
+2020 COVID operational shock,origin,LSE,159
+2020 COVID operational shock,origin,LWB,59
+2020 COVID operational shock,origin,LWS,85
+2020 COVID operational shock,origin,LYH,98
+2020 COVID operational shock,origin,MAF,644
+2020 COVID operational shock,origin,MBS,131
+2020 COVID operational shock,origin,MCI,3348
+2020 COVID operational shock,origin,MCO,9644
+2020 COVID operational shock,origin,MDT,397
+2020 COVID operational shock,origin,MDW,6261
+2020 COVID operational shock,origin,MEI,68
+2020 COVID operational shock,origin,MEM,1575
+2020 COVID operational shock,origin,MFE,352
+2020 COVID operational shock,origin,MFR,429
+2020 COVID operational shock,origin,MGM,252
+2020 COVID operational shock,origin,MHK,80
+2020 COVID operational shock,origin,MHT,554
+2020 COVID operational shock,origin,MIA,5844
+2020 COVID operational shock,origin,MKE,1973
+2020 COVID operational shock,origin,MKG,68
+2020 COVID operational shock,origin,MLB,228
+2020 COVID operational shock,origin,MLI,297
+2020 COVID operational shock,origin,MLU,244
+2020 COVID operational shock,origin,MMH,28
+2020 COVID operational shock,origin,MOB,340
+2020 COVID operational shock,origin,MOT,232
+2020 COVID operational shock,origin,MQT,103
+2020 COVID operational shock,origin,MRY,302
+2020 COVID operational shock,origin,MSN,859
+2020 COVID operational shock,origin,MSO,303
+2020 COVID operational shock,origin,MSP,10317
+2020 COVID operational shock,origin,MSY,3347
+2020 COVID operational shock,origin,MTJ,186
+2020 COVID operational shock,origin,MVY,28
+2020 COVID operational shock,origin,MYR,816
+2020 COVID operational shock,origin,OAJ,273
+2020 COVID operational shock,origin,OAK,3245
+2020 COVID operational shock,origin,OGD,6
+2020 COVID operational shock,origin,OGG,1322
+2020 COVID operational shock,origin,OGS,80
+2020 COVID operational shock,origin,OKC,1595
+2020 COVID operational shock,origin,OMA,1767
+2020 COVID operational shock,origin,OME,55
+2020 COVID operational shock,origin,ONT,1617
+2020 COVID operational shock,origin,ORD,19343
+2020 COVID operational shock,origin,ORF,1424
+2020 COVID operational shock,origin,ORH,64
+2020 COVID operational shock,origin,OTH,27
+2020 COVID operational shock,origin,OTZ,35
+2020 COVID operational shock,origin,OWB,11
+2020 COVID operational shock,origin,PAE,55
+2020 COVID operational shock,origin,PAH,72
+2020 COVID operational shock,origin,PBG,129
+2020 COVID operational shock,origin,PBI,1721
+2020 COVID operational shock,origin,PDX,3637
+2020 COVID operational shock,origin,PGD,595
+2020 COVID operational shock,origin,PHF,139
+2020 COVID operational shock,origin,PHL,7301
+2020 COVID operational shock,origin,PHX,12360
+2020 COVID operational shock,origin,PIA,323
+2020 COVID operational shock,origin,PIB,56
+2020 COVID operational shock,origin,PIE,775
+2020 COVID operational shock,origin,PIH,94
+2020 COVID operational shock,origin,PIR,53
+2020 COVID operational shock,origin,PIT,2957
+2020 COVID operational shock,origin,PLN,82
+2020 COVID operational shock,origin,PNS,980
+2020 COVID operational shock,origin,PPG,2
+2020 COVID operational shock,origin,PRC,61
+2020 COVID operational shock,origin,PSC,308
+2020 COVID operational shock,origin,PSE,23
+2020 COVID operational shock,origin,PSG,77
+2020 COVID operational shock,origin,PSM,34
+2020 COVID operational shock,origin,PSP,959
+2020 COVID operational shock,origin,PUB,61
+2020 COVID operational shock,origin,PVD,1004
+2020 COVID operational shock,origin,PVU,68
+2020 COVID operational shock,origin,PWM,679
+2020 COVID operational shock,origin,RAP,429
+2020 COVID operational shock,origin,RDD,74
+2020 COVID operational shock,origin,RDM,429
+2020 COVID operational shock,origin,RDU,3483
+2020 COVID operational shock,origin,RFD,83
+2020 COVID operational shock,origin,RHI,69
+2020 COVID operational shock,origin,RIC,1306
+2020 COVID operational shock,origin,RIW,45
+2020 COVID operational shock,origin,RKS,58
+2020 COVID operational shock,origin,RNO,1338
+2020 COVID operational shock,origin,ROA,176
+2020 COVID operational shock,origin,ROC,795
+2020 COVID operational shock,origin,ROW,90
+2020 COVID operational shock,origin,RST,229
+2020 COVID operational shock,origin,RSW,3114
+2020 COVID operational shock,origin,SAF,128
+2020 COVID operational shock,origin,SAN,5519
+2020 COVID operational shock,origin,SAT,2407
+2020 COVID operational shock,origin,SAV,1158
+2020 COVID operational shock,origin,SBA,455
+2020 COVID operational shock,origin,SBN,472
+2020 COVID operational shock,origin,SBP,395
+2020 COVID operational shock,origin,SCC,60
+2020 COVID operational shock,origin,SCE,106
+2020 COVID operational shock,origin,SCK,68
+2020 COVID operational shock,origin,SDF,1577
+2020 COVID operational shock,origin,SEA,10370
+2020 COVID operational shock,origin,SFB,943
+2020 COVID operational shock,origin,SFO,9248
+2020 COVID operational shock,origin,SGF,672
+2020 COVID operational shock,origin,SGU,274
+2020 COVID operational shock,origin,SHD,67
+2020 COVID operational shock,origin,SHR,52
+2020 COVID operational shock,origin,SHV,459
+2020 COVID operational shock,origin,SIT,74
+2020 COVID operational shock,origin,SJC,3501
+2020 COVID operational shock,origin,SJT,137
+2020 COVID operational shock,origin,SJU,2079
+2020 COVID operational shock,origin,SLC,9526
+2020 COVID operational shock,origin,SLN,66
+2020 COVID operational shock,origin,SMF,3424
+2020 COVID operational shock,origin,SMX,18
+2020 COVID operational shock,origin,SNA,2438
+2020 COVID operational shock,origin,SPI,84
+2020 COVID operational shock,origin,SPN,22
+2020 COVID operational shock,origin,SPS,74
+2020 COVID operational shock,origin,SRQ,853
+2020 COVID operational shock,origin,STC,15
+2020 COVID operational shock,origin,STL,4648
+2020 COVID operational shock,origin,STS,186
+2020 COVID operational shock,origin,STT,334
+2020 COVID operational shock,origin,STX,94
+2020 COVID operational shock,origin,SUN,132
+2020 COVID operational shock,origin,SUX,80
+2020 COVID operational shock,origin,SWF,84
+2020 COVID operational shock,origin,SWO,72
+2020 COVID operational shock,origin,SYR,709
+2020 COVID operational shock,origin,TLH,426
+2020 COVID operational shock,origin,TOL,124
+2020 COVID operational shock,origin,TPA,5207
+2020 COVID operational shock,origin,TRI,217
+2020 COVID operational shock,origin,TTN,126
+2020 COVID operational shock,origin,TUL,1140
+2020 COVID operational shock,origin,TUS,1257
+2020 COVID operational shock,origin,TVC,345
+2020 COVID operational shock,origin,TWF,85
+2020 COVID operational shock,origin,TXK,89
+2020 COVID operational shock,origin,TYR,107
+2020 COVID operational shock,origin,TYS,1082
+2020 COVID operational shock,origin,USA,118
+2020 COVID operational shock,origin,VCT,13
+2020 COVID operational shock,origin,VEL,67
+2020 COVID operational shock,origin,VLD,88
+2020 COVID operational shock,origin,VPS,732
+2020 COVID operational shock,origin,WRG,81
+2020 COVID operational shock,origin,WYS,24
+2020 COVID operational shock,origin,XNA,809
+2020 COVID operational shock,origin,XWA,53
+2020 COVID operational shock,origin,YAK,73
+2020 COVID operational shock,origin,YUM,137
+2021-2023 recovery and transition,destination,ABE,1137
+2021-2023 recovery and transition,destination,ABI,539
+2021-2023 recovery and transition,destination,ABQ,5207
+2021-2023 recovery and transition,destination,ABR,185
+2021-2023 recovery and transition,destination,ABY,248
+2021-2023 recovery and transition,destination,ACK,450
+2021-2023 recovery and transition,destination,ACT,388
+2021-2023 recovery and transition,destination,ACV,502
+2021-2023 recovery and transition,destination,ACY,867
+2021-2023 recovery and transition,destination,ADK,27
+2021-2023 recovery and transition,destination,ADQ,252
+2021-2023 recovery and transition,destination,AEX,565
+2021-2023 recovery and transition,destination,AGS,991
+2021-2023 recovery and transition,destination,AKN,102
+2021-2023 recovery and transition,destination,ALB,2895
+2021-2023 recovery and transition,destination,ALO,133
+2021-2023 recovery and transition,destination,ALS,89
+2021-2023 recovery and transition,destination,ALW,158
+2021-2023 recovery and transition,destination,AMA,1400
+2021-2023 recovery and transition,destination,ANC,5379
+2021-2023 recovery and transition,destination,APN,152
+2021-2023 recovery and transition,destination,ASE,1750
+2021-2023 recovery and transition,destination,ATL,87313
+2021-2023 recovery and transition,destination,ATW,1397
+2021-2023 recovery and transition,destination,ATY,66
+2021-2023 recovery and transition,destination,AUS,21629
+2021-2023 recovery and transition,destination,AVL,2563
+2021-2023 recovery and transition,destination,AVP,484
+2021-2023 recovery and transition,destination,AZA,1633
+2021-2023 recovery and transition,destination,AZO,398
+2021-2023 recovery and transition,destination,BDL,5899
+2021-2023 recovery and transition,destination,BET,175
+2021-2023 recovery and transition,destination,BFF,170
+2021-2023 recovery and transition,destination,BFL,695
+2021-2023 recovery and transition,destination,BGM,136
+2021-2023 recovery and transition,destination,BGR,1175
+2021-2023 recovery and transition,destination,BHM,3911
+2021-2023 recovery and transition,destination,BIH,51
+2021-2023 recovery and transition,destination,BIL,1213
+2021-2023 recovery and transition,destination,BIS,1043
+2021-2023 recovery and transition,destination,BJI,192
+2021-2023 recovery and transition,destination,BKG,14
+2021-2023 recovery and transition,destination,BLI,872
+2021-2023 recovery and transition,destination,BLV,310
+2021-2023 recovery and transition,destination,BMI,677
+2021-2023 recovery and transition,destination,BNA,23018
+2021-2023 recovery and transition,destination,BOI,6538
+2021-2023 recovery and transition,destination,BOS,32799
+2021-2023 recovery and transition,destination,BPT,229
+2021-2023 recovery and transition,destination,BQK,221
+2021-2023 recovery and transition,destination,BQN,618
+2021-2023 recovery and transition,destination,BRD,161
+2021-2023 recovery and transition,destination,BRO,351
+2021-2023 recovery and transition,destination,BRW,73
+2021-2023 recovery and transition,destination,BTM,164
+2021-2023 recovery and transition,destination,BTR,1145
+2021-2023 recovery and transition,destination,BTV,1964
+2021-2023 recovery and transition,destination,BUF,4747
+2021-2023 recovery and transition,destination,BUR,7165
+2021-2023 recovery and transition,destination,BWI,23003
+2021-2023 recovery and transition,destination,BZN,2929
+2021-2023 recovery and transition,destination,CAE,1582
+2021-2023 recovery and transition,destination,CAK,677
+2021-2023 recovery and transition,destination,CDB,7
+2021-2023 recovery and transition,destination,CDC,168
+2021-2023 recovery and transition,destination,CDV,191
+2021-2023 recovery and transition,destination,CGI,112
+2021-2023 recovery and transition,destination,CHA,1464
+2021-2023 recovery and transition,destination,CHO,727
+2021-2023 recovery and transition,destination,CHS,6575
+2021-2023 recovery and transition,destination,CID,2116
+2021-2023 recovery and transition,destination,CIU,213
+2021-2023 recovery and transition,destination,CKB,193
+2021-2023 recovery and transition,destination,CLE,10186
+2021-2023 recovery and transition,destination,CLL,359
+2021-2023 recovery and transition,destination,CLT,53389
+2021-2023 recovery and transition,destination,CMH,9905
+2021-2023 recovery and transition,destination,CMI,396
+2021-2023 recovery and transition,destination,CMX,201
+2021-2023 recovery and transition,destination,CNY,164
+2021-2023 recovery and transition,destination,COD,132
+2021-2023 recovery and transition,destination,COS,3255
+2021-2023 recovery and transition,destination,COU,369
+2021-2023 recovery and transition,destination,CPR,450
+2021-2023 recovery and transition,destination,CRP,1018
+2021-2023 recovery and transition,destination,CRW,790
+2021-2023 recovery and transition,destination,CSG,410
+2021-2023 recovery and transition,destination,CVG,9720
+2021-2023 recovery and transition,destination,CWA,488
+2021-2023 recovery and transition,destination,CYS,111
+2021-2023 recovery and transition,destination,DAB,806
+2021-2023 recovery and transition,destination,DAL,17739
+2021-2023 recovery and transition,destination,DAY,1844
+2021-2023 recovery and transition,destination,DBQ,117
+2021-2023 recovery and transition,destination,DCA,32464
+2021-2023 recovery and transition,destination,DDC,161
+2021-2023 recovery and transition,destination,DEC,237
+2021-2023 recovery and transition,destination,DEN,73755
+2021-2023 recovery and transition,destination,DFW,75963
+2021-2023 recovery and transition,destination,DHN,258
+2021-2023 recovery and transition,destination,DIK,63
+2021-2023 recovery and transition,destination,DLG,112
+2021-2023 recovery and transition,destination,DLH,462
+2021-2023 recovery and transition,destination,DRO,946
+2021-2023 recovery and transition,destination,DRT,147
+2021-2023 recovery and transition,destination,DSM,3824
+2021-2023 recovery and transition,destination,DTW,34699
+2021-2023 recovery and transition,destination,DVL,187
+2021-2023 recovery and transition,destination,EAR,171
+2021-2023 recovery and transition,destination,EAT,141
+2021-2023 recovery and transition,destination,EAU,142
+2021-2023 recovery and transition,destination,ECP,2098
+2021-2023 recovery and transition,destination,EGE,872
+2021-2023 recovery and transition,destination,EKO,128
+2021-2023 recovery and transition,destination,ELM,304
+2021-2023 recovery and transition,destination,ELP,4277
+2021-2023 recovery and transition,destination,ERI,99
+2021-2023 recovery and transition,destination,ESC,197
+2021-2023 recovery and transition,destination,EUG,2332
+2021-2023 recovery and transition,destination,EVV,545
+2021-2023 recovery and transition,destination,EWN,248
+2021-2023 recovery and transition,destination,EWR,32055
+2021-2023 recovery and transition,destination,EYW,2340
+2021-2023 recovery and transition,destination,FAI,1176
+2021-2023 recovery and transition,destination,FAR,1724
+2021-2023 recovery and transition,destination,FAT,3126
+2021-2023 recovery and transition,destination,FAY,596
+2021-2023 recovery and transition,destination,FCA,1253
+2021-2023 recovery and transition,destination,FLG,554
+2021-2023 recovery and transition,destination,FLL,23526
+2021-2023 recovery and transition,destination,FLO,17
+2021-2023 recovery and transition,destination,FNT,705
+2021-2023 recovery and transition,destination,FOD,148
+2021-2023 recovery and transition,destination,FSD,2041
+2021-2023 recovery and transition,destination,FSM,352
+2021-2023 recovery and transition,destination,FWA,1300
+2021-2023 recovery and transition,destination,GCC,172
+2021-2023 recovery and transition,destination,GCK,198
+2021-2023 recovery and transition,destination,GEG,5261
+2021-2023 recovery and transition,destination,GFK,355
+2021-2023 recovery and transition,destination,GGG,221
+2021-2023 recovery and transition,destination,GJT,1022
+2021-2023 recovery and transition,destination,GNV,943
+2021-2023 recovery and transition,destination,GPT,832
+2021-2023 recovery and transition,destination,GRB,1068
+2021-2023 recovery and transition,destination,GRI,262
+2021-2023 recovery and transition,destination,GRK,605
+2021-2023 recovery and transition,destination,GRR,4215
+2021-2023 recovery and transition,destination,GSO,2487
+2021-2023 recovery and transition,destination,GSP,3224
+2021-2023 recovery and transition,destination,GST,29
+2021-2023 recovery and transition,destination,GTF,673
+2021-2023 recovery and transition,destination,GTR,268
+2021-2023 recovery and transition,destination,GUC,208
+2021-2023 recovery and transition,destination,GUM,203
+2021-2023 recovery and transition,destination,HDN,648
+2021-2023 recovery and transition,destination,HGR,56
+2021-2023 recovery and transition,destination,HHH,698
+2021-2023 recovery and transition,destination,HIB,194
+2021-2023 recovery and transition,destination,HLN,382
+2021-2023 recovery and transition,destination,HNL,14818
+2021-2023 recovery and transition,destination,HOB,70
+2021-2023 recovery and transition,destination,HOU,13668
+2021-2023 recovery and transition,destination,HPN,2757
+2021-2023 recovery and transition,destination,HRL,911
+2021-2023 recovery and transition,destination,HSV,2004
+2021-2023 recovery and transition,destination,HTS,120
+2021-2023 recovery and transition,destination,HVN,20
+2021-2023 recovery and transition,destination,HYA,41
+2021-2023 recovery and transition,destination,HYS,190
+2021-2023 recovery and transition,destination,IAD,14242
+2021-2023 recovery and transition,destination,IAG,89
+2021-2023 recovery and transition,destination,IAH,33920
+2021-2023 recovery and transition,destination,ICT,2448
+2021-2023 recovery and transition,destination,IDA,1083
+2021-2023 recovery and transition,destination,ILG,13
+2021-2023 recovery and transition,destination,ILM,1856
+2021-2023 recovery and transition,destination,IMT,197
+2021-2023 recovery and transition,destination,IND,11053
+2021-2023 recovery and transition,destination,INL,161
+2021-2023 recovery and transition,destination,ISP,1223
+2021-2023 recovery and transition,destination,ITH,148
+2021-2023 recovery and transition,destination,ITO,1652
+2021-2023 recovery and transition,destination,JAC,1579
+2021-2023 recovery and transition,destination,JAN,1970
+2021-2023 recovery and transition,destination,JAX,7447
+2021-2023 recovery and transition,destination,JFK,31561
+2021-2023 recovery and transition,destination,JLN,181
+2021-2023 recovery and transition,destination,JMS,219
+2021-2023 recovery and transition,destination,JNU,1229
+2021-2023 recovery and transition,destination,JST,202
+2021-2023 recovery and transition,destination,KOA,4368
+2021-2023 recovery and transition,destination,KTN,641
+2021-2023 recovery and transition,destination,LAN,555
+2021-2023 recovery and transition,destination,LAR,174
+2021-2023 recovery and transition,destination,LAS,45107
+2021-2023 recovery and transition,destination,LAW,312
+2021-2023 recovery and transition,destination,LAX,50590
+2021-2023 recovery and transition,destination,LBB,1532
+2021-2023 recovery and transition,destination,LBE,256
+2021-2023 recovery and transition,destination,LBF,162
+2021-2023 recovery and transition,destination,LBL,183
+2021-2023 recovery and transition,destination,LCH,302
+2021-2023 recovery and transition,destination,LCK,289
+2021-2023 recovery and transition,destination,LEX,1882
+2021-2023 recovery and transition,destination,LFT,846
+2021-2023 recovery and transition,destination,LGA,37476
+2021-2023 recovery and transition,destination,LGB,3852
+2021-2023 recovery and transition,destination,LIH,3859
+2021-2023 recovery and transition,destination,LIT,2946
+2021-2023 recovery and transition,destination,LNK,182
+2021-2023 recovery and transition,destination,LRD,379
+2021-2023 recovery and transition,destination,LSE,379
+2021-2023 recovery and transition,destination,LWB,122
+2021-2023 recovery and transition,destination,LWS,283
+2021-2023 recovery and transition,destination,LYH,25
+2021-2023 recovery and transition,destination,MAF,2239
+2021-2023 recovery and transition,destination,MBS,366
+2021-2023 recovery and transition,destination,MCI,11646
+2021-2023 recovery and transition,destination,MCO,39505
+2021-2023 recovery and transition,destination,MCW,153
+2021-2023 recovery and transition,destination,MDT,1437
+2021-2023 recovery and transition,destination,MDW,20146
+2021-2023 recovery and transition,destination,MEI,193
+2021-2023 recovery and transition,destination,MEM,5667
+2021-2023 recovery and transition,destination,MFE,961
+2021-2023 recovery and transition,destination,MFR,1889
+2021-2023 recovery and transition,destination,MGM,720
+2021-2023 recovery and transition,destination,MHK,423
+2021-2023 recovery and transition,destination,MHT,1610
+2021-2023 recovery and transition,destination,MIA,27155
+2021-2023 recovery and transition,destination,MKE,6620
+2021-2023 recovery and transition,destination,MKG,111
+2021-2023 recovery and transition,destination,MLB,724
+2021-2023 recovery and transition,destination,MLI,1047
+2021-2023 recovery and transition,destination,MLU,578
+2021-2023 recovery and transition,destination,MOB,802
+2021-2023 recovery and transition,destination,MOT,706
+2021-2023 recovery and transition,destination,MQT,294
+2021-2023 recovery and transition,destination,MRY,1027
+2021-2023 recovery and transition,destination,MSN,2716
+2021-2023 recovery and transition,destination,MSO,1375
+2021-2023 recovery and transition,destination,MSP,32932
+2021-2023 recovery and transition,destination,MSY,12131
+2021-2023 recovery and transition,destination,MTJ,840
+2021-2023 recovery and transition,destination,MVY,286
+2021-2023 recovery and transition,destination,MYR,4371
+2021-2023 recovery and transition,destination,OAJ,544
+2021-2023 recovery and transition,destination,OAK,11542
+2021-2023 recovery and transition,destination,OGD,10
+2021-2023 recovery and transition,destination,OGG,8107
+2021-2023 recovery and transition,destination,OGS,87
+2021-2023 recovery and transition,destination,OKC,5579
+2021-2023 recovery and transition,destination,OMA,5791
+2021-2023 recovery and transition,destination,OME,175
+2021-2023 recovery and transition,destination,ONT,6116
+2021-2023 recovery and transition,destination,ORD,69043
+2021-2023 recovery and transition,destination,ORF,5484
+2021-2023 recovery and transition,destination,ORH,306
+2021-2023 recovery and transition,destination,OTH,93
+2021-2023 recovery and transition,destination,OTZ,169
+2021-2023 recovery and transition,destination,OWB,16
+2021-2023 recovery and transition,destination,PAE,726
+2021-2023 recovery and transition,destination,PAH,145
+2021-2023 recovery and transition,destination,PBG,183
+2021-2023 recovery and transition,destination,PBI,6704
+2021-2023 recovery and transition,destination,PDX,15791
+2021-2023 recovery and transition,destination,PGD,1667
+2021-2023 recovery and transition,destination,PGV,24
+2021-2023 recovery and transition,destination,PHF,112
+2021-2023 recovery and transition,destination,PHL,23290
+2021-2023 recovery and transition,destination,PHX,44725
+2021-2023 recovery and transition,destination,PIA,860
+2021-2023 recovery and transition,destination,PIB,167
+2021-2023 recovery and transition,destination,PIE,2141
+2021-2023 recovery and transition,destination,PIH,162
+2021-2023 recovery and transition,destination,PIR,72
+2021-2023 recovery and transition,destination,PIT,10403
+2021-2023 recovery and transition,destination,PLN,254
+2021-2023 recovery and transition,destination,PNS,3250
+2021-2023 recovery and transition,destination,PPG,14
+2021-2023 recovery and transition,destination,PRC,203
+2021-2023 recovery and transition,destination,PSC,1560
+2021-2023 recovery and transition,destination,PSE,174
+2021-2023 recovery and transition,destination,PSG,192
+2021-2023 recovery and transition,destination,PSM,92
+2021-2023 recovery and transition,destination,PSP,3929
+2021-2023 recovery and transition,destination,PUB,113
+2021-2023 recovery and transition,destination,PUW,242
+2021-2023 recovery and transition,destination,PVD,3694
+2021-2023 recovery and transition,destination,PVU,386
+2021-2023 recovery and transition,destination,PWM,2773
+2021-2023 recovery and transition,destination,RAP,1331
+2021-2023 recovery and transition,destination,RDD,397
+2021-2023 recovery and transition,destination,RDM,1961
+2021-2023 recovery and transition,destination,RDU,14238
+2021-2023 recovery and transition,destination,RFD,187
+2021-2023 recovery and transition,destination,RHI,214
+2021-2023 recovery and transition,destination,RIC,4810
+2021-2023 recovery and transition,destination,RIW,123
+2021-2023 recovery and transition,destination,RKS,119
+2021-2023 recovery and transition,destination,RNO,5389
+2021-2023 recovery and transition,destination,ROA,561
+2021-2023 recovery and transition,destination,ROC,2988
+2021-2023 recovery and transition,destination,ROW,282
+2021-2023 recovery and transition,destination,RST,550
+2021-2023 recovery and transition,destination,RSW,10114
+2021-2023 recovery and transition,destination,SAF,472
+2021-2023 recovery and transition,destination,SAN,21503
+2021-2023 recovery and transition,destination,SAT,9075
+2021-2023 recovery and transition,destination,SAV,4743
+2021-2023 recovery and transition,destination,SBA,1936
+2021-2023 recovery and transition,destination,SBN,1490
+2021-2023 recovery and transition,destination,SBP,1246
+2021-2023 recovery and transition,destination,SCC,132
+2021-2023 recovery and transition,destination,SCE,207
+2021-2023 recovery and transition,destination,SCK,177
+2021-2023 recovery and transition,destination,SDF,5739
+2021-2023 recovery and transition,destination,SEA,45910
+2021-2023 recovery and transition,destination,SFB,2490
+2021-2023 recovery and transition,destination,SFO,32494
+2021-2023 recovery and transition,destination,SGF,1876
+2021-2023 recovery and transition,destination,SGU,852
+2021-2023 recovery and transition,destination,SHD,126
+2021-2023 recovery and transition,destination,SHR,172
+2021-2023 recovery and transition,destination,SHV,1222
+2021-2023 recovery and transition,destination,SIT,377
+2021-2023 recovery and transition,destination,SJC,13053
+2021-2023 recovery and transition,destination,SJT,462
+2021-2023 recovery and transition,destination,SJU,8227
+2021-2023 recovery and transition,destination,SLC,30728
+2021-2023 recovery and transition,destination,SLN,223
+2021-2023 recovery and transition,destination,SMF,13407
+2021-2023 recovery and transition,destination,SMX,46
+2021-2023 recovery and transition,destination,SNA,11583
+2021-2023 recovery and transition,destination,SPI,235
+2021-2023 recovery and transition,destination,SPN,86
+2021-2023 recovery and transition,destination,SPS,289
+2021-2023 recovery and transition,destination,SRQ,4354
+2021-2023 recovery and transition,destination,STC,44
+2021-2023 recovery and transition,destination,STL,14866
+2021-2023 recovery and transition,destination,STS,1032
+2021-2023 recovery and transition,destination,STT,1587
+2021-2023 recovery and transition,destination,STX,371
+2021-2023 recovery and transition,destination,SUN,552
+2021-2023 recovery and transition,destination,SUX,201
+2021-2023 recovery and transition,destination,SWF,184
+2021-2023 recovery and transition,destination,SWO,199
+2021-2023 recovery and transition,destination,SYR,3199
+2021-2023 recovery and transition,destination,TBN,64
+2021-2023 recovery and transition,destination,TLH,1377
+2021-2023 recovery and transition,destination,TOL,165
+2021-2023 recovery and transition,destination,TPA,19875
+2021-2023 recovery and transition,destination,TRI,752
+2021-2023 recovery and transition,destination,TTN,564
+2021-2023 recovery and transition,destination,TUL,4019
+2021-2023 recovery and transition,destination,TUS,4477
+2021-2023 recovery and transition,destination,TVC,1171
+2021-2023 recovery and transition,destination,TWF,200
+2021-2023 recovery and transition,destination,TXK,311
+2021-2023 recovery and transition,destination,TYR,334
+2021-2023 recovery and transition,destination,TYS,3456
+2021-2023 recovery and transition,destination,USA,264
+2021-2023 recovery and transition,destination,VCT,145
+2021-2023 recovery and transition,destination,VEL,162
+2021-2023 recovery and transition,destination,VLD,276
+2021-2023 recovery and transition,destination,VPS,2793
+2021-2023 recovery and transition,destination,WRG,175
+2021-2023 recovery and transition,destination,WYS,96
+2021-2023 recovery and transition,destination,XNA,2747
+2021-2023 recovery and transition,destination,XWA,389
+2021-2023 recovery and transition,destination,YAK,188
+2021-2023 recovery and transition,destination,YKM,139
+2021-2023 recovery and transition,destination,YUM,453
+2021-2023 recovery and transition,origin,ABE,1173
+2021-2023 recovery and transition,origin,ABI,513
+2021-2023 recovery and transition,origin,ABQ,5288
+2021-2023 recovery and transition,origin,ABR,177
+2021-2023 recovery and transition,origin,ABY,256
+2021-2023 recovery and transition,origin,ACK,457
+2021-2023 recovery and transition,origin,ACT,400
+2021-2023 recovery and transition,origin,ACV,521
+2021-2023 recovery and transition,origin,ACY,879
+2021-2023 recovery and transition,origin,ADK,24
+2021-2023 recovery and transition,origin,ADQ,271
+2021-2023 recovery and transition,origin,AEX,590
+2021-2023 recovery and transition,origin,AGS,1035
+2021-2023 recovery and transition,origin,AKN,129
+2021-2023 recovery and transition,origin,ALB,2904
+2021-2023 recovery and transition,origin,ALO,126
+2021-2023 recovery and transition,origin,ALS,80
+2021-2023 recovery and transition,origin,ALW,162
+2021-2023 recovery and transition,origin,AMA,1311
+2021-2023 recovery and transition,origin,ANC,5275
+2021-2023 recovery and transition,origin,APN,163
+2021-2023 recovery and transition,origin,ASE,1685
+2021-2023 recovery and transition,origin,ATL,87338
+2021-2023 recovery and transition,origin,ATW,1277
+2021-2023 recovery and transition,origin,ATY,59
+2021-2023 recovery and transition,origin,AUS,21812
+2021-2023 recovery and transition,origin,AVL,2492
+2021-2023 recovery and transition,origin,AVP,496
+2021-2023 recovery and transition,origin,AZA,1573
+2021-2023 recovery and transition,origin,AZO,398
+2021-2023 recovery and transition,origin,BDL,5879
+2021-2023 recovery and transition,origin,BET,179
+2021-2023 recovery and transition,origin,BFF,173
+2021-2023 recovery and transition,origin,BFL,706
+2021-2023 recovery and transition,origin,BGM,116
+2021-2023 recovery and transition,origin,BGR,1158
+2021-2023 recovery and transition,origin,BHM,3858
+2021-2023 recovery and transition,origin,BIH,68
+2021-2023 recovery and transition,origin,BIL,1263
+2021-2023 recovery and transition,origin,BIS,1028
+2021-2023 recovery and transition,origin,BJI,192
+2021-2023 recovery and transition,origin,BKG,12
+2021-2023 recovery and transition,origin,BLI,842
+2021-2023 recovery and transition,origin,BLV,326
+2021-2023 recovery and transition,origin,BMI,679
+2021-2023 recovery and transition,origin,BNA,23135
+2021-2023 recovery and transition,origin,BOI,6607
+2021-2023 recovery and transition,origin,BOS,32507
+2021-2023 recovery and transition,origin,BPT,246
+2021-2023 recovery and transition,origin,BQK,242
+2021-2023 recovery and transition,origin,BQN,586
+2021-2023 recovery and transition,origin,BRD,205
+2021-2023 recovery and transition,origin,BRO,369
+2021-2023 recovery and transition,origin,BRW,95
+2021-2023 recovery and transition,origin,BTM,200
+2021-2023 recovery and transition,origin,BTR,1158
+2021-2023 recovery and transition,origin,BTV,1905
+2021-2023 recovery and transition,origin,BUF,4853
+2021-2023 recovery and transition,origin,BUR,7154
+2021-2023 recovery and transition,origin,BWI,22969
+2021-2023 recovery and transition,origin,BZN,2992
+2021-2023 recovery and transition,origin,CAE,1519
+2021-2023 recovery and transition,origin,CAK,680
+2021-2023 recovery and transition,origin,CDB,16
+2021-2023 recovery and transition,origin,CDC,169
+2021-2023 recovery and transition,origin,CDV,182
+2021-2023 recovery and transition,origin,CGI,115
+2021-2023 recovery and transition,origin,CHA,1428
+2021-2023 recovery and transition,origin,CHO,670
+2021-2023 recovery and transition,origin,CHS,6399
+2021-2023 recovery and transition,origin,CID,2021
+2021-2023 recovery and transition,origin,CIU,210
+2021-2023 recovery and transition,origin,CKB,207
+2021-2023 recovery and transition,origin,CLE,10122
+2021-2023 recovery and transition,origin,CLL,328
+2021-2023 recovery and transition,origin,CLT,53120
+2021-2023 recovery and transition,origin,CMH,9849
+2021-2023 recovery and transition,origin,CMI,405
+2021-2023 recovery and transition,origin,CMX,212
+2021-2023 recovery and transition,origin,CNY,181
+2021-2023 recovery and transition,origin,COD,138
+2021-2023 recovery and transition,origin,COS,3081
+2021-2023 recovery and transition,origin,COU,363
+2021-2023 recovery and transition,origin,CPR,455
+2021-2023 recovery and transition,origin,CRP,1034
+2021-2023 recovery and transition,origin,CRW,834
+2021-2023 recovery and transition,origin,CSG,406
+2021-2023 recovery and transition,origin,CVG,9745
+2021-2023 recovery and transition,origin,CWA,501
+2021-2023 recovery and transition,origin,CYS,104
+2021-2023 recovery and transition,origin,DAB,841
+2021-2023 recovery and transition,origin,DAL,17929
+2021-2023 recovery and transition,origin,DAY,1891
+2021-2023 recovery and transition,origin,DBQ,88
+2021-2023 recovery and transition,origin,DCA,32404
+2021-2023 recovery and transition,origin,DDC,185
+2021-2023 recovery and transition,origin,DEC,237
+2021-2023 recovery and transition,origin,DEN,73844
+2021-2023 recovery and transition,origin,DFW,75741
+2021-2023 recovery and transition,origin,DHN,257
+2021-2023 recovery and transition,origin,DIK,58
+2021-2023 recovery and transition,origin,DLG,111
+2021-2023 recovery and transition,origin,DLH,490
+2021-2023 recovery and transition,origin,DRO,1018
+2021-2023 recovery and transition,origin,DRT,165
+2021-2023 recovery and transition,origin,DSM,3996
+2021-2023 recovery and transition,origin,DTW,34692
+2021-2023 recovery and transition,origin,DVL,153
+2021-2023 recovery and transition,origin,EAR,160
+2021-2023 recovery and transition,origin,EAT,138
+2021-2023 recovery and transition,origin,EAU,143
+2021-2023 recovery and transition,origin,ECP,2065
+2021-2023 recovery and transition,origin,EGE,859
+2021-2023 recovery and transition,origin,EKO,117
+2021-2023 recovery and transition,origin,ELM,272
+2021-2023 recovery and transition,origin,ELP,4239
+2021-2023 recovery and transition,origin,ERI,102
+2021-2023 recovery and transition,origin,ESC,186
+2021-2023 recovery and transition,origin,EUG,2284
+2021-2023 recovery and transition,origin,EVV,566
+2021-2023 recovery and transition,origin,EWN,280
+2021-2023 recovery and transition,origin,EWR,32158
+2021-2023 recovery and transition,origin,EYW,2382
+2021-2023 recovery and transition,origin,FAI,1221
+2021-2023 recovery and transition,origin,FAR,1722
+2021-2023 recovery and transition,origin,FAT,3162
+2021-2023 recovery and transition,origin,FAY,622
+2021-2023 recovery and transition,origin,FCA,1377
+2021-2023 recovery and transition,origin,FLG,559
+2021-2023 recovery and transition,origin,FLL,23684
+2021-2023 recovery and transition,origin,FLO,8
+2021-2023 recovery and transition,origin,FNT,675
+2021-2023 recovery and transition,origin,FOD,145
+2021-2023 recovery and transition,origin,FSD,1977
+2021-2023 recovery and transition,origin,FSM,358
+2021-2023 recovery and transition,origin,FWA,1360
+2021-2023 recovery and transition,origin,GCC,173
+2021-2023 recovery and transition,origin,GCK,208
+2021-2023 recovery and transition,origin,GEG,5204
+2021-2023 recovery and transition,origin,GFK,348
+2021-2023 recovery and transition,origin,GGG,247
+2021-2023 recovery and transition,origin,GJT,1030
+2021-2023 recovery and transition,origin,GNV,957
+2021-2023 recovery and transition,origin,GPT,850
+2021-2023 recovery and transition,origin,GRB,1107
+2021-2023 recovery and transition,origin,GRI,232
+2021-2023 recovery and transition,origin,GRK,578
+2021-2023 recovery and transition,origin,GRR,4377
+2021-2023 recovery and transition,origin,GSO,2496
+2021-2023 recovery and transition,origin,GSP,3332
+2021-2023 recovery and transition,origin,GST,20
+2021-2023 recovery and transition,origin,GTF,728
+2021-2023 recovery and transition,origin,GTR,293
+2021-2023 recovery and transition,origin,GUC,238
+2021-2023 recovery and transition,origin,GUM,166
+2021-2023 recovery and transition,origin,HDN,771
+2021-2023 recovery and transition,origin,HGR,60
+2021-2023 recovery and transition,origin,HHH,706
+2021-2023 recovery and transition,origin,HIB,187
+2021-2023 recovery and transition,origin,HLN,402
+2021-2023 recovery and transition,origin,HNL,14651
+2021-2023 recovery and transition,origin,HOB,60
+2021-2023 recovery and transition,origin,HOU,13862
+2021-2023 recovery and transition,origin,HPN,2827
+2021-2023 recovery and transition,origin,HRL,864
+2021-2023 recovery and transition,origin,HSV,1970
+2021-2023 recovery and transition,origin,HTS,121
+2021-2023 recovery and transition,origin,HVN,15
+2021-2023 recovery and transition,origin,HYA,44
+2021-2023 recovery and transition,origin,HYS,207
+2021-2023 recovery and transition,origin,IAD,14330
+2021-2023 recovery and transition,origin,IAG,106
+2021-2023 recovery and transition,origin,IAH,33693
+2021-2023 recovery and transition,origin,ICT,2384
+2021-2023 recovery and transition,origin,IDA,1100
+2021-2023 recovery and transition,origin,ILG,17
+2021-2023 recovery and transition,origin,ILM,1796
+2021-2023 recovery and transition,origin,IMT,209
+2021-2023 recovery and transition,origin,IND,10941
+2021-2023 recovery and transition,origin,INL,160
+2021-2023 recovery and transition,origin,ISP,1239
+2021-2023 recovery and transition,origin,ITH,177
+2021-2023 recovery and transition,origin,ITO,1647
+2021-2023 recovery and transition,origin,JAC,1552
+2021-2023 recovery and transition,origin,JAN,1964
+2021-2023 recovery and transition,origin,JAX,7397
+2021-2023 recovery and transition,origin,JFK,31651
+2021-2023 recovery and transition,origin,JLN,186
+2021-2023 recovery and transition,origin,JMS,229
+2021-2023 recovery and transition,origin,JNU,1221
+2021-2023 recovery and transition,origin,JST,188
+2021-2023 recovery and transition,origin,KOA,4361
+2021-2023 recovery and transition,origin,KTN,652
+2021-2023 recovery and transition,origin,LAN,535
+2021-2023 recovery and transition,origin,LAR,172
+2021-2023 recovery and transition,origin,LAS,44955
+2021-2023 recovery and transition,origin,LAW,306
+2021-2023 recovery and transition,origin,LAX,50740
+2021-2023 recovery and transition,origin,LBB,1524
+2021-2023 recovery and transition,origin,LBE,239
+2021-2023 recovery and transition,origin,LBF,176
+2021-2023 recovery and transition,origin,LBL,162
+2021-2023 recovery and transition,origin,LCH,305
+2021-2023 recovery and transition,origin,LCK,269
+2021-2023 recovery and transition,origin,LEX,1919
+2021-2023 recovery and transition,origin,LFT,879
+2021-2023 recovery and transition,origin,LGA,37712
+2021-2023 recovery and transition,origin,LGB,3959
+2021-2023 recovery and transition,origin,LIH,3838
+2021-2023 recovery and transition,origin,LIT,2993
+2021-2023 recovery and transition,origin,LNK,184
+2021-2023 recovery and transition,origin,LRD,377
+2021-2023 recovery and transition,origin,LSE,399
+2021-2023 recovery and transition,origin,LWB,112
+2021-2023 recovery and transition,origin,LWS,269
+2021-2023 recovery and transition,origin,LYH,25
+2021-2023 recovery and transition,origin,MAF,2154
+2021-2023 recovery and transition,origin,MBS,354
+2021-2023 recovery and transition,origin,MCI,11639
+2021-2023 recovery and transition,origin,MCO,39761
+2021-2023 recovery and transition,origin,MCW,137
+2021-2023 recovery and transition,origin,MDT,1398
+2021-2023 recovery and transition,origin,MDW,20162
+2021-2023 recovery and transition,origin,MEI,193
+2021-2023 recovery and transition,origin,MEM,5830
+2021-2023 recovery and transition,origin,MFE,957
+2021-2023 recovery and transition,origin,MFR,1879
+2021-2023 recovery and transition,origin,MGM,710
+2021-2023 recovery and transition,origin,MHK,393
+2021-2023 recovery and transition,origin,MHT,1641
+2021-2023 recovery and transition,origin,MIA,27044
+2021-2023 recovery and transition,origin,MKE,6764
+2021-2023 recovery and transition,origin,MKG,130
+2021-2023 recovery and transition,origin,MLB,663
+2021-2023 recovery and transition,origin,MLI,1050
+2021-2023 recovery and transition,origin,MLU,573
+2021-2023 recovery and transition,origin,MOB,844
+2021-2023 recovery and transition,origin,MOT,672
+2021-2023 recovery and transition,origin,MQT,310
+2021-2023 recovery and transition,origin,MRY,1068
+2021-2023 recovery and transition,origin,MSN,2764
+2021-2023 recovery and transition,origin,MSO,1371
+2021-2023 recovery and transition,origin,MSP,33200
+2021-2023 recovery and transition,origin,MSY,12309
+2021-2023 recovery and transition,origin,MTJ,801
+2021-2023 recovery and transition,origin,MVY,268
+2021-2023 recovery and transition,origin,MYR,4371
+2021-2023 recovery and transition,origin,OAJ,559
+2021-2023 recovery and transition,origin,OAK,11501
+2021-2023 recovery and transition,origin,OGD,8
+2021-2023 recovery and transition,origin,OGG,8122
+2021-2023 recovery and transition,origin,OGS,93
+2021-2023 recovery and transition,origin,OKC,5478
+2021-2023 recovery and transition,origin,OMA,5807
+2021-2023 recovery and transition,origin,OME,170
+2021-2023 recovery and transition,origin,ONT,6120
+2021-2023 recovery and transition,origin,ORD,68353
+2021-2023 recovery and transition,origin,ORF,5526
+2021-2023 recovery and transition,origin,ORH,329
+2021-2023 recovery and transition,origin,OTH,81
+2021-2023 recovery and transition,origin,OTZ,206
+2021-2023 recovery and transition,origin,OWB,28
+2021-2023 recovery and transition,origin,PAE,678
+2021-2023 recovery and transition,origin,PAH,163
+2021-2023 recovery and transition,origin,PBG,195
+2021-2023 recovery and transition,origin,PBI,6638
+2021-2023 recovery and transition,origin,PDX,15835
+2021-2023 recovery and transition,origin,PGD,1670
+2021-2023 recovery and transition,origin,PGV,21
+2021-2023 recovery and transition,origin,PHF,113
+2021-2023 recovery and transition,origin,PHL,23448
+2021-2023 recovery and transition,origin,PHX,44801
+2021-2023 recovery and transition,origin,PIA,893
+2021-2023 recovery and transition,origin,PIB,178
+2021-2023 recovery and transition,origin,PIE,2091
+2021-2023 recovery and transition,origin,PIH,165
+2021-2023 recovery and transition,origin,PIR,62
+2021-2023 recovery and transition,origin,PIT,10421
+2021-2023 recovery and transition,origin,PLN,214
+2021-2023 recovery and transition,origin,PNS,3101
+2021-2023 recovery and transition,origin,PPG,20
+2021-2023 recovery and transition,origin,PRC,219
+2021-2023 recovery and transition,origin,PSC,1563
+2021-2023 recovery and transition,origin,PSE,189
+2021-2023 recovery and transition,origin,PSG,182
+2021-2023 recovery and transition,origin,PSM,95
+2021-2023 recovery and transition,origin,PSP,3860
+2021-2023 recovery and transition,origin,PUB,104
+2021-2023 recovery and transition,origin,PUW,244
+2021-2023 recovery and transition,origin,PVD,3643
+2021-2023 recovery and transition,origin,PVU,398
+2021-2023 recovery and transition,origin,PWM,2927
+2021-2023 recovery and transition,origin,RAP,1348
+2021-2023 recovery and transition,origin,RDD,398
+2021-2023 recovery and transition,origin,RDM,2055
+2021-2023 recovery and transition,origin,RDU,14009
+2021-2023 recovery and transition,origin,RFD,200
+2021-2023 recovery and transition,origin,RHI,209
+2021-2023 recovery and transition,origin,RIC,4750
+2021-2023 recovery and transition,origin,RIW,142
+2021-2023 recovery and transition,origin,RKS,135
+2021-2023 recovery and transition,origin,RNO,5562
+2021-2023 recovery and transition,origin,ROA,552
+2021-2023 recovery and transition,origin,ROC,3025
+2021-2023 recovery and transition,origin,ROW,326
+2021-2023 recovery and transition,origin,RST,571
+2021-2023 recovery and transition,origin,RSW,10200
+2021-2023 recovery and transition,origin,SAF,471
+2021-2023 recovery and transition,origin,SAN,21368
+2021-2023 recovery and transition,origin,SAT,8972
+2021-2023 recovery and transition,origin,SAV,4831
+2021-2023 recovery and transition,origin,SBA,1933
+2021-2023 recovery and transition,origin,SBN,1509
+2021-2023 recovery and transition,origin,SBP,1171
+2021-2023 recovery and transition,origin,SCC,113
+2021-2023 recovery and transition,origin,SCE,219
+2021-2023 recovery and transition,origin,SCK,155
+2021-2023 recovery and transition,origin,SDF,5686
+2021-2023 recovery and transition,origin,SEA,45920
+2021-2023 recovery and transition,origin,SFB,2548
+2021-2023 recovery and transition,origin,SFO,32629
+2021-2023 recovery and transition,origin,SGF,1853
+2021-2023 recovery and transition,origin,SGU,835
+2021-2023 recovery and transition,origin,SHD,113
+2021-2023 recovery and transition,origin,SHR,168
+2021-2023 recovery and transition,origin,SHV,1158
+2021-2023 recovery and transition,origin,SIT,357
+2021-2023 recovery and transition,origin,SJC,13067
+2021-2023 recovery and transition,origin,SJT,465
+2021-2023 recovery and transition,origin,SJU,8285
+2021-2023 recovery and transition,origin,SLC,30711
+2021-2023 recovery and transition,origin,SLN,200
+2021-2023 recovery and transition,origin,SMF,13431
+2021-2023 recovery and transition,origin,SMX,57
+2021-2023 recovery and transition,origin,SNA,11468
+2021-2023 recovery and transition,origin,SPI,205
+2021-2023 recovery and transition,origin,SPN,102
+2021-2023 recovery and transition,origin,SPS,311
+2021-2023 recovery and transition,origin,SRQ,4328
+2021-2023 recovery and transition,origin,STC,22
+2021-2023 recovery and transition,origin,STL,15085
+2021-2023 recovery and transition,origin,STS,985
+2021-2023 recovery and transition,origin,STT,1539
+2021-2023 recovery and transition,origin,STX,367
+2021-2023 recovery and transition,origin,SUN,494
+2021-2023 recovery and transition,origin,SUX,218
+2021-2023 recovery and transition,origin,SWF,171
+2021-2023 recovery and transition,origin,SWO,173
+2021-2023 recovery and transition,origin,SYR,3139
+2021-2023 recovery and transition,origin,TBN,67
+2021-2023 recovery and transition,origin,TLH,1384
+2021-2023 recovery and transition,origin,TOL,173
+2021-2023 recovery and transition,origin,TPA,19780
+2021-2023 recovery and transition,origin,TRI,769
+2021-2023 recovery and transition,origin,TTN,559
+2021-2023 recovery and transition,origin,TUL,4024
+2021-2023 recovery and transition,origin,TUS,4270
+2021-2023 recovery and transition,origin,TVC,1168
+2021-2023 recovery and transition,origin,TWF,173
+2021-2023 recovery and transition,origin,TXK,260
+2021-2023 recovery and transition,origin,TYR,344
+2021-2023 recovery and transition,origin,TYS,3425
+2021-2023 recovery and transition,origin,USA,279
+2021-2023 recovery and transition,origin,VCT,157
+2021-2023 recovery and transition,origin,VEL,184
+2021-2023 recovery and transition,origin,VLD,301
+2021-2023 recovery and transition,origin,VPS,2652
+2021-2023 recovery and transition,origin,WRG,186
+2021-2023 recovery and transition,origin,WYS,87
+2021-2023 recovery and transition,origin,XNA,2768
+2021-2023 recovery and transition,origin,XWA,360
+2021-2023 recovery and transition,origin,YAK,190
+2021-2023 recovery and transition,origin,YKM,152
+2021-2023 recovery and transition,origin,YUM,468

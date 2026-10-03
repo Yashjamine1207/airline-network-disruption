@@ -1,0 +1,2 @@
+reference,challenger,pr_auc_reference,pr_auc_challenger,difference,ci_low,ci_high,share_challenger_better,n_boot,n_days
+baseline_carrier_rate,lightgbm_base,0.0367473839295104,0.045297921187948544,0.008550537258438143,0.00540250610316097,0.010749624059134766,1.0,100,365

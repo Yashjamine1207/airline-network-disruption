@@ -1,0 +1,5 @@
+challenger,reference,period,pr_auc_reference,pr_auc_challenger,difference,ci_low,ci_high,share_challenger_better,n_boot,n_days,verdict
+lstm,lightgbm_base_no_year,2022 second half (confirmation),0.046797301415135384,0.04419745990832509,-0.0025998415068102937,-0.004061369880273899,-0.0010294219139700212,0.0,200,184,lightgbm_base_no_year is better than lstm: the whole 95% interval is below zero.
+lstm,lightgbm_base_no_year,2022 full year,0.04792840382302811,0.045960737065587905,-0.0019676667574402076,-0.003012702854566694,-0.0005696344234844729,0.0,200,365,lightgbm_base_no_year is better than lstm: the whole 95% interval is below zero.
+lstm,"lstm, full fit",2022 second half (confirmation),0.04538950129113999,0.04419745990832509,-0.0011920413828149026,-0.0018655660617300125,-0.0004537680991870264,0.0,200,184,"lstm, full fit is better than lstm: the whole 95% interval is below zero."
+lstm,"lstm, full fit",2022 full year,0.04712238663844464,0.045960737065587905,-0.001161649572856735,-0.0017610625231999498,-0.00038638245282830876,0.005,200,365,"lstm, full fit is better than lstm: the whole 95% interval is below zero."

@@ -1,0 +1,149 @@
+{
+  "created_utc": "2026-09-30T13:15:18+00:00",
+  "feature_version": "phase6_features_v1",
+  "feature_set": "base_no_year",
+  "protocol": "phase6",
+  "tag": "",
+  "smoke_run": false,
+  "params_source": "configs/lightgbm_benchmark_selected.json",
+  "params": {
+    "objective": "binary",
+    "metric": "average_precision",
+    "n_estimators": 1200,
+    "learning_rate": 0.05,
+    "num_leaves": 15,
+    "min_child_samples": 100,
+    "reg_lambda": 10.0,
+    "verbosity": -1,
+    "colsample_bytree": 0.8,
+    "subsample": 0.7,
+    "cat_smooth": 10,
+    "min_data_per_group": 500,
+    "cat_l2": 10,
+    "max_cat_threshold": 16,
+    "subsample_freq": 1
+  },
+  "variants": [
+    "full",
+    "no2020",
+    "matched"
+  ],
+  "shock_year": 2020,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "comparison_seed": 42,
+  "fit_rows_by_utc_year": {
+    "2018": 1,
+    "2019": 741941,
+    "2020": 449920,
+    "2021": 262490
+  },
+  "comparisons": [
+    {
+      "challenger": "no2020",
+      "reference": "full",
+      "period": "2022 second half (confirmation)",
+      "pr_auc_reference": 0.046797301415135384,
+      "pr_auc_challenger": 0.046531257710733055,
+      "difference": -0.00026604370440232866,
+      "ci_low": -0.0009951034460990449,
+      "ci_high": 0.00041831644485290875,
+      "share_challenger_better": 0.18,
+      "n_boot": 200,
+      "n_days": 184,
+      "verdict": "No clear difference between no2020 and full: the 95% interval includes zero (point estimate -0.00027)."
+    },
+    {
+      "challenger": "no2020",
+      "reference": "full",
+      "period": "2022 full year",
+      "pr_auc_reference": 0.04792840382302811,
+      "pr_auc_challenger": 0.047116654025276664,
+      "difference": -0.0008117497977514487,
+      "ci_low": -0.0013577302789251498,
+      "ci_high": -0.00018813871678850677,
+      "share_challenger_better": 0.005,
+      "n_boot": 200,
+      "n_days": 365,
+      "verdict": "full is better than no2020: the whole 95% interval is below zero."
+    },
+    {
+      "challenger": "no2020",
+      "reference": "matched",
+      "period": "2022 second half (confirmation)",
+      "pr_auc_reference": 0.04620899305332016,
+      "pr_auc_challenger": 0.046531257710733055,
+      "difference": 0.0003222646574128976,
+      "ci_low": -0.00047634368481310873,
+      "ci_high": 0.0012092330641958933,
+      "share_challenger_better": 0.72,
+      "n_boot": 200,
+      "n_days": 184,
+      "verdict": "No clear difference between no2020 and matched: the 95% interval includes zero (point estimate +0.00032)."
+    },
+    {
+      "challenger": "no2020",
+      "reference": "matched",
+      "period": "2022 full year",
+      "pr_auc_reference": 0.04728957277029219,
+      "pr_auc_challenger": 0.047116654025276664,
+      "difference": -0.0001729187450155295,
+      "ci_low": -0.0006380617415870835,
+      "ci_high": 0.0005760536181683976,
+      "share_challenger_better": 0.34,
+      "n_boot": 200,
+      "n_days": 365,
+      "verdict": "No clear difference between no2020 and matched: the 95% interval includes zero (point estimate -0.00017)."
+    },
+    {
+      "challenger": "matched",
+      "reference": "full",
+      "period": "2022 second half (confirmation)",
+      "pr_auc_reference": 0.046797301415135384,
+      "pr_auc_challenger": 0.04620899305332016,
+      "difference": -0.0005883083618152263,
+      "ci_low": -0.001159829267870311,
+      "ci_high": -8.513554936115158e-05,
+      "share_challenger_better": 0.02,
+      "n_boot": 200,
+      "n_days": 184,
+      "verdict": "full is better than matched: the whole 95% interval is below zero."
+    },
+    {
+      "challenger": "matched",
+      "reference": "full",
+      "period": "2022 full year",
+      "pr_auc_reference": 0.04792840382302811,
+      "pr_auc_challenger": 0.04728957277029219,
+      "difference": -0.0006388310527359192,
+      "ci_low": -0.0010600497666226733,
+      "ci_high": -0.0002962343405867881,
+      "share_challenger_better": 0.005,
+      "n_boot": 200,
+      "n_days": 365,
+      "verdict": "full is better than matched: the whole 95% interval is below zero."
+    }
+  ],
+  "drop_2020_adopted": false,
+  "rule": "DEC-021: no2020 must beat both full and matched on the second half of 2022, each with the whole 95% interval above zero",
+  "final_test_used": false,
+  "total_seconds": 264.5,
+  "hardware": {
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu_logical_cores": 16,
+    "ram_total_gb": 33.7
+  },
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "pyarrow": "19.0.0",
+    "scikit-learn": "1.6.1",
+    "lightgbm": "4.7.0",
+    "tensorflow": "2.20.0",
+    "keras": "3.11.3"
+  }
+}

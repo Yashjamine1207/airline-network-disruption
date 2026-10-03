@@ -1,0 +1,127 @@
+{
+  "created_utc": "2026-10-01T08:09:47+00:00",
+  "tag": "",
+  "smoke_run": false,
+  "target": "severe_delay_120",
+  "feature_version": "phase6_features_v1",
+  "feature_set": "base_no_year",
+  "seed": 42,
+  "params_file": "configs/lightgbm_benchmark_selected.json",
+  "params_tuned_for_this_target": true,
+  "ranking_score": "uncalibrated LightGBM probability (Platt is monotone, so the ranking is identical); no probability threshold used",
+  "capacities": [
+    "0.5%",
+    "1%",
+    "5%",
+    "10%"
+  ],
+  "schemes": {
+    "whole_year": "top K% of every flight in the year",
+    "by_month": "top K% within each month",
+    "by_day": "top K% within each UTC prediction day"
+  },
+  "rule": "flights reviewed in a group of n = ceil(K * n), at least 1; ties by row order",
+  "windows": [
+    {
+      "target": "severe_delay_120",
+      "eval_year": 2020,
+      "regime": "2020 shock",
+      "fit_rows": 360797,
+      "fit_from": "2018-12-31 21:15:00+00:00",
+      "fit_to": "2019-06-30 23:59:00+00:00",
+      "early_stop_rows": 381145,
+      "trees": 12,
+      "eval_rows": 449920,
+      "events": 4866,
+      "prevalence": 0.010815256045519204,
+      "pr_auc": 0.013749190122237154,
+      "pr_auc_lift": 1.271277357130485,
+      "roc_auc": 0.5886233431126645,
+      "fit_seconds": 2.0
+    },
+    {
+      "target": "severe_delay_120",
+      "eval_year": 2021,
+      "regime": "2021 recovery",
+      "fit_rows": 975359,
+      "fit_from": "2018-12-31 21:15:00+00:00",
+      "fit_to": "2020-06-30 23:55:00+00:00",
+      "early_stop_rows": 216503,
+      "trees": 123,
+      "eval_rows": 599646,
+      "events": 12866,
+      "prevalence": 0.021455992368830945,
+      "pr_auc": 0.04048503406475849,
+      "pr_auc_lift": 1.8868870462300769,
+      "roc_auc": 0.6454979802878583,
+      "fit_seconds": 6.9
+    },
+    {
+      "target": "severe_delay_120",
+      "eval_year": 2022,
+      "regime": "2022 recovery/transition (locked model)",
+      "fit_rows": 1454352,
+      "fit_from": "2018-12-31 21:15:00+00:00",
+      "fit_to": "2021-06-30 23:57:00+00:00",
+      "early_stop_rows": 337156,
+      "trees": 53,
+      "eval_rows": 667616,
+      "events": 17820,
+      "prevalence": 0.02669199060537794,
+      "pr_auc": 0.04792840382302811,
+      "pr_auc_lift": 1.7956099465047552,
+      "roc_auc": 0.6430433759150129,
+      "fit_seconds": 8.2
+    }
+  ],
+  "reproduction_check_2022": {
+    "checked": true,
+    "pr_auc_difference": 0.0,
+    "largest_score_difference": 0.0
+  },
+  "bootstrap": {
+    "unit": "whole UTC prediction days",
+    "resamples": 500,
+    "interval": "95% percentile"
+  },
+  "penalty_table": {
+    "status": "ILLUSTRATIVE ASSUMPTIONS ONLY, not airline costs",
+    "ratios_miss_to_false_alert": [
+      1,
+      2,
+      5,
+      10,
+      20,
+      50,
+      100
+    ],
+    "break_even_ratio": "false alerts divided by events captured, computed from measured counts"
+  },
+  "not_evaluable": [
+    "2019 (no earlier data for an expanding window)",
+    "2023 (locked final test, never loaded)",
+    "airport recovery episodes and regression errors (not part of this script)"
+  ],
+  "limits": [
+    "each year is a different model trained on less data for earlier years; years are not one model tested three times",
+    "2022 was used to choose LightGBM settings and the calibration method, so it is validation, not a clean test",
+    "no cost of reviewing a flight, no cost of a missed event and no action taken after a review is modelled"
+  ],
+  "final_test_used": false,
+  "total_seconds": 72.6,
+  "hardware": {
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu_logical_cores": 16,
+    "ram_total_gb": 33.7
+  },
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "pyarrow": "19.0.0",
+    "scikit-learn": "1.6.1",
+    "lightgbm": "4.7.0",
+    "tensorflow": "2.20.0",
+    "keras": "3.11.3"
+  }
+}

@@ -1,0 +1,4 @@
+target,model,feature_set,split,test_rows,test_event_rate,average_precision,roc_auc,brier_score,mae_minutes,rmse_minutes,input_sha256,severe_test_rows,severe_subset_mae_minutes
+cancelled_target,logistic_regression_unweighted,base,final_test_2023,463484,0.016848478048864687,0.022219791580380614,0.5702449525236102,0.017219526304247865,,,,,
+severe_delay_120,lightgbm_isotonic,base,final_test_2023,454413,0.03187408810927504,0.043610550327036535,0.593209097480656,0.03102183411926739,,,,,
+arrival_delay_minutes,ridge_regression,base,final_test_2023,454413,,,,,26.300310023994015,60.06826781399759,,14484.0,231.4736360787071

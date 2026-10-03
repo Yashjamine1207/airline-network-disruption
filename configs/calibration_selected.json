@@ -1,0 +1,39 @@
+{
+  "created_utc": "2026-09-30T16:04:11+00:00",
+  "target": "severe_delay_120",
+  "prediction_time": "scheduled departure UTC minus 2 hours",
+  "feature_version": "phase6_features_v1",
+  "feature_set": "base_no_year",
+  "model": "LightGBM, tuned settings from configs/lightgbm_benchmark_selected.json",
+  "seed": 42,
+  "rule_1": {
+    "chosen_method": "platt",
+    "reason": "Platt improved the selection half and the improvement was confirmed on the second half.",
+    "confirmation_ci_high_vs_uncalibrated": {
+      "platt": -6.235122077667729e-06,
+      "isotonic": 5.276465090917336e-06
+    },
+    "confirmation_ci_high_isotonic_vs_platt": 1.8054269536904325e-05
+  },
+  "rule_2": {
+    "final_test_fit_source": "same_as_here",
+    "reason": "Fitting on more recent rows was not clearly better, so the same kind of rows is used.",
+    "ci_high_recent_vs_old": 9.691416066768677e-06
+  },
+  "ranking_policy": {
+    "score_used_for_ranking": "uncalibrated LightGBM score",
+    "note": "Platt is strictly increasing, so it gives the same ranking. Isotonic creates ties. Later ranking tables state which scores they use."
+  },
+  "bootstrap": {
+    "resamples": 1000,
+    "seed": 42,
+    "confidence": 0.95,
+    "unit": "day"
+  },
+  "final_test_used": false,
+  "methods_compared": [
+    "uncalibrated",
+    "platt",
+    "isotonic"
+  ]
+}

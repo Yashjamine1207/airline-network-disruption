@@ -1,0 +1,564 @@
+
+==============================================================================
+1. ENVIRONMENT
+==============================================================================
+Report time (local): 2026-09-29 12:59:07
+Project root: C:\Users\Softmgmt\Desktop\MAIN_FOLDER\WHOLE_DATA\ML_JOBS\MACHINE_LEARNING_PROJECTS\Airline Network Disruption Intelligence
+Python: 3.13.5 (CPython)
+Platform: Windows-11-10.0.26200-SP0
+CPU logical cores: 16
+RAM: 33.7 GB total, 3.2 GB available right now
+Disk at project root: 267 GB free of 1,023 GB
+
+Installed packages:
+  pandas         2.2.3 (dist: pandas)
+  numpy          2.1.3 (dist: numpy)
+  polars         NOT INSTALLED
+  pyarrow        19.0.0 (dist: pyarrow)
+  scikit-learn   1.6.1 (dist: scikit-learn)
+  lightgbm       4.7.0 (dist: lightgbm)
+  xgboost        NOT INSTALLED
+  tensorflow     2.20.0 (dist: tensorflow)
+  keras          3.11.3 (dist: keras)
+  shap           NOT INSTALLED
+  networkx       3.4.2 (dist: networkx)
+  lifelines      0.30.3 (dist: lifelines)
+  PyYAML         6.0.3 (dist: pyyaml)
+  pytest         8.3.4 (dist: pytest)
+  psutil         5.9.0 (dist: psutil)
+
+nvidia-smi GPUs: NVIDIA GeForce RTX 3050 Laptop GPU, 4096 MiB, 592.82
+TensorFlow 2.20.0 imported OK. Physical devices: ['/physical_device:CPU:0 (CPU)']
+
+==============================================================================
+2. REPOSITORY LAYOUT
+==============================================================================
+  [OK] pyproject.toml
+  [OK] README.md
+  [OK] .gitignore
+  [OK] configs/lightgbm.yaml
+  [OK] configs/lstm.yaml
+  [OK] configs/gru.yaml
+  [OK] configs/transformer.yaml
+  [OK] configs/validation.yaml
+  [OK] configs/features.yaml
+  [OK] configs/calibration.yaml
+  [OK] configs/targets.yaml
+  [OK] configs/decision_policy.yaml
+  [OK] configs/network_features.yaml
+  [OK] configs/survival.yaml
+  [OK] docs/decisions/decision_log.md
+  [OK] docs/decisions/historical_outcome_availability.md
+  [OK] docs/decisions/prediction_timestamp_policy.md
+  [OK] docs/decisions/validation_strategy.md
+  [OK] docs/data/leakage_audit.md
+  [MISSING] docs/data/feature_catalog.md
+  [MISSING] models/registry/model_registry.md
+  [MISSING] src/airline_disruption/models/boosting.py
+  [MISSING] src/airline_disruption/models/calibration.py
+  [MISSING] src/airline_disruption/models/training.py
+  [MISSING] src/airline_disruption/models/lstm.py
+  [MISSING] src/airline_disruption/models/gru.py
+  [MISSING] src/airline_disruption/models/transformer.py
+  [MISSING] src/airline_disruption/features/sequences.py
+  [MISSING] src/airline_disruption/features/point_in_time.py
+  [MISSING] src/airline_disruption/validation/temporal_splits.py
+  [MISSING] src/airline_disruption/evaluation/classification.py
+  [MISSING] src/airline_disruption/evaluation/regression.py
+  [MISSING] src/airline_disruption/evaluation/operational_value.py
+  [MISSING] tests/validation
+  [OK] tests/features
+Missing: 15 of 35 expected paths
+
+src/airline_disruption/models/: baselines.py, regression_baselines.py, tabular_preprocessing.py
+src/airline_disruption/features/: folder does not exist
+src/airline_disruption/validation/: folder does not exist
+src/airline_disruption/evaluation/: folder does not exist
+src/airline_disruption/network/: centrality.py, graph_builder.py
+src/airline_disruption/explainability/: folder does not exist
+src/airline_disruption/utils/: folder does not exist
+scripts/ (63 files): analyse_airport_recovery_km.py, analyse_airport_recovery_sensitivity.py, analyse_entity_coverage.py, analyse_lagged_airport_disruption.py, analyse_schedule_entity_disruption.py, analyse_temporal_regimes.py, audit_flight_data.py, audit_prediction_timestamps.py, benchmark_schedule_normalisation.py, benchmark_vectorised_departures.py, benchmark_vectorised_schedule.py, build_airport_recovery_episodes.py, build_airport_route_disruption_summary.py, build_base_features.py, build_base_plus_schedule_history.py, build_completed_outcome_times.py, build_network_exposure_summary.py, build_network_regime_summary.py, build_phase3_tabular_features.py, build_phase5_evaluation_reports.py, build_phase5_report.py, build_prediction_timestamps.py, build_prior_month_network_features.py, build_prior_month_schedule_counts.py, build_targets.py, build_temporal_split_manifest.py, build_utc_route_disruption_summary.py, build_yearly_airport_networks.py, build_yearly_network_metrics.py, calibrate_phase4_severe_delay_lightgbm.py, check_phase3_source_columns.py, compare_vectorised_arrivals.py, compare_vectorised_departures.py, compare_vectorised_schedule.py, consolidate_phase2_data_card.py, evaluate_phase4_final_test_2023.py, evaluate_severe_delay_2023_corrected.py, phase6_step1_audit.py, plan_noaa_weather_acquisition.py, plot_airport_network.py, plot_centrality_vs_disruption.py, plot_phase4_model_comparison.py, prepare_base_model_tables.py, prepare_phase4_base_data.py, prepare_phase4_full_data.py, prepare_phase4_schedule_network_data.py, run_phase4_constant_baselines.py, run_regime_shift_diagnostics.py, run_schedule_normalisation_sample.py, summarise_phase4_ranking_capacity.py, summarise_phase4_validation.py, train_phase4_cancellation_logistic.py, train_phase4_cancellation_logistic_unweighted.py, train_phase4_elastic_net_regression.py, train_phase4_linear_regression.py, train_phase4_ridge_regression.py, train_phase4_severe_delay_lightgbm.py, train_phase4_severe_delay_lightgbm_schedule_network.py, train_phase4_severe_delay_logistic.py, validate_base_features.py, validate_completed_arrival_clocks.py, validate_phase3_tabular_features.py, validate_targets.py
+tests/: 20 test files
+notebooks/: 01_data_source_audit.ipynb
+
+==============================================================================
+3. DATA FILES
+==============================================================================
+[OK] raw_flights: data/raw/flights_kaggle/flights_sample_3m.csv
+     size 614.1 MB, rows 3,000,000, columns 32, modified 2026-09-20 18:31
+     columns: ['FL_DATE', 'AIRLINE', 'AIRLINE_DOT', 'AIRLINE_CODE', 'DOT_CODE', 'FL_NUMBER', 'ORIGIN', 'ORIGIN_CITY', 'DEST', 'DEST_CITY', 'CRS_DEP_TIME', 'DEP_TIME', 'DEP_DELAY', 'TAXI_OUT', 'WHEELS_OFF', 'WHEELS_ON', 'TAXI_IN', 'CRS_ARR_TIME', 'ARR_TIME', 'ARR_DELAY', 'CANCELLED', 'CANCELLATION_CODE', 'DIVERTED', 'CRS_ELAPSED_TIME', 'ELAPSED_TIME', 'AIR_TIME', 'DISTANCE', 'DELAY_DUE_CARRIER', 'DELAY_DUE_WEATHER', 'DELAY_DUE_NAS', 'DELAY_DUE_SECURITY', 'DELAY_DUE_LATE_AIRCRAFT']
+     tail/aircraft-like columns in raw file: ['DELAY_DUE_LATE_AIRCRAFT']
+[OK] base_predictors: data/features/base/base_predictors.csv
+     size 482.6 MB, rows 2,999,999, columns 27, modified 2026-09-25 21:52
+     columns: ['source_row_number', 'prediction_timestamp_utc', 'FL_DATE', 'scheduled_departure_utc', 'scheduled_departure_year', 'scheduled_departure_month', 'scheduled_departure_quarter', 'scheduled_departure_day_of_month', 'scheduled_departure_day_of_week', 'scheduled_departure_week_of_year', 'scheduled_departure_is_weekend', 'scheduled_departure_hour_local', 'scheduled_departure_minute_local', 'scheduled_arrival_hour_local', 'scheduled_arrival_minute_local', 'scheduled_elapsed_time_minutes', 'distance_miles', 'origin_airport', 'destination_airport', 'route', 'airline_code', 'dot_code', 'carrier_identifier', 'flight_number', 'scheduled_departure_time_valid', 'scheduled_arrival_time_valid', 'scheduled_date_valid']
+[OK] model_labels: data/processed/targets/model_labels.csv
+     size 142.5 MB, rows 2,999,999, columns 9, modified 2026-09-25 21:52
+     columns: ['source_row_number', 'FL_DATE', 'cancelled_target', 'completed_flight', 'arrival_delay_minutes', 'severe_delay_60', 'severe_delay_90', 'severe_delay_120', 'severe_delay_180']
+[OK] prior_month_counts: data/features/historical/prior_month_schedule_counts.csv
+     size 152.0 MB, rows 2,999,999, columns 6, modified 2026-09-26 17:26
+[OK] prior_month_network: data/features/network/prior_month_airport_network.csv
+     size 184.5 MB, rows 2,999,999, columns 7, modified 2026-09-26 17:39
+[OK] phase3_features: data/features/tabular/phase3_schedule_network_features.csv
+     size 564.3 MB, rows 2,999,999, columns 34, modified 2026-09-26 17:42
+     columns: ['source_row_number', 'prediction_timestamp_utc', 'FL_DATE', 'scheduled_departure_utc', 'scheduled_departure_year', 'scheduled_departure_month', 'scheduled_departure_quarter', 'scheduled_departure_day_of_month', 'scheduled_departure_day_of_week', 'scheduled_departure_week_of_year', 'scheduled_departure_is_weekend', 'scheduled_departure_hour_local', 'scheduled_departure_minute_local', 'scheduled_arrival_hour_local', 'scheduled_arrival_minute_local', 'scheduled_elapsed_time_minutes', 'distance_miles', 'origin_airport', 'destination_airport', 'route', 'airline_code', 'dot_code', 'carrier_identifier', 'flight_number', 'scheduled_departure_time_valid', 'scheduled_arrival_time_valid', 'scheduled_date_valid', 'prior_calendar_month_carrier_scheduled_flight_count', 'prior_calendar_month_origin_scheduled_flight_count', 'prior_calendar_month_route_scheduled_flight_count', 'prior_month_origin_out_degree', 'prior_month_origin_weighted_out_degree', 'prior_month_destination_in_degree', 'prior_month_destination_weighted_in_degree']
+[OK] split_manifest: data/processed/model_ready/temporal_split_manifest.csv
+     size 160.0 MB, rows 2,999,999, columns 4, modified 2026-09-25 21:57
+
+Other tables under data/features and data/processed (header only):
+  data\features\base\base_features.csv  (513.3 MB, rows 3,000,000, cols 34)
+  data\features\tabular\base_plus_prior_schedule.csv  (519.7 MB, rows 2,999,999, cols 30)
+      history-like columns: ['prior_calendar_month_carrier_scheduled_flight_count', 'prior_calendar_month_origin_scheduled_flight_count', 'prior_calendar_month_route_scheduled_flight_count']
+  data\processed\model_ready\phase4_base_dev_validation.parquet  (33.9 MB, rows 2,536,515, cols 19)
+  data\processed\model_ready\phase4_base_full_splits.parquet  (40.5 MB, rows 2,999,999, cols 19)
+  data\processed\model_ready\phase4_schedule_network_dev_validation.parquet  (54.6 MB, rows 2,536,515, cols 26)
+      history-like columns: ['prior_calendar_month_carrier_scheduled_flight_count', 'prior_calendar_month_origin_scheduled_flight_count', 'prior_calendar_month_route_scheduled_flight_count', 'prior_month_origin_out_degree', 'prior_month_origin_weighted_out_degree', 'prior_month_destination_in_degree', 'prior_month_destination_weighted_in_degree']
+  data\processed\network_windows\airport_month_lag_disruption.parquet  (0.2 MB, rows 6,263, cols 10)
+      history-like columns: ['previous_scheduled', 'previous_completed', 'previous_severe_rate', 'current_severe_rate', 'previous_cancellation_rate', 'current_cancellation_rate']
+  data\processed\network_windows\yearly_route_counts.csv  (2.2 MB, rows 32,238, cols 6)
+  data\processed\survival_episodes\airport_recovery_episodes.csv  (0.3 MB, rows 2,547, cols 12)
+      history-like columns: ['start_severe_rate', 'disruption_rate_threshold', 'normal_rate_threshold']
+  data\processed\targets\flight_targets.csv  (604.0 MB, rows 3,000,000, cols 24)
+
+==============================================================================
+4. CHRONOLOGICAL SPLIT MANIFEST
+==============================================================================
+Columns: ['source_row_number', 'flight_date', 'prediction_timestamp_utc', 'temporal_split']
+Detected: id=source_row_number, split=temporal_split, prediction timestamp=prediction_timestamp_utc
+Rows: 2,999,999
+Duplicate source_row_number values: 0
+
+Rows per split (expected value from the Phase 3 summary in brackets):
+  development: 1,848,655  [expected 1,848,655, diff +0]
+  validation: 687,860  [expected 687,860, diff +0]
+  final_test_locked: 463,484  [expected 463,484, diff +0]
+
+Unparseable prediction_timestamp_utc values: 0
+Prediction-timestamp range per split (UTC):
+                                        min                       max
+temporal_split                                                       
+development       2018-12-31 21:15:00+00:00 2022-01-01 06:50:00+00:00
+final_test_locked 2023-01-01 05:59:00+00:00 2023-09-01 06:55:00+00:00
+validation        2022-01-01 03:59:00+00:00 2023-01-01 07:35:00+00:00
+  development ends 2022-01-01 06:50, validation starts 2022-01-01 03:59: OVERLAP
+  validation ends 2023-01-01 07:35, final_test_locked starts 2023-01-01 05:59: OVERLAP
+Chronological ordering of splits: FAIL
+
+Rows per split by prediction-timestamp year (UTC):
+prediction_timestamp_utc  2018    2019    2020    2021    2022    2023
+temporal_split                                                        
+development                  1  757518  479446  611553     137       0
+final_test_locked            0       0       0       0       0  463484
+validation                   0       0       0       0  687710     150
+
+==============================================================================
+5. LABEL PREVALENCE PER SPLIT
+==============================================================================
+Label rows: 2,999,999. Rows without a manifest split: 0
+Binary label-like columns: ['cancelled_target', 'completed_flight', 'severe_delay_60', 'severe_delay_90', 'severe_delay_120', 'severe_delay_180']
+
+cancelled_target by split:
+                   non_null   events  prevalence
+temporal_split                                  
+development         1848655  52883.0     0.02861
+final_test_locked    463484   7809.0     0.01685
+validation           687860  18448.0     0.02682
+
+completed_flight by split:
+                   non_null     events  prevalence
+temporal_split                                    
+development         1848655  1791627.0     0.96915
+final_test_locked    463484   454413.0     0.98043
+validation           687860   667761.0     0.97078
+
+severe_delay_60 by split:
+                   non_null   events  prevalence
+temporal_split                                  
+development         1791627  95330.0     0.05321
+final_test_locked    454413  36378.0     0.08005
+validation           667761  46704.0     0.06994
+
+severe_delay_90 by split:
+                   non_null   events  prevalence
+temporal_split                                  
+development         1791627  57917.0     0.03233
+final_test_locked    454413  22249.0     0.04896
+validation           667761  27949.0     0.04185
+
+severe_delay_120 by split:
+                   non_null   events  prevalence
+temporal_split                                  
+development         1791627  37493.0     0.02093
+final_test_locked    454413  14484.0     0.03187
+validation           667761  17824.0     0.02669
+
+severe_delay_180 by split:
+                   non_null   events  prevalence
+temporal_split                                  
+development         1791627  17393.0     0.00971
+final_test_locked    454413   7001.0     0.01541
+validation           667761   8227.0     0.01232
+
+arrival_delay_minutes (continuous) by split:
+                     count   mean  median     max
+temporal_split                                   
+development        1791627  1.978    -8.0  2568.0
+final_test_locked   454413  9.366    -5.0  2913.0
+validation          667761  6.913    -5.0  2934.0
+
+==============================================================================
+6. FEATURE-COLUMN REVIEW
+==============================================================================
+Name-based review only. A clean result here is not proof of no leakage;
+it only catches obvious outcome-like or history-like column names.
+
+base_predictors (27 columns)
+  outcome-like names (REVIEW if any): none
+  history-like names: none
+
+phase3_features (34 columns)
+  outcome-like names (REVIEW if any): none
+  history-like names: ['prior_calendar_month_carrier_scheduled_flight_count', 'prior_calendar_month_origin_scheduled_flight_count', 'prior_calendar_month_route_scheduled_flight_count', 'prior_month_origin_out_degree', 'prior_month_origin_weighted_out_degree', 'prior_month_destination_in_degree', 'prior_month_destination_weighted_in_degree']
+
+==============================================================================
+7. PHASE 4 RESULT TABLES ON DISK
+==============================================================================
+No Phase 4 result tables found in the expected locations.
+
+==============================================================================
+8. TEXT SEARCH (final test, quarantine, historical rates)
+==============================================================================
+Scanned 154 text files (0 skipped as too large).
+
+[quarantine] 1 hits in 1 files
+       1  reports\evaluation\phase4_final_summary.md
+      reports\evaluation\phase4_final_summary.md:45: Earlier scripts mistakenly fitted models or calibration using 2023 labels, violating the holdout principle. Those outputs have bee
+
+[final-test references] 64 hits in 26 files
+       6  configs\validation.yaml
+       5  scripts\evaluate_phase4_final_test_2023.py
+       5  scripts\evaluate_severe_delay_2023_corrected.py
+       5  configs\decision_policy.yaml
+       4  configs\lightgbm.yaml
+       4  configs\xgboost.yaml
+       3  scripts\build_temporal_split_manifest.py
+       3  tests\features\test_validated_arrival_clocks.py
+       2  scripts\build_completed_outcome_times.py
+       2  configs\calibration.yaml
+      scripts\build_completed_outcome_times.py:148: # Preserve the final test lock regardless of its outcome fields.
+      scripts\build_completed_outcome_times.py:149: status.loc[~development_or_validation] = "final_test_locked"
+      scripts\build_temporal_split_manifest.py:31: "final_test_locked": 0,
+      scripts\build_temporal_split_manifest.py:101: "final_test_locked",
+      scripts\build_temporal_split_manifest.py:149: print(f"Final test (locked): {counts['final_test_locked']:,}")
+      scripts\evaluate_phase4_final_test_2023.py:38: TEST_SPLIT = "final_test_locked"
+
+[outcome-availability policy] 8 hits in 7 files
+       2  configs\network_features.yaml
+       1  scripts\analyse_lagged_airport_disruption.py
+       1  scripts\build_completed_outcome_times.py
+       1  scripts\build_phase5_evaluation_reports.py
+       1  docs\decisions\historical_outcome_availability.md
+       1  docs\decisions\target_definitions.md
+       1  reports\evaluation\propagation_report.md
+      scripts\analyse_lagged_airport_disruption.py:214: "Retrospective association only; outcome availability "
+      scripts\build_completed_outcome_times.py:9: the published dataset made the outcome available.
+      scripts\build_phase5_evaluation_reports.py:117: "pre-flight predictive features. Actual outcome availability "
+      configs\network_features.yaml:83: subject to point-in-time outcome availability.
+      configs\network_features.yaml:88: subject to point-in-time outcome availability.
+      docs\decisions\historical_outcome_availability.md:1: # Historical outcome availability decision
+
+[historical outcome rates used as features] 12 hits in 2 files
+       8  configs\features.yaml
+       4  configs\network_features.yaml
+      configs\features.yaml:100: - "carrier_historical_severe_delay_rate"
+      configs\features.yaml:101: - "carrier_historical_cancellation_rate"
+      configs\features.yaml:112: - "origin_historical_severe_delay_rate"
+      configs\features.yaml:113: - "destination_historical_severe_delay_rate"
+      configs\features.yaml:114: - "origin_historical_cancellation_rate"
+      configs\features.yaml:115: - "destination_historical_cancellation_rate"
+
+[feature-list definitions] 59 hits in 22 files
+      11  scripts\evaluate_phase4_final_test_2023.py
+       4  scripts\train_phase4_cancellation_logistic.py
+       4  scripts\train_phase4_elastic_net_regression.py
+       4  scripts\train_phase4_linear_regression.py
+       4  scripts\train_phase4_ridge_regression.py
+       4  scripts\train_phase4_severe_delay_logistic.py
+       3  src\airline_disruption\models\tabular_preprocessing.py
+       3  scripts\evaluate_severe_delay_2023_corrected.py
+       3  scripts\train_phase4_severe_delay_lightgbm_schedule_network.py
+       3  scripts\validate_base_features.py
+      src\airline_disruption\models\tabular_preprocessing.py:34: BASE_FEATURE_COLUMNS = BASE_NUMERIC_COLUMNS + BASE_CATEGORICAL_COLUMNS
+      src\airline_disruption\models\tabular_preprocessing.py:70: missing = set(BASE_FEATURE_COLUMNS).difference(predictors.columns)
+      src\airline_disruption\models\tabular_preprocessing.py:74: selected = predictors.loc[:, BASE_FEATURE_COLUMNS].copy()
+      scripts\calibrate_phase4_severe_delay_lightgbm.py:133: "feature_set": "base_schedule_carrier_airport_route",
+      scripts\evaluate_phase4_final_test_2023.py:27: BASE_FEATURE_COLUMNS,
+      scripts\evaluate_phase4_final_test_2023.py:58: f'"{column}"' for column in BASE_FEATURE_COLUMNS
+
+==============================================================================
+9. KEY DOCUMENTS AND CONFIGS
+==============================================================================
+
+--- configs/lightgbm.yaml (modified 2026-09-20 22:13, 226 lines, showing head 40)
+    # LightGBM configuration for:
+    # Airline Network Disruption Intelligence:
+    # Delay Prediction, Propagation, Recovery and Network Resilience
+    
+    version: "0.1.0"
+    
+    general:
+      library: "lightgbm"
+      random_seed: 42
+      deterministic_when_supported: true
+    
+      chronological_validation_required: true
+      final_test_set_used_for_tuning: false
+    
+      configuration_selection_dataset: "validation_only"
+    
+    classification:
+      enabled: true
+    
+      objectives:
+        severe_arrival_delay: "binary"
+        cancellation: "binary"
+    
+      evaluation_metrics:
+        primary: "average_precision"
+    
+        secondary:
+          - "binary_logloss"
+          - "auc"
+    
+      class_imbalance:
+        primary_strategy: "scale_pos_weight_from_training_fold"
+    
+        compute_using: >
+          Number of negative examples divided by number of positive examples in the
+          relevant training fold only.
+    
+        resampling_enabled_by_default: false
+    
+      initial_parameters:
+
+--- configs/validation.yaml (modified 2026-09-22 03:24, 90 lines, showing head 40)
+    # Chronological validation configuration
+    #
+    # The boundaries below were confirmed from the audited raw Kaggle CSV:
+    # - Earliest flight date: 2019-01-01
+    # - Latest flight date:   2023-08-31
+    # - Valid FL_DATE rows:   3,000,000 / 3,000,000
+    #
+    # This is a retrospective portfolio study. All headline evaluation uses
+    # chronological splits only. Random train/test splitting is prohibited.
+    
+    data_coverage:
+      flight_date_column: "FL_DATE"
+      source_date_format: "%Y-%m-%d"
+      audited_start_date: "2019-01-01"
+      audited_end_date: "2023-08-31"
+      audited_years_present:
+        - 2019
+        - 2020
+        - 2021
+        - 2022
+        - 2023
+      final_year_coverage_note: >
+        The dataset contains flights through 2023-08-31 only. The final test
+        period is therefore a partial-year test period and must never be
+        described as full-year 2023 coverage.
+    
+    primary_temporal_split:
+      # Development/training data. These dates may be used for training and
+      # expanding-window development experiments only.
+      development_train_start: "2019-01-01"
+      development_train_end: "2021-12-31"
+    
+      # Used for model selection, hyperparameter tuning, probability calibration,
+      # and alert-threshold selection. Do not train final models on this period
+      # until all choices are locked.
+      validation_start: "2022-01-01"
+      validation_end: "2022-12-31"
+    
+      # Untouched final evaluation period. It must not affect feature selection,
+      # preprocessing, model selection, calibration, or threshold choice.
+
+--- configs/calibration.yaml (modified 2026-09-20 22:11, 122 lines, showing head 40)
+    # Probability-calibration configuration for:
+    # Airline Network Disruption Intelligence:
+    # Delay Prediction, Propagation, Recovery and Network Resilience
+    
+    version: "0.1.0"
+    
+    general:
+      enabled: true
+      applies_to:
+        - "severe_arrival_delay_classification"
+        - "cancellation_classification"
+    
+      primary_goal: >
+        Evaluate whether predicted disruption probabilities correspond to observed
+        disruption frequencies in later chronological data.
+    
+      final_test_set_used_to_fit_calibration: false
+      final_test_set_used_to_select_calibration_method: false
+    
+    calibration_data:
+      model_training_data: "chronological_training_period"
+      calibration_selection_data: "chronological_validation_period"
+      final_evaluation_data: "untouched_final_temporal_test_period"
+    
+      rule: >
+        Calibration methods are fitted and selected using validation data only after
+        the underlying model is trained on the relevant chronological training
+        period.
+    
+    candidate_methods:
+      - method_id: "uncalibrated"
+        description: "Use the original model probability without post-processing."
+    
+      - method_id: "platt_sigmoid"
+        description: >
+          Fit a sigmoid probability-calibration model using validation-period
+          predictions and outcomes.
+    
+      - method_id: "isotonic"
+        description: >
+
+--- docs/decisions/historical_outcome_availability.md (modified 2026-09-26 18:44, 36 lines, showing head 36)
+    # Historical outcome availability decision
+    
+    ## Prediction context
+    
+    The pre-flight prediction timestamp is scheduled departure UTC minus
+    two hours. A historical outcome feature may be used only if the earlier
+    flight's outcome was available by that timestamp.
+    
+    ## Evidence from the audited source
+    
+    The flight file provides final arrival-delay and cancellation outcomes,
+    but no field recording when each outcome became available to a user of
+    this retrospective dataset.
+    
+    The project reconstructed and destination-clock-validated gate-arrival
+    event times for 2,459,301 development/validation flights. These are
+    times when flights arrived, not verified times when their records became
+    available. No reliable cancellation-availability timestamp exists.
+    
+    ## Phase 3 decision
+    
+    Do not include historical severe-delay rates, historical cancellation
+    rates, historical mean/median arrival delay, or rolling outcome-based
+    disruption rates in pre-flight predictors under the current evidence.
+    
+    Keep `validated_completed_arrivals.csv` for retrospective timing and
+    data-quality analysis only. Do not join it into
+    `phase3_schedule_network_features.csv`.
+    
+    The approved historical predictors are previous-completed-UTC-month
+    scheduled-flight counts and schedule-only airport-route network
+    features. The target table remains separate from predictor tables.
+    
+    This is a documented limitation, not evidence that historical outcome
+    rates would have no predictive value. Revisit them only if a defensible
+    outcome-availability rule and point-in-time tests are established.
+
+--- docs/decisions/decision_log.md (modified 2026-09-20 22:16, 206 lines, showing tail 40)
+    
+    ---
+    
+    ## DEC-011 — Recovery definition
+    
+    | Field | Value |
+    |---|---|
+    | Date | 2026-09-20 |
+    | Status | Provisional |
+    | Decision | Define candidate normal operation as arrival delay below 15 minutes; recovery is the first later eligible operated flight in a validated rotation t
+    | Rationale | This supports consistent construction of recovery episodes and survival analysis |
+    | Consequence | Recovery results require documented right-censoring, rotation eligibility, and sensitivity analysis |
+    | Confirmation requirement | Confirm source outcome fields and rotation coverage during the Phase 1 audit |
+    | Evidence | `docs/decisions/recovery_definition.md`, `configs/survival.yaml` |
+    
+    ---
+    
+    ## DEC-012 — Weather matching
+    
+    | Field | Value |
+    |---|---|
+    | Date | 2026-09-20 |
+    | Status | Accepted |
+    | Decision | Match weather using NOAA GHCNh observations at or before the flight prediction timestamp |
+    | Rationale | Weather observations after prediction time would create future-data leakage |
+    | Consequence | Preserve station identity, observation time, quality metadata, matching method, and time gap |
+    | Evidence | `configs/weather_matching.yaml` |
+    
+    ---
+    
+    ## DEC-013 — Ranked prioritisation scenarios
+    
+    | Field | Value |
+    |---|---|
+    | Date | 2026-09-20 |
+    | Status | Accepted |
+    | Decision | Evaluate ranked flights at the top 0.5%, 1%, 5%, and 10% of eligible flights |
+    | Rationale | This shows how models capture disruption events under hypothetical review-capacity constraints |
+    | Consequence | Capacity and utility values are illustrative analytical assumptions, not airline policy, staffing plans, or financial estimates |
+    | Evidence | `docs/decisions/utility_scenarios.md`, `configs/decision_policy.yaml` |
+
+--- models/registry/model_registry.md: MISSING
+
+==============================================================================
+10. GIT STATE
+==============================================================================
+Branch: main
+Last 8 commits:
+    56a86ee chore: establish Phase 0 research protocol and repository structure
+Uncommitted or untracked entries: 131
+     M configs/features.yaml
+    M  configs/validation.yaml
+    A  data/external/airport_coverage_audit.csv
+    A  data/external/airport_timezone_mapping.csv
+    A  data/external/airport_timezone_mapping_requires_review.csv
+    A  data/external/flight_data_audit.json
+    A  data/external/flight_data_audit_summary.csv
+    A  data/external/flight_field_mapping.csv
+    A  data/external/flight_missingness_audit.csv
+    A  data/external/flight_time_quality_audit.csv
+    A  data/external/scheduled_time_consistency_audit.csv
+    A  data/sample/scheduled_timestamp_normalisation_sample_audit.csv
+    A  docs/data/flight_data_audit.md
+     M docs/data/leakage_audit.md
+    M  docs/decisions/validation_strategy.md
+    A  notebooks/01_data_source_audit.ipynb
+    M  pyproject.toml
+    A  reports/evaluation/schedule_normalisation_benchmark.md
+    A  scripts/audit_flight_data.py
+    A  scripts/benchmark_schedule_normalisation.py
+    A  scripts/benchmark_vectorised_departures.py
+    A  scripts/benchmark_vectorised_schedule.py
+    A  scripts/compare_vectorised_arrivals.py
+    A  scripts/compare_vectorised_departures.py
+    A  scripts/compare_vectorised_schedule.py
+    A  scripts/run_schedule_normalisation_sample.py
+    A  src/airline_disruption/data/__init__.py
+    A  src/airline_disruption/data/ingestion.py
+    A  src/airline_disruption/timestamps/__init__.py
+    A  src/airline_disruption/timestamps/local_to_utc.py
+    A  src/airline_disruption/timestamps/normalise_schedule.py
+    A  src/airline_disruption/timestamps/schedule_arrival_reconciliation.py
+    A  src/airline_disruption/timestamps/schedule_times.py
+    A  src/airline_disruption/timestamps/vectorised_arrivals.py
+    A  src/airline_disruption/timestamps/vectorised_departures.py
+    A  src/airline_disruption/timestamps/vectorised_schedule.py
+    A  tests/data/test_ingestion.py
+    A  tests/test_ingestion.py
+    A  tests/timestamps/test_local_to_utc.py
+    A  tests/timestamps/test_normalise_schedule.py
+    ... 91 more
+
+Tracked files inside protected data/model folders (should be none):
+    none
+
+==============================================================================
+DONE
+==============================================================================
+All sections ran.

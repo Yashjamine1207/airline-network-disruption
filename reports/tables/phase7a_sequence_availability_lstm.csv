@@ -1,0 +1,2 @@
+dimension,group,rows,share_of_rows,events,prevalence,mean_score,mean_probability,probability_to_observed,brier_probability,alert_rate_top1pct,precision_top1pct,recall_top1pct,alert_rate_top10pct,precision_top10pct,recall_top10pct,pr_auc,lift,small_sample
+sequence_availability,full (16 real bins),341232,1.0,8887,0.026043864584798612,0.02059135156454471,0.02059135156454471,0.7906411699192889,0.0252544832357743,0.009999062221597037,0.09114888628370457,0.0349949364239901,0.09999941388849815,0.05386396272309,0.20681894902666817,0.04538950129113999,1.7428097563382785,False

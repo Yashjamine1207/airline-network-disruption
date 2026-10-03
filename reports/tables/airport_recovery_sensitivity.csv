@@ -1,0 +1,8 @@
+scenario,minimum_completed_per_airport_day,disruption_rate_threshold,normal_rate_threshold,consecutive_normal_days_required,qualifying_airport_days,airports_with_qualifying_days,episodes,observed_recoveries,censored_episodes,median_days_among_observed_recoveries_only
+primary_candidate,20,0.05,0.02,2,36153,50,2547,1677,870,5.0
+minimum_10_flights,10,0.05,0.02,2,63379,100,5859,3933,1926,4.0
+minimum_50_flights,50,0.05,0.02,2,9245,22,643,304,339,4.0
+disruption_rate_10_percent,20,0.1,0.02,2,36153,50,1003,689,314,6.0
+normal_rate_3_percent,20,0.05,0.03,2,36153,50,2835,1978,857,4.0
+one_normal_day,20,0.05,0.02,1,36153,50,3205,2545,660,3.0
+three_normal_days,20,0.05,0.02,3,36153,50,2087,1116,971,7.0

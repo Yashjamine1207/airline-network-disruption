@@ -1,0 +1,5 @@
+phase6_split,flights,full_lookback,partial_lookback,empty_lookback,origin_quiet_full_lookback,median_origin_departures_in_lookback,share_not_full
+development,1848518,1844870,3647,1,34168,54.0,0.0019734728036189253
+embargoed_boundary,287,287,0,0,2,71.0,0.0
+final_test_locked,463484,463484,0,0,6767,63.0,0.0
+validation,687710,687710,0,0,11195,62.0,0.0

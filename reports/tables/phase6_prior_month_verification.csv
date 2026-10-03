@@ -1,0 +1,8 @@
+feature,definition,comparable_rows,matches,mismatches,stored_null_in_comparable_rows,mismatch_rate,first_month_rows,first_month_stored_null
+prior_calendar_month_carrier_scheduled_flight_count,scheduled flights of the carrier in the previous UTC month,2999998,2990333,9665,0,0.003221668814445876,1,0
+prior_calendar_month_origin_scheduled_flight_count,scheduled flights leaving the origin in the previous UTC month,2999998,2990391,9607,0,0.0032023354682236453,1,0
+prior_calendar_month_route_scheduled_flight_count,scheduled flights on the route in the previous UTC month,2999998,2991092,8906,0,0.002968668645779097,1,0
+prior_month_origin_out_degree,distinct destinations served from the origin in the previous UTC month,2999998,2991999,7999,0,0.0026663351108900737,1,0
+prior_month_origin_weighted_out_degree,scheduled flights leaving the origin in the previous UTC month,2999998,2990391,9607,0,0.0032023354682236453,1,0
+prior_month_destination_in_degree,distinct origins serving the destination in the previous UTC month,2999998,2992318,7680,0,0.0025600017066678043,1,0
+prior_month_destination_weighted_in_degree,scheduled flights arriving at the destination in the previous UTC month,2999998,2990419,9579,0,0.0031930021286680856,1,0

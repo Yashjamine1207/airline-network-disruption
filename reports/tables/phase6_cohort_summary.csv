@@ -1,0 +1,7 @@
+cohort_version,phase6_split,regime,rows,completed_flights,cancelled_events,severe_delay_120_events,cancellation_rate,severe_delay_120_rate_among_completed
+phase6_cohort_v1,development,2019_pre_covid,757672,742095,13594,19761,0.01794,0.02663
+phase6_cohort_v1,development,2020_covid_shock,479350,449823,28757,4863,0.05999,0.01081
+phase6_cohort_v1,development,2021_2022_transition,611496,599590,10514,12865,0.01719,0.02146
+phase6_cohort_v1,validation,2021_2022_transition,687710,667616,18444,17820,0.02682,0.02669
+phase6_cohort_v1,final_test_locked,2023_partial_final,463484,454413,7809,14484,0.01685,0.03187
+phase6_cohort_v1,embargoed_boundary,2021_2022_transition,287,264,22,8,0.07666,0.0303

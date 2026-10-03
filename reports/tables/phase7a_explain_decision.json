@@ -1,0 +1,72 @@
+{
+  "created_utc": "2026-10-01T08:08:31+00:00",
+  "tag": "",
+  "smoke_run": false,
+  "feature_version": "phase6_features_v1",
+  "feature_set": "base_no_year",
+  "seed": 42,
+  "best_iteration": 53,
+  "calibration_method_used_for_probabilities": "platt",
+  "reproduction_check": {
+    "checked": true,
+    "file": "C:\\Users\\Softmgmt\\Desktop\\MAIN_FOLDER\\WHOLE_DATA\\ML_JOBS\\MACHINE_LEARNING_PROJECTS\\Airline Network Disruption Intelligence\\data\\processed\\phase6\\predictions\\lightgbm_validation_phase6_tuned_ladder.parquet",
+    "column": "lightgbm_base_no_year",
+    "pr_auc_difference": 0.0,
+    "largest_score_difference": 0.0
+  },
+  "shap": {
+    "rows": 341232,
+    "period": "2022 second half",
+    "unit": "log-odds",
+    "additivity_gap": 8.881784197001252e-15,
+    "expected_value_log_odds": -4.008999232883119,
+    "top_features": [
+      "carrier_identifier",
+      "scheduled_departure_hour_local",
+      "scheduled_departure_month",
+      "destination_airport",
+      "origin_airport"
+    ]
+  },
+  "cases": {
+    "rule": "cases.select_cases: alert = top 1%, missed = outside top 10%, quantiles 0.25/0.5/0.75, 3 extremes",
+    "counts": {
+      "false_negative": 3,
+      "false_positive": 3,
+      "high_confidence_false_negative": 3,
+      "high_confidence_false_positive": 3,
+      "low_risk_correct": 3,
+      "true_positive": 3
+    }
+  },
+  "error_breakdown": {
+    "period": "2022 full year",
+    "cutoffs": {
+      "0.01": 0.05932335780487977,
+      "0.1": 0.03496009764716202
+    },
+    "note": "the first half of 2022 chose LightGBM settings, so the full year favours the model slightly"
+  },
+  "not_evaluable": [
+    "2019 and 2020 regimes (training years for this model)",
+    "sequence availability and length (the tabular model has no sequence input)",
+    "large regression errors and airport recovery episodes (no regression model or episode table is loaded here)"
+  ],
+  "final_test_used": false,
+  "total_seconds": 34.0,
+  "hardware": {
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu_logical_cores": 16,
+    "ram_total_gb": 33.7
+  },
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "pyarrow": "19.0.0",
+    "scikit-learn": "1.6.1",
+    "lightgbm": "4.7.0",
+    "tensorflow": "2.20.0",
+    "keras": "3.11.3"
+  }
+}

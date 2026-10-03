@@ -1,0 +1,224 @@
+{
+  "created_utc": "2026-09-30T16:22:24+00:00",
+  "architecture": "transformer",
+  "tag": "",
+  "smoke_run": false,
+  "target": "severe_delay_120",
+  "prediction_time": "scheduled departure UTC minus 2 hours",
+  "input_version": "phase6_deep_inputs_v1",
+  "feature_version": "phase6_features_v1",
+  "static_inputs": "base_no_year (DEC-018)",
+  "sequence": {
+    "version": "phase6_sequences_v1",
+    "entity": "origin airport schedule (DEC-017)",
+    "lookback_bins": 16,
+    "lookback_hours": 48,
+    "bin_hours": 3,
+    "channels": [
+      "scheduled_departures",
+      "scheduled_arrivals",
+      "distinct_destinations"
+    ],
+    "padding": "zeros, masked; the mask is passed to the sequence layer (recurrent layer, or attention keys and the final average)",
+    "outcome_columns_read": false
+  },
+  "protocol": "phase6 (fit < 2021-07-01 <= early stop; validation = 2022)",
+  "fit_variant": "full",
+  "fit_rows_by_utc_year": {
+    "2018": 1,
+    "2019": 741941,
+    "2020": 449920,
+    "2021": 262490
+  },
+  "training": {
+    "batch_size": 2048,
+    "max_epochs": 15,
+    "patience": 3,
+    "loss": "binary cross-entropy, unweighted",
+    "optimiser": "Adam",
+    "early_stopping_monitor": "val_pr_auc on the early-stop rows"
+  },
+  "rows": {
+    "fit": 1454352,
+    "early_stop": 337156,
+    "validation": 667616
+  },
+  "n_random_draws": 0,
+  "search_space": {
+    "units": [
+      16,
+      32,
+      64
+    ],
+    "dense": [
+      32,
+      64,
+      128
+    ],
+    "dropout": [
+      0.1,
+      0.2,
+      0.3
+    ],
+    "learning_rate": [
+      0.001,
+      0.0003
+    ]
+  },
+  "default_config": {
+    "units": 32,
+    "dense": 64,
+    "dropout": 0.2,
+    "learning_rate": 0.001
+  },
+  "seed": 42,
+  "n_threads": 8,
+  "selection_period": "2022, prediction time before 2022-07-01 UTC",
+  "confirmation_period": "2022, prediction time from 2022-07-01 UTC",
+  "challenger_config": null,
+  "challenger_overrides": null,
+  "challenger_adopted": false,
+  "confirmation_bootstrap": null,
+  "final_config_index": 0,
+  "final_config": {
+    "units": 32,
+    "dense": 64,
+    "dropout": 0.2,
+    "learning_rate": 0.001
+  },
+  "parameter_count": 224857,
+  "primary_train_seconds": 245.4,
+  "primary_best_epoch": 1,
+  "primary_epochs_run": 4,
+  "seed_check": {
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "pr_auc_confirmation_half": [
+      0.0448931358620326,
+      0.04524119689269637,
+      0.04581941332984443
+    ],
+    "spread": 0.0009262774678118341
+  },
+  "benchmark": {
+    "file": "data/processed/phase6/predictions/lightgbm_validation_phase6_tuned_ladder.parquet",
+    "column": "lightgbm_base_no_year"
+  },
+  "extra_references": {
+    "control": "data/processed/phase6/predictions/mlp_validation.parquet",
+    "recurrent": "data/processed/phase6/predictions/lstm_validation.parquet"
+  },
+  "comparisons": [
+    {
+      "challenger": "transformer",
+      "reference": "lightgbm_base_no_year",
+      "period": "2022 second half (confirmation)",
+      "pr_auc_reference": 0.046797301415135384,
+      "pr_auc_challenger": 0.0448931358620326,
+      "difference": -0.0019041655531027851,
+      "ci_low": -0.0031732880343587483,
+      "ci_high": -0.0005948611155542903,
+      "share_challenger_better": 0.0,
+      "n_boot": 200,
+      "n_days": 184,
+      "verdict": "lightgbm_base_no_year is better than transformer: the whole 95% interval is below zero."
+    },
+    {
+      "challenger": "transformer",
+      "reference": "lightgbm_base_no_year",
+      "period": "2022 full year",
+      "pr_auc_reference": 0.04792840382302811,
+      "pr_auc_challenger": 0.04664424807844341,
+      "difference": -0.0012841557445847016,
+      "ci_low": -0.002117192720584634,
+      "ci_high": -0.00022893756573461963,
+      "share_challenger_better": 0.01,
+      "n_boot": 200,
+      "n_days": 365,
+      "verdict": "lightgbm_base_no_year is better than transformer: the whole 95% interval is below zero."
+    },
+    {
+      "challenger": "transformer",
+      "reference": "mlp (control, no sequence)",
+      "period": "2022 second half (confirmation)",
+      "pr_auc_reference": 0.045735596407875875,
+      "pr_auc_challenger": 0.0448931358620326,
+      "difference": -0.0008424605458432766,
+      "ci_low": -0.0018520712733617966,
+      "ci_high": -3.991185613122189e-05,
+      "share_challenger_better": 0.02,
+      "n_boot": 200,
+      "n_days": 184,
+      "verdict": "mlp (control, no sequence) is better than transformer: the whole 95% interval is below zero."
+    },
+    {
+      "challenger": "transformer",
+      "reference": "mlp (control, no sequence)",
+      "period": "2022 full year",
+      "pr_auc_reference": 0.04690580408819551,
+      "pr_auc_challenger": 0.04664424807844341,
+      "difference": -0.00026155600975209803,
+      "ci_low": -0.0008458118042170982,
+      "ci_high": 0.0004704868762937482,
+      "share_challenger_better": 0.185,
+      "n_boot": 200,
+      "n_days": 365,
+      "verdict": "No clear difference between transformer and mlp (control, no sequence): the 95% interval includes zero (point estimate -0.00026)."
+    },
+    {
+      "challenger": "transformer",
+      "reference": "lstm (best recurrent model)",
+      "period": "2022 second half (confirmation)",
+      "pr_auc_reference": 0.04538950129113999,
+      "pr_auc_challenger": 0.0448931358620326,
+      "difference": -0.0004963654291073941,
+      "ci_low": -0.0010832262587117051,
+      "ci_high": 7.358196113178111e-06,
+      "share_challenger_better": 0.03,
+      "n_boot": 200,
+      "n_days": 184,
+      "verdict": "No clear difference between transformer and lstm (best recurrent model): the 95% interval includes zero (point estimate -0.00050)."
+    },
+    {
+      "challenger": "transformer",
+      "reference": "lstm (best recurrent model)",
+      "period": "2022 full year",
+      "pr_auc_reference": 0.04712238663844464,
+      "pr_auc_challenger": 0.04664424807844341,
+      "difference": -0.0004781385600012289,
+      "ci_low": -0.001092995511814021,
+      "ci_high": -1.1676439488126313e-05,
+      "share_challenger_better": 0.025,
+      "n_boot": 200,
+      "n_days": 365,
+      "verdict": "lstm (best recurrent model) is better than transformer: the whole 95% interval is below zero."
+    }
+  ],
+  "model_file": "data\\processed\\phase6\\models\\transformer_c0_s42.keras",
+  "review_fractions": [
+    0.005,
+    0.01,
+    0.05,
+    0.1
+  ],
+  "final_test_used": false,
+  "total_seconds": 1089.9,
+  "hardware": {
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu_logical_cores": 16,
+    "ram_total_gb": 33.7
+  },
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "pyarrow": "19.0.0",
+    "scikit-learn": "1.6.1",
+    "lightgbm": "4.7.0",
+    "tensorflow": "2.20.0",
+    "keras": "3.11.3"
+  }
+}

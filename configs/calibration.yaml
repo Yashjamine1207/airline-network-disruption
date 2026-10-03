@@ -1,122 +1,61 @@
-# Probability-calibration configuration for:
-# Airline Network Disruption Intelligence:
-# Delay Prediction, Propagation, Recovery and Network Resilience
+# Phase 7A calibration settings (DEC-023). Read by scripts/run_phase6_calibration.py.
+# Changing anything here after results exist is a protocol change: record it in the decision log.
+#
+# What this file cannot do: it cannot allow the final test. final_test.allowed must stay false and the
+# loader refuses to run otherwise. Calibration rows must also come strictly before the rows they are
+# scored on; the code enforces that regardless of this file.
 
-version: "0.1.0"
+version: 1
 
-general:
-  enabled: true
-  applies_to:
-    - "severe_arrival_delay_classification"
-    - "cancellation_classification"
+model:
+  # The calibrated model is the tuned LightGBM benchmark refitted with seed 42 (DEC-018, DEC-019).
+  feature_set: base_no_year
+  params_file: configs/lightgbm_benchmark_selected.json
+  seed: 42
+  # The refit is checked against the scores already stored for this model. The run stops if the full-year
+  # 2022 PR-AUC differs by more than the tolerance, because then a different model would be calibrated.
+  reference_predictions: data/processed/phase6/predictions/lightgbm_validation_phase6_tuned_ladder.parquet
+  reference_column: lightgbm_base_no_year
+  reproduction_pr_auc_tolerance: 0.0005
 
-  primary_goal: >
-    Evaluate whether predicted disruption probabilities correspond to observed
-    disruption frequencies in later chronological data.
+methods:
+  - uncalibrated   # the reference, always kept
+  - platt          # logistic on the logit of the score; cannot change the ranking
+  - isotonic       # monotone step function; flexible, can create ties
 
-  final_test_set_used_to_fit_calibration: false
-  final_test_set_used_to_select_calibration_method: false
-
-calibration_data:
-  model_training_data: "chronological_training_period"
-  calibration_selection_data: "chronological_validation_period"
-  final_evaluation_data: "untouched_final_temporal_test_period"
-
-  rule: >
-    Calibration methods are fitted and selected using validation data only after
-    the underlying model is trained on the relevant chronological training
-    period.
-
-candidate_methods:
-  - method_id: "uncalibrated"
-    description: "Use the original model probability without post-processing."
-
-  - method_id: "platt_sigmoid"
-    description: >
-      Fit a sigmoid probability-calibration model using validation-period
-      predictions and outcomes.
-
-  - method_id: "isotonic"
-    description: >
-      Fit an isotonic probability-calibration model using validation-period
-      predictions and outcomes when validation sample size supports it.
-
-selection:
-  primary_selection_metric: "brier_score"
-
-  supporting_evidence:
-    - "reliability_curve"
-    - "calibration_curve"
-    - "pr_auc"
-    - "precision_at_k"
-    - "recall_at_k"
-    - "regime_specific_calibration"
-
-  selection_rule: >
-    Select a calibration method only when it improves or preserves useful
-    ranking performance while improving probability reliability on validation
-    data. Retain the uncalibrated model when calibration does not provide
-    meaningful benefit.
+calibration:
+  # Experiment A (the one that decides the method): fit on the early-stopping rows, 2021-07-01 to 2021-12-31 UTC.
+  # They come after every fit row and before every 2022 row.
+  primary_fit_rows: early_stop
+  # Experiment B (a diagnostic, never used to choose the method): fit on the first half of 2022,
+  # score the second half. It shows whether older calibration rows are a problem.
+  diagnostic_fit_rows: validation_first_half
 
 evaluation:
-  required_metrics:
-    - "brier_score"
-    - "reliability_diagram"
-    - "calibration_curve"
-    - "predicted_probability_distribution"
-    - "observed_event_rate_by_probability_bin"
+  # 2022 is split at 2022-07-01 UTC by prediction time, exactly as in the LightGBM tuning (DEC-019).
+  selection: validation_first_half        # decides which calibrators are candidates
+  confirmation: validation_second_half    # confirms the choice with a paired day-level bootstrap
+  descriptive: [validation_full_year, validation_by_quarter]
 
-  probability_bins:
-    strategy: "quantile_or_fixed_bins_to_be_documented"
-    minimum_bin_sample_rule: "to_be_defined_after_event_prevalence_audit"
+metrics:
+  reliability_bins: 10            # equal-count bins
+  probability_floor: 1.0e-6       # calibrated probabilities are kept inside [floor, 1 - floor]
 
-  subgroup_evaluation:
-    enabled_when_sample_size_allows: true
+bootstrap:
+  resamples: 1000
+  seed: 42
+  confidence: 0.95
 
-    candidate_subgroups:
-      - "operating_regime"
-      - "carrier"
-      - "origin_airport"
-      - "destination_airport"
-      - "route"
-      - "weather_coverage_status"
-      - "rotation_eligibility_status"
+decision_rule:
+  primary_metric: brier           # lower is better; PR-AUC is reported but cannot be improved by Platt
+  simplicity_order: [uncalibrated, platt, isotonic]
+  adopt_only_if: whole 95% interval of (Brier(method) - Brier(uncalibrated)) below zero on the confirmation half
+  isotonic_over_platt_only_if: whole 95% interval of (Brier(isotonic) - Brier(platt)) below zero on the confirmation half
 
-ranking_policy:
-  preserve_probability_ranking_evaluation: true
+ranking:
+  # Which scores rank flights in the alert-policy step. Platt keeps the order of the raw score.
+  # Isotonic turns many scores into ties. The choice is stated next to every ranking result.
+  score_used_for_ranking: uncalibrated
 
-  ranked_review_capacities:
-    - 0.005
-    - 0.01
-    - 0.05
-    - 0.10
-
-  report:
-    - "precision_at_k"
-    - "recall_at_k"
-    - "events_captured_at_k"
-    - "false_alerts_at_k"
-
-reporting:
-  compare_uncalibrated_and_calibrated_models: true
-
-  required_outputs:
-    - "brier_score_comparison"
-    - "reliability_curve_comparison"
-    - "calibration_curve_comparison"
-    - "pr_auc_comparison"
-    - "ranked_alert_metric_comparison"
-    - "calibration_by_operating_regime"
-    - "calibration_limitations"
-
-documentation:
-  metric_definitions_file: "docs/decisions/metric_definitions.md"
-  validation_strategy_file: "docs/decisions/validation_strategy.md"
-  alert_policy_file: "docs/decisions/alert_threshold_policy.md"
-  calibration_report: "reports/evaluation/calibration_and_alert_policy_report.md"
-
-interpretation_rules:
-  - "Calibration evaluates the reliability of predicted probabilities."
-  - "A calibrated probability is not an operational guarantee."
-  - "Calibration does not make the project a real-time airline decision system."
-  - "Calibration method selection must not use final-test outcomes."
+final_test:
+  allowed: false

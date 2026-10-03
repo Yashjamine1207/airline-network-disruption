@@ -1,0 +1,3 @@
+outcome,airport_month_pairs,airports,first_current_month_utc,last_current_month_utc,pooled_pearson_correlation,within_airport_pearson_correlation,minimum_scheduled_each_month,minimum_completed_each_month,scope
+severe,6263,159,2019-02-01,2023-08-01,0.3781104446232664,0.255801794626884,50,50,retrospective_association_not_predictive_feature
+cancellation,6263,159,2019-02-01,2023-08-01,0.34007374979131666,0.3210884820302927,50,50,retrospective_association_not_predictive_feature

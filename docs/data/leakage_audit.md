@@ -230,3 +230,46 @@ Before headline modelling results are reported, the project will produce a leaka
 - Evaluation-fold fitting rule.
 - Leakage test reference.
 - Approval or exclusion decision.
+
+## Phase 3 implementation status — 2026-09-26
+
+The pre-flight prediction timestamp is scheduled departure UTC minus two hours.
+
+The validated schedule-only tabular feature table is
+`data/features/tabular/phase3_schedule_network_features.csv`.
+It contains 2,999,999 rows. One DST-ambiguous scheduled departure
+was excluded. Predictor and label files remain separate.
+
+The table includes schedule, calendar, carrier, airport, and route
+features; previous-completed-UTC-month scheduled-flight counts; and
+previous-completed-UTC-month directed airport-network degree measures.
+Synthetic tests confirm that adding future flights does not change
+earlier monthly count or network features. The assembled table passed
+row-alignment and prohibited-column validation.
+
+The chronological split contains 1,848,655 development rows,
+687,860 validation rows, and 463,484 locked final-test rows.
+No final-test target values were evaluated.
+
+A separate retrospective timing audit validated gate-arrival event
+times for 2,459,301 development/validation flights. It excluded
+34 rows with inconsistent delay/elapsed fields, 53 additional rows
+whose reconstructed UTC arrival disagreed with the destination-local
+ARR_TIME by more than one minute, and other rows lacking reliable
+timing. Final-test outcome times remain locked.
+
+A validated gate-arrival EVENT time is not a verified DATA AVAILABILITY
+time. Historical severe-delay rates or arrival-delay aggregates based
+on those outcomes are NOT approved as pre-flight predictors until an
+availability rule is documented and tested. Cancellation outcomes have
+no validated cancellation-availability timestamp.
+
+The retrospective source does not establish that every schedule value
+is an exact snapshot from two hours before departure. This limitation
+must accompany any pre-flight interpretation.
+
+Phase 3 remains open. The standing project brief includes NOAA GHCNh,
+while the later Phase 2 summary says weather will not be used. That
+scope conflict must be resolved before claiming completion of the
+official project pipeline. No tail-based rotation or recovery claim is
+supported by the audited flight file.
